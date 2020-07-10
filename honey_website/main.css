@@ -1,0 +1,123 @@
+*{
+  font-family: 'Rubik', sans-serif;
+}
+html , body {
+
+  padding: 0;
+  border: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+body{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+header , nav ,section ,div , footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header{
+  justify-content: space-between;
+height: 100px;
+background-color: rgba(0, 0, 0, 0.9);
+}
+.svg{
+  height: 95px;
+  width: 95px;
+  margin:0 20px;
+}
+h1.logo{
+  font-size: 1rem;
+  color: yellow;
+  transition: transform .5s;
+}
+h1.logo:hover{
+ transform: scale(1.3);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+div.nav{
+  height: 50px;
+  width: 80px;
+  background-color: yellow;
+  border-radius: 5px;
+  margin: 0 20px;
+  transition: transform .5s;
+}
+div.nav:hover{
+  transform: scale(1.2);
+}
+section.header{
+
+  height: 500px;
+  width: 100%;
+  background-image: url("C:/Users/Salma/Documents/GitHub/web_work/honey_website/images/honey-blur.jpg");
+  background-size: cover;
+  background-position: center;
+}
+h1.section{
+  font-size: 3rem;
+  color: white;
+}
+div.para{
+  justify-content: center;
+  align-items: flex-start;
+}
+para{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  width: 48%;
+  margin: 10px;
+}
+h2{
+  color: yellow;
+}
+p{
+  color: #BCB000;
+}
+footer{
+  height: 100px;
+  background-color: whitesmoke;
+}
+section.contact{
+  justify-content: space-around;
+
+}
+div.contact{
+  height: 400px;
+  width: 400px;
+  background-image: url("C:/Users/Salma/Documents/GitHub/web_work/honey_website/images/honey-2045580_1920.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  margin: 20px;
+  color: yellow;
+  font-size: 2rem;
+}
+div.contact_num{
+  flex-flow: column;
+  justify-content: flex-start;
+}
+li{
+  color: #BCB000;
+}
+section.about{
+  justify-content: space-around;
+}
+div.about{
+  height: 400px;
+  width: 400px;
+  background-image: url("C:/Users/Salma/Documents/GitHub/web_work/honey_website/images/apiary-1866740_1920.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  margin: 20px;
+  color: black;
+  font-size: 3rem;
+}
+div.about_para{
+  flex-flow: column;
+  justify-content: flex-start;
+}
