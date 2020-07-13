@@ -1,0 +1,41 @@
+header{
+  height: 150px;
+  flex-direction: column;
+}
+div.nav{
+  width: 50;
+  font-size:1.2rem;
+}
+section.sec_head{
+  height: 500px;
+}
+h1.section{
+  text-align: center;
+}
+article.tupperware{
+  flex-direction: column;
+
+}
+div.vid{
+  height: 220px;
+  width: 320px;
+}
+photos{
+  flex-direction: column;
+}
+img.product{
+  height: 500px;
+  width: 350px;
+  margin: 10px;
+  padding: 10px;
+}
+section.article_sec{
+  height: 400px;
+  width: 100%;
+}
+h1.contact{
+  text-align: center;
+}
+footer{
+  height: 120px;
+}
