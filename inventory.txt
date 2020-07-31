@@ -16,5 +16,11 @@ inventory
 14. use shape-outside with floating
 15. vh and vw
 16. quotes in css
+17. Different gradients and color combos from abobe
+18. illustrations
+19. animated illustrations
+20. scroll behavior
+21. opacity to fade or pop elements
+
 
 

@@ -21,11 +21,12 @@ header{
 
   height: 100px;
   width: 100%;
-  background-image: linear-gradient(to right , #00C4ED , #00FBCF);
+  background-image: linear-gradient(180deg ,#0048FF , #4076FF);
 }
 nav{
   height: 60px;
   width: 50%;
+  justify-content:flex-end;
 }
 div.nav{
   min-height: 100%;
@@ -47,14 +48,42 @@ a{
   margin: 20px;
 }
 h1.logo{
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: whitesmoke;
+  margin: 20px;
 }
-section{
-  height: 400px;
+section.contact{
+  height: 600px;
   width: 100%;
-  background-image: url("../images/contactus.jpg");
+  background-image: url('../images/contact.jpg');
+  background-size:cover;
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+}
+article{
+  flex-direction: column;
+}
+section.sec1{
+  flex-direction: column;
+}
+div.article{
+  flex-direction: column;
+  height: 500px;
+  width: 60%;
+  background-image: linear-gradient(to top ,#0048FF , #4076FF);
+  margin: 20px;
+  border-radius: 6px;
+}
+img.div_article{
+  top:10px;
+  right: 10px;
+  height: 200px;
+  border-radius: 4px;
+}
+h1.div_article{
+  font-size: 2rem;
+}
+p{
+  font-size: 1.4rem;
+  padding: 20px;
 }

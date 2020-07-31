@@ -25,10 +25,11 @@ header{
 height: 100px;
 /* background-color: rgba(0, 0, 0, 0.9); */
 }
-.svg{
+img.logo{
   height: 95px;
   width: 95px;
-  margin:0 20px;
+  margin: 0 20px;
+  margin-top: 20px;
 }
 h1.logo{
   font-size: 1rem;
