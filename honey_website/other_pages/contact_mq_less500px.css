@@ -12,3 +12,6 @@ padding: 20px;
 p.para{
   font-size: 1rem;
 }
+section.contact{
+  flex-direction: column;
+}

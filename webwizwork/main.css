@@ -30,9 +30,10 @@ nav{
 }
 div.nav{
   min-height: 100%;
-  width: 100px;
+  width: 120px;
   font-size: 1.5rem;
   transition: transform .4s;
+  padding: 5px;
 }
 div.nav:hover{
   transform: scale(1.3);
@@ -83,6 +84,8 @@ button:hover{
 }
 article{
   flex-direction: column;
+  background-image: url("images/bgindex.jpg");
+  background-size: contain;
 }
 section.sec1{
   flex-direction: column;

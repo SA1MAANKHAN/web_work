@@ -65,7 +65,9 @@ article{
 }
 section.sec1{
   flex-direction: column;
-}
+  background-image: url("../images/bgcontact.jpg");
+  background-size: contain;
+  }
 div.article{
   flex-direction: column;
   height: 500px;
@@ -86,4 +88,9 @@ h1.div_article{
 p{
   font-size: 1.4rem;
   padding: 20px;
+}
+footer{
+  height: 80px;
+  background-color:#009F64;
+  padding: 15px;
 }
