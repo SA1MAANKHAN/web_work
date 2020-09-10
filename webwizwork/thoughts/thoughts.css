@@ -20,8 +20,10 @@ header , nav , section ,div ,a ,footer{
 }
 header{
   justify-content: space-between;
-
-  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
   width: 100%;
   background-image: linear-gradient(180deg ,#5680E9 , #5AB9EA);
 }
@@ -33,6 +35,7 @@ nav{
 div.nav{
   min-height: 100%;
   width: 100px;
+  margin: 20px;
   transition: transform .4s;
 }
 div.nav:hover{
@@ -55,7 +58,34 @@ h1.logo{
   margin: 20px;
 }
 section.contact{
-  height: 600px;
+  height: 100vh;
+}
+div.section{
+  flex: 1;
+  flex-direction: column;
+
+}
+h1.section{
+    color: #2F2E41;
+    font-size: 3rem;
+}
+p.section{
+  color: #2F2E41;
+}
+h2.section{
+    color: #5AB9EA;
+    font-size: 1rem;
+}
+h3.section{
+    color: #5AB9EA;
+    font-size: 2rem;
+    border: 3px solid #5AB9EA;
+    border-radius: 5px;
+    padding: 5px;
+}
+div.SVG{
+  flex: 1;
+  height:50%;
   width: 100%;
   background-image: url('../SVGs/undraw_ideas_s70l (1).svg');
   background-size:contain;
@@ -68,20 +98,20 @@ article{
 }
 section.sec1{
   flex-direction: column;
-  background-image: url("../images/bg.jpg");
-  background-size: contain;
+  /* background-image: url("../images/bg.jpg");
+  background-size: contain; */
 
 }
-div.l_article{
+div.article{
   flex-direction: column;
   height: 500px;
   width: 60%;
   background-image: linear-gradient(to top ,#51C0EC, #2E6AFF);
   margin: 20px;
   border-radius: 6px;
-  border-radius: 1% 1% 60% 1%
+  border-radius: 50%;
 }
-div.r_article{
+/* div.article{
   flex-direction: column;
   height: 500px;
   width: 60%;
@@ -89,7 +119,7 @@ div.r_article{
   margin: 20px;
   border-radius: 6px;
   border-radius: 1% 1% 1% 60%
-}
+} */
 img.div_article{
   top:10px;
   right: 10px;
@@ -105,7 +135,7 @@ p{
 }
 footer{
   height: 80px;
-  background-image: linear-gradient(to bottom,#7525F4,#7E4ADE);
+  background-image: linear-gradient(180deg  , #5AB9EA,#5680E9);
   padding: 15px;
 
 }

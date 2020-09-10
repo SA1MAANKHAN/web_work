@@ -21,6 +21,7 @@ inventory
 19. animated illustrations
 20. scroll behavior
 21. opacity to fade or pop elements
+22. to get overlay page sliding ....use postion fixed and position absolute....see todd->html->build it->03 
 
 
 
