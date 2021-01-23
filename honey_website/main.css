@@ -2,28 +2,27 @@
   font-family: 'Rubik', sans-serif;
 }
 html , body {
-
+  /* my reset */
   padding: 0;
   border: 0;
   margin: 0;
-
   box-sizing: border-box;
 }
 body{
   background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
 }
 article{
   width: 100%;
 }
-header , nav ,section ,div , footer{
+header, nav, div, section, footer{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 header{
-  justify-content: space-between;
-height: 100px;
-/* background-color: rgba(0, 0, 0, 0.9); */
+  flex-direction: column;
+  height: 100vh;
 }
 img.logo{
   height: 95px;
@@ -31,17 +30,24 @@ img.logo{
   margin: 0 20px;
   margin-top: 20px;
 }
-h1.logo{
+a.logo{
+  text-decoration: none;
   font-size: 1rem;
   color: yellow;
   transition: transform .5s;
 }
-h1.logo:hover{
+a.logo:hover{
  transform: scale(1.3);
 }
-a{
+a.nav{
   text-decoration: none;
   color: black;
+}
+div.logo{
+  margin-right: 500px;
+}
+nav{
+  /* height: 100px; */
 }
 div.nav{
   height: 50px;
@@ -49,6 +55,7 @@ div.nav{
   background-color: yellow;
   border-radius: 5px;
   margin: 0 20px;
+  /* box-shadow: 0 0px 4px yellow; */
   transition: transform .5s;
 }
 div.nav:hover{
@@ -56,19 +63,26 @@ div.nav:hover{
 }
 section.header{
 
-  height: 500px;
+  height: 100%;
   width: 100%;
-  background-image: url("images/honey-blur.jpg");
+  background-image: url("images/landing.jpg");
   background-size: cover;
   background-position: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 h1.section{
-  font-size: 3rem;
-  color: white;
+  font-size: 5rem;
+  color: yellow;
+  margin: 200px 200px;
+
 }
 div.para{
   justify-content: center;
   align-items: flex-start;
+  height: 300px;
+  width: 220px;
+  padding: 30px;
 }
 para{
   background-color: rgba(0, 0, 0, 0.5);
@@ -86,44 +100,4 @@ p{
 footer{
   height: 100px;
   background-color: whitesmoke;
-}
-section.contact{
-  justify-content: space-around;
-
-}
-div.contact{
-  height: 400px;
-  width: 400px;
-  background-image: url("images/honey-2045580_1920.jpg");
-  background-size: cover;
-  border-radius: 10px;
-  margin: 20px;
-  color: yellow;
-  font-size: 2rem;
-}
-div.contact_num{
-  flex-flow: column;
-  justify-content: flex-start;
-  width: 45%;
-}
-li{
-  color: #BCB000;
-}
-section.about{
-  justify-content: space-around;
-}
-div.about{
-  height: 400px;
-  width: 400px;
-  background-image: url("images/apiary-1866740_1920.jpg");
-  background-size: cover;
-  border-radius: 10px;
-  margin: 20px;
-  color: black;
-  font-size: 3rem;
-}
-div.about_para{
-  flex-flow: column;
-  justify-content: flex-start;
-  width: 45%;
 }

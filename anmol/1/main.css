@@ -1,0 +1,76 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+html ,body , section , header ,nav{
+  padding: 0;
+  border: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+}
+a{
+  text-decoration: none;
+  color: whitesmoke;
+  transition: font-size .3s;
+  font-weight: 600;
+}
+a:hover{
+  font-size: 1.3rem;
+}
+article{
+  height: 400px;
+  background-image: url("images/bg.jpeg");
+}
+header{
+  height: 120px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+nav , div , section , footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav{
+  height: 100%;
+}
+div.nav{
+  height: 100%;
+  width: 200px;
+
+}
+div.nav:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  height:
+}
+h1{
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  transition: font-size .3s ease-in-out ;
+  background-color:rgba(0, 0, 0, 0.5) ;
+}
+h1:hover{
+  font-size: 3.5rem;
+}
+section{
+  flex-direction: column;
+}
+div.sec{
+  background-image: linear-gradient(to right , #00A266,#00FBF5);
+  width: 80%;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 10px;
+}
+div.sec:hover{
+  background-image: linear-gradient(to left , #00A266,#00FBF5);
+}
+footer{
+  height: 100px;
+  width: 100%;
+  background-color: whitesmoke;
+}

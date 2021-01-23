@@ -1,0 +1,118 @@
+*{
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color:whitesmoke;
+  scroll-behavior: smooth;
+}
+body{
+  background:#0713B8;
+}
+header , div {
+  display: flex;
+}
+section{
+  height: 100vh;
+}
+header{
+  justify-content: space-between;
+  align-items: center;
+  background: #0713B8;
+  height: 80px;
+  /* border: dotted hotpink 5px; */
+}
+div.header{
+  display: inline;
+}
+div.logo-header{
+  margin-left: 20px;
+}
+nav{
+  margin-right: 20px;
+}
+a{
+  text-decoration:none;
+}
+a.header-nav{
+  margin:10px;
+  font-weight: bold;
+  color: whitesmoke;
+  transition: border-bottom .2s ease-in-out;
+
+}
+a.header-nav:hover{
+  border-bottom: 3px solid whitesmoke ;
+}
+
+div.svg{
+  background-color: white;
+  border-radius: 100%;
+  height: 400px;
+  width: 400px;
+  margin: 100px;
+  align-items: center;
+  justify-content: center;
+}
+svg.svg-section{
+  height: 300px;
+  width: 300px;
+}
+h1.landing-text{
+  font-size: 6rem;
+}
+div.landing{
+  /* border: dotted hotpink 2px; */
+  justify-content: space-between;
+  height: 100%;
+}
+div.landing-text{
+  /* border: dotted hotpink 2px; */
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+div.bg-effect{
+  justify-content: center;
+}
+.main{
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+transition: transform .3s ease;
+}
+svg.bg-effect:hover{
+  transform: scale(1.2);
+}
+
+.main {
+  width: 250px;
+  height: 250px;
+}
+
+div.bottom {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+
+}
+img{
+  height: 100px;
+  width: 100px;
+  margin:10px;
+  border-radius:5px;
+}
+
+.meditation{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+.mindfulness {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}

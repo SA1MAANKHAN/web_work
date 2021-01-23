@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Salmaan</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="name nav-name">Salmaan</div>
+        <div class="links nav-links">
+          <div class="nav-link-div nav-links-1">
+            <a class="nav-link nav-links-1" href="#about-me">about me</a>
+          </div>
+          <div class="nav-link-div nav-links-2">
+            <a class="nav-link nav-links-2" href="#skills">skills</a>
+          </div>
+          <div class="nav-link-div nav-links-3">
+            <a class="nav-link nav-links-3" href="#blog">blog</a>
+          </div>
+          <div class="nav-link-div nav-links-4">
+            <a class="nav-link nav-links-4" href="#contact">contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <section class="header-section">
+        <!-- <img src="img/IMG_20191013_083625.jpg" alt="" /> -->
+        <h1 class="welcome-msg header-h1">
+          Hey,<br />
+          I am Salmaan <br />
+          and I am a
+          <div class="sliding-names">developer</div>
+
+          <div class="scroll-down-landing">
+            <a href="#" class="scroll-down-landing"
+              ><p class="scroll-text">Scroll down</p></a
+            >
+          </div>
+        </h1>
+
+        <!--  
+          ANIMATION
+          
+          <div class="sliding-names">
+            <ul class="animation">
+              <li>developer</li>
+              <li>meditator</li>
+              <li>blogger</li>
+              <li>guitarist</li>
+            </ul>
+          </div> -->
+
+        <div class="slider">
+          <div class="slide slide--1">
+            <img src="img/coder.jpg" alt="" class="sliding-img-1 sliding-img" />
+          </div>
+
+          <div class="slide slide--2">
+            <img
+              src="img/meditaion.jpg"
+              alt=""
+              class="sliding-img-2 sliding-img"
+            />
+          </div>
+
+          <div class="slide slide--3">
+            <img src="img/blog.jpg" alt="" class="sliding-img-3 sliding-img" />
+          </div>
+
+          <div class="slide slide--4">
+            <img
+              src="img/guitar.jpg"
+              alt=""
+              class="sliding-img-4 sliding-img"
+            />
+          </div>
+        </div>
+
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+      </section>
+    </header>
+    <section class="about-me" id="about-me">
+      <div class="about-me-div">
+        <h1 class="about-me-heading">About Me</h1>
+        <p class="about-me-para">
+          I'm a computer science student at Punjabi University. I have been
+          doing web development a year and half now. I'm always looking for
+          opportunities to learn & improve to add value to my life and to the
+          those around me. There are many things I like to do, to see, and to
+          experience. I read, I write, I think, I dream, I speak, I listen.
+        </p>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <div class="div-skills">
+        <h1 class="skills-heading">My skills</h1>
+        <li>
+          <h3>HTML5</h3>
+          <span class="bar"><span class="html-skill"></span></span>
+        </li>
+        <li>
+          <h3>Js</h3>
+          <span class="bar"><span class="js-skill"></span></span>
+        </li>
+        <li>
+          <h3>CSS</h3>
+          <span class="bar"><span class="css-skill"></span></span>
+        </li>
+        <li>
+          <h3>Golang</h3>
+          <span class="bar"><span class="golang-skill"></span></span>
+        </li>
+        <li>
+          <h3>SQL & Pl/SQL</h3>
+          <span class="bar"><span class="sql-skill"></span></span>
+        </li>
+        <li>
+          <h3>C++</h3>
+          <span class="bar"><span class="cpp-skill"></span></span>
+        </li>
+        <li>
+          <h3>PYTHON</h3>
+          <span class="bar"><span class="python-skill"></span></span>
+        </li>
+      </div>
+    </section>
+    <section class="blog" id="blog">
+      <div class="blog-info">
+        <div class="medium-logo">
+          <svg
+            enable-background="new 0 0 24 24"
+            height="80"
+            viewBox="0 0 24 24"
+            width="80"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m22.085 4.733 1.915-1.832v-.401h-6.634l-4.728 11.768-5.379-11.768h-6.956v.401l2.237 2.693c.218.199.332.49.303.783v10.583c.069.381-.055.773-.323 1.05l-2.52 3.054v.396h7.145v-.401l-2.52-3.049c-.273-.278-.402-.663-.347-1.05v-9.154l6.272 13.659h.729l5.393-13.659v10.881c0 .287 0 .346-.188.534l-1.94 1.877v.402h9.412v-.401l-1.87-1.831c-.164-.124-.249-.332-.214-.534v-13.467c-.035-.203.049-.411.213-.534z"
+              fill="#212121"
+            /></svg
+          >Medium
+        </div>
+        <h3 class="medium-blog medium-blog-h3">
+          I write blogs on medium on all kind of subjects from mindfulness to
+          tehnology.
+        </h3>
+        <h4 class="medium-blog medium-blog-h4">
+          <a
+            class="medium-blog medium-blog-link"
+            href="https://medium.com/@salmaank"
+            >Click here to visit!</a
+          >
+        </h4>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="row">
+          <h1 class="contact-h1">get in touch</h1>
+        </div>
+        <div class="row">
+          <h4 class="contact-h4" style="text-align: center">
+            Always love to hear from you!
+          </h4>
+        </div>
+        <div class="row input-container">
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <input type="text" required />
+              <label>Name</label>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input">
+              <input type="text" required />
+              <label>Email</label>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input" style="float: right">
+              <input type="text" required />
+              <label>Phone Number</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <textarea required></textarea>
+              <label>Message</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="btn-lrg submit-btn">Send Message</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">Designed and Created by Salmaan.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
