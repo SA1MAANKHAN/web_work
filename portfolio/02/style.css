@@ -32,6 +32,8 @@ fonts {
   border-radius: 50px;
   box-shadow: 2px 2px 3px rgb(53, 53, 53);
   transition: opacity 0.3s;
+  border: 3px solid whitesmoke;
+  z-index: 1;
 }
 header {
   height: 100vh;
@@ -58,6 +60,32 @@ a {
   color: whitesmoke;
   font-size: 1.5rem;
   margin: 2rem;
+}
+.nav-links-1 {
+  animation: navLinkAnimation 1s forwards 0.25s ease;
+}
+.nav-links-2 {
+  animation: navLinkAnimation 1s forwards 0.5s ease;
+}
+.nav-links-3 {
+  animation: navLinkAnimation 1s forwards 0.75s ease;
+}
+.nav-links-4 {
+  animation: navLinkAnimation 1s forwards 1s ease;
+}
+@keyframes navLinkAnimation {
+  0% {
+    transform: translateY(-30%);
+  }
+  80% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.elementToAnimate {
 }
 /* landing section */
 .header-section {
@@ -87,6 +115,20 @@ a {
 }
 .intro-msg {
   color: white;
+  animation: introMsg 1.2s forwards 0s ease;
+}
+@keyframes introMsg {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(2%);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .hello-msg {
   font-size: 2rem;
@@ -100,6 +142,7 @@ a {
   letter-spacing: 0.4rem;
   font-size: 5rem;
 }
+
 .sub-intro {
   margin-top: 1rem;
   font-family: "Playball", cursive;
@@ -112,6 +155,32 @@ a {
   height: 230px;
   border-radius: 50%;
   width: 230px;
+  animation: myImgRoatate 5s infinite 3s linear;
+}
+@keyframes myImgRoatate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.landing-bio {
+  animation: landingBioAnimation 1.2s forwards 0s ease;
+}
+@keyframes landingBioAnimation {
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-2%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
 }
 .landing-bio-name {
   color: white;
@@ -140,6 +209,7 @@ a {
   font-family: "Poppins", sans-serif;
   border: none;
   border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* about */
@@ -173,9 +243,11 @@ a {
 .eduandexp-section {
   height: 100vh;
   display: flex;
+  background-color: #323b63;
+  clip-path: polygon(0 0, 100% 0, 40% 100%, 0% 100%);
 }
 .edu-sec {
-  color: #323b63;
+  color: white;
 }
 .eduandexp {
   display: flex;
@@ -196,6 +268,17 @@ a {
   letter-spacing: 0.3rem;
   margin: 2rem 0;
 }
+.education {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.edu-sub {
+  /* width: 300px; */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
 /* skills */
 .skills {
@@ -210,10 +293,11 @@ a {
 .skills-heading {
   font-family: "Playball", cursive;
   font-size: 3rem;
+  margin-top: 2rem;
 }
 .skills-sub-heading {
   font-family: "Rajdhani", sans-serif;
-  margin: 3rem;
+  margin: 1rem;
   letter-spacing: 0.3rem;
 }
 .skills li {
@@ -253,7 +337,7 @@ a {
   }
 }
 .js-skill {
-  width: 50%;
+  width: 80%;
 }
 .js-skill-animate {
   animation: js 2s;
@@ -263,7 +347,7 @@ a {
     width: 0%;
   }
   100% {
-    width: 50%;
+    width: 80%;
   }
 }
 .css-skill {
@@ -281,7 +365,7 @@ a {
   }
 }
 .golang-skill {
-  width: 60%;
+  width: 70%;
 }
 .go-skill-animate {
   animation: golang 2s;
@@ -291,11 +375,11 @@ a {
     width: 0%;
   }
   100% {
-    width: 60%;
+    width: 70%;
   }
 }
 .sql-skill {
-  width: 60%;
+  width: 70%;
 }
 .sql-skill-animate {
   animation: sql 2s;
@@ -305,7 +389,7 @@ a {
     width: 0%;
   }
   100% {
-    width: 60%;
+    width: 70%;
   }
 }
 .cpp-skill {
@@ -341,18 +425,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.intrest-img-left {
-  display: flex;
-  flex-direction: column;
-  height: 80vh;
-  width: 33%;
-}
-.intrest-img-right {
-  display: flex;
-  flex-direction: column;
-  height: 80vh;
-  width: 33%;
+
+  background-color: #323b63;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 31% 50%, 0% 0%);
 }
 
 .intrests {
@@ -363,19 +438,10 @@ a {
   align-items: center;
   flex-direction: column;
 }
-.intrest-img {
-  width: 20rem;
-  height: 20rem;
-  margin: 0rem 5rem;
-}
-.intrest-img-4 {
-  height: 15rem;
-}
-
 .intrest-heading,
 .intrest-sub-heading,
 .intrest {
-  color: #323b63;
+  color: white;
 }
 .intrest-heading {
   font-family: "Playball", cursive;
@@ -558,6 +624,8 @@ input[type="checkbox"]:checked + label {
 /* hover effect  */
 .fa:hover {
   opacity: 0.7;
+  height: 30px;
+  width: 30px;
 }
 .footer-div {
   margin-bottom: 2rem;
