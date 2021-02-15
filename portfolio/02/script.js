@@ -37,9 +37,9 @@ const homeBtnVis = function (entries) {
   const [entry] = entries;
 
   if (entry.isIntersecting) {
-    homeBtn.style.opacity = 0;
+    homeBtn.style.display = "none";
   } else {
-    homeBtn.style.opacity = 1;
+    homeBtn.style.display = "flex";
   }
 };
 
