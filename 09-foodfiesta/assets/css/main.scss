@@ -7,20 +7,22 @@
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  background: rgb(241, 110, 233);
-  background: radial-gradient(
-    circle,
-    rgba(241, 110, 233, 1) 0%,
-    rgba(255, 165, 240, 1) 28%,
-    rgba(255, 165, 240, 1) 63%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
 @mixin flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+body {
+  background: rgb(230, 74, 51);
+  background: linear-gradient(
+    325deg,
+    rgba(230, 74, 51, 1) 3%,
+    rgba(252, 132, 113, 1) 46%,
+    rgba(242, 84, 173, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-position: c
 }
 .welcome-page {
   @include flex();
@@ -54,15 +56,26 @@ body {
 .header {
   @include flex();
   width: 100%;
+  height: 25vh;
+
+  background-image: url("../imgs/wave.svg");
+
+  background-repeat: no-repeat;
+  background-position: fill;
+  background-size: cover;
 }
 
 .logo {
-  height: 6rem;
-  width: 21rem;
+  height: 4rem;
+  width: 14rem;
   background-image: url("../logo/default.png");
   background-size: contain;
   background-repeat: no-repeat;
+
+  box-shadow: 0 0.5rem 0.75rem rgba($color: #000000, $alpha: 0.7);
 }
+
+// homepage
 
 .homepage {
   @include flex();
@@ -70,46 +83,147 @@ body {
 
 .cards-container {
   display: grid;
+  position: relative;
 
-  width: 60%;
+  margin-top: 2rem;
+  width: 80%;
+
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-template-rows: repeat(1fr);
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
+  grid-row-gap: 0.5rem;
+
   .card {
+    align-self: center;
     @include flex();
     height: 10rem;
-    width: 15rem;
+    width: 80%;
+    min-width: 12rem;
+    max-width: 15rem;
     margin: 1rem;
 
     border-radius: 20px;
+    transition: border-radius 0.4s ease;
 
     color: white;
     font-weight: bolder;
     font-size: 1.5rem;
 
     box-shadow: 10px 10px 10px rgba($color: #000000, $alpha: 0.7);
+    background-size: cover;
+    transition: height 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
   }
+  .card:hover {
+    animation: wiggle 0.6s;
+  }
+  @keyframes wiggle {
+    25% {
+      transform: scale(0.9, 1.2);
+    }
+    50% {
+      transform: scale(1, 0.9);
+    }
+    75% {
+      transform: scale(0.8, 1.1);
+    }
+  }
+}
 
-  .card-food-fact,
-  .card-search-food {
-    background-image: url(../imgs/food-1.jpg);
-    background-size: cover;
+.card-food-fact,
+.card-search-food {
+  background-image: url(../imgs/food-1.jpg);
+  background-size: cover;
+}
+.card-food-joke,
+.card-6 {
+  background-image: url(../imgs/food-2.jpg);
+  background-size: cover;
+}
+.card-search-recipies,
+.card-7 {
+  background-image: url(../imgs/food-3.jpg);
+  background-size: cover;
+}
+.card-random-recipe,
+.card-8 {
+  background-image: url(../imgs/food-4.jpg);
+  background-size: cover;
+}
+
+// FOODFACT
+
+.food-fact-container {
+  @include flex();
+  flex-direction: column;
+  .food-fact-card {
+    @include flex();
+    width: 80%;
+    height: 10rem;
+    margin-top: 4rem;
+
+    backdrop-filter: blur(100px);
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgb(41, 41, 41);
+
+    .food-fact {
+      width: 80%;
+      color: white;
+    }
   }
-  .card-food-joke,
-  .card-6 {
-    background-image: url(../imgs/food-2.jpg);
-    background-size: cover;
+  .refresh-fact-btn {
+    background-color: rgba(127, 0, 213, 0.5);
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: padding 0.3s ease-in-out;
+    transition: margin 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
   }
-  .card-search-recipies,
-  .card-7 {
-    background-image: url(../imgs/food-3.jpg);
-    background-size: cover;
+  .refresh-fact-btn:hover {
+    animation: wiggle 0.6s;
   }
-  .card-random-recipe,
-  .card-8 {
-    background-image: url(../imgs/food-4.jpg);
-    background-size: cover;
+  @keyframes wiggle {
+    25% {
+      transform: scale(0.9, 1.2);
+    }
+    50% {
+      transform: scale(1, 0.9);
+    }
+    75% {
+      transform: scale(0.8, 1.1);
+    }
+  }
+}
+
+// Search
+
+.search-container {
+  .input-search {
+    @include flex();
+    flex-direction: column;
+
+    .label {
+      color: white;
+      margin: 0.5rem;
+    }
+
+    .search-input {
+      padding: 0.5rem 1rem;
+    }
+
+    .search-btn {
+      padding: 0.4rem 0.6rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+    .search-btn:hover {
+      animation: wiggle 0.6s;
+    }
   }
 }
 
