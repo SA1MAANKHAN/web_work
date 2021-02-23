@@ -10,6 +10,11 @@ const controlFoodFact = async function () {
   foodFact.render(model.state.foodFact);
 };
 
+const controlFoodJoke = async function () {
+  await model.randomFoodJoke();
+  foodJoke.render(model.state.foodJoke);
+};
+
 const controlSearchFoodInput = function () {
   model.searchFood("oreo");
   searchFoodInput.renderSearch();
@@ -20,10 +25,6 @@ const controlSearchRecipeInput = function () {
   searchRecipeInput.renderSearch();
 };
 
-const controlFoodJoke = function () {
-  model.randomFoodJoke();
-  foodJoke.render(model.state.foodJoke);
-};
 
 const controlRandomRecipe = function () {
   // model.randomRecipies();

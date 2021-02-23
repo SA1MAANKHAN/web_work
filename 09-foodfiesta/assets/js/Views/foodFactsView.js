@@ -3,7 +3,6 @@ import View from "./View.js";
 class FoodFact {
   homepage = document.querySelector(".homepage");
   foodFactCard = document.querySelector(".card-food-fact");
-  data;
   reloadBtn = document.querySelector(".refresh-fact-btn");
 
   addFoodFactHandler(handler) {
@@ -11,6 +10,10 @@ class FoodFact {
       e.preventDefault();
       handler();
     });
+
+    // this.reloadBtn.addEventListener("click", function () {
+    //   handler();
+    // });
   }
 
   render(text) {
@@ -29,13 +32,13 @@ class FoodFact {
     this.homepage.insertAdjacentHTML("beforeend", html);
   }
 
-  addFoodFactReloadHandler(handler) {
-    this.reloadBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      console.log("ckicked");
-      handler();
-    });
-  }
+  // addFoodFactReloadHandler(handler) {
+  //   this.reloadBtn.addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     console.log("ckicked");
+  //     handler();
+  //   });
+  // }
 }
 
 export default new FoodFact();

@@ -20,6 +20,15 @@ export const randomFoodFact = async function () {
   // state.foodFact = data.text;
 };
 
+export const randomFoodJoke = async function () {
+  // const response = await fetch(
+  //   `https://api.spoonacular.com/food/jokes/random?apiKey=${APIKEY}`
+  // );
+  // const data = await response.json();
+  // state.foodJoke = data.text;
+};
+
+
 export const searchFood = async function (input) {
   const response = await fetch(
     `https://api.spoonacular.com/food/search?query=${input}&apiKey=${APIKEY}`
@@ -72,14 +81,4 @@ export const searchByIngredients = async function (ingredients) {
     "------------------------Search By Ingredients ---------------------"
   );
   console.log(data);
-};
-export const randomFoodJoke = async function () {
-  const response = await fetch(
-    `https://api.spoonacular.com/food/jokes/random?apiKey=${APIKEY}`
-  );
-
-  const data = await response.json();
-
-  state.foodJoke = data.text;
-  console.log(state);
 };

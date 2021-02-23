@@ -130,6 +130,7 @@ body {
 .cards-container .card {
   -ms-flex-item-align: center;
       align-self: center;
+  justify-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,9 +141,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 10rem;
-  width: 80%;
-  min-width: 12rem;
-  max-width: 15rem;
+  width: 15rem;
   margin: 1rem;
   border-radius: 20px;
   -webkit-transition: border-radius 0.4s ease;

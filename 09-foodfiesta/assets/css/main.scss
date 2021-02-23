@@ -98,11 +98,10 @@ body {
 
   .card {
     align-self: center;
+    justify-self: center;
     @include flex();
     height: 10rem;
-    width: 80%;
-    min-width: 12rem;
-    max-width: 15rem;
+    width: 15rem;
     margin: 1rem;
 
     border-radius: 20px;

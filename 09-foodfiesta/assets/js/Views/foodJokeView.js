@@ -12,12 +12,12 @@ class FoodJoke {
     });
   }
 
-  render(data) {
+  render(text) {
     this.homepage.innerHTML = "";
     const html = `   <div class="food-joke-container">
 
      <div class="food-joke-card"  >
-       <span class="food-joke">${data.text} </span>
+       <span class="food-joke">${text} </span>
       </div>
       <button class="refresh-joke-btn">
         <i class="fas fa-redo-alt"></i>
