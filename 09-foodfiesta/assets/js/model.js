@@ -6,14 +6,18 @@ export const state = {
     query: {},
   },
   searchRecipe: {},
+  foodJoke: {},
+  randomRecipie: {},
+  ByIngredients: {},
+  querry: {},
 };
 
-export const randomFoodTrivia = async function () {
-  const response = await fetch(
-    `https://api.spoonacular.com/food/trivia/random?apiKey=${APIKEY}`
-  );
-  const data = await response.json();
-  state.foodFact = data.text;
+export const randomFoodFact = async function () {
+  // const response = await fetch(
+  //   `https://api.spoonacular.com/food/trivia/random?apiKey=${APIKEY}`
+  // );
+  // const data = await response.json();
+  // state.foodFact = data.text;
 };
 
 export const searchFood = async function (input) {
@@ -32,16 +36,6 @@ export const searchFood = async function (input) {
   console.log(state);
 };
 
-export const randomFoodJoke = async function () {
-  const response = await fetch(
-    `https://api.spoonacular.com/food/jokes/random?apiKey=${APIKEY}`
-  );
-
-  const data = await response.json();
-  console.log("----------------------Random Food Joke ---------------------");
-  console.log(data);
-};
-
 // RANDOM RECIPIES
 
 export const randomRecipies = async function () {
@@ -51,7 +45,7 @@ export const randomRecipies = async function () {
 
   const data = await response.json();
 
-  return data;
+  state.randomRecipie = data.recipes[0];
 };
 
 export const getQueriesAnswered = async function (inputQuery) {
@@ -78,4 +72,14 @@ export const searchByIngredients = async function (ingredients) {
     "------------------------Search By Ingredients ---------------------"
   );
   console.log(data);
+};
+export const randomFoodJoke = async function () {
+  const response = await fetch(
+    `https://api.spoonacular.com/food/jokes/random?apiKey=${APIKEY}`
+  );
+
+  const data = await response.json();
+
+  state.foodJoke = data.text;
+  console.log(state);
 };

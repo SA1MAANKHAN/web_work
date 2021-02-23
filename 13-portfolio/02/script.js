@@ -48,28 +48,48 @@ const obsOptions = {
   threshold: 0,
 };
 
-const observer = new IntersectionObserver(homeBtnVis, obsOptions);
+const observerHomeBtn = new IntersectionObserver(homeBtnVis, obsOptions);
 
-observer.observe(header);
+observerHomeBtn.observe(header);
 
 // skills animation --------------------------
 
-// const skills = document.querySelector(".skills");
-// const htmlSkill = document.querySelector(".html-skill");
+const skillSection = document.querySelector(".skills");
+const htmlSkill = document.querySelector(".html-skill");
+const cssSkill = document.querySelector(".css-skill");
+const jsSkill = document.querySelector(".js-skill");
+const golangSkill = document.querySelector(".golang-skill");
+const pythonSkill = document.querySelector(".python-skill");
+const sqlSkill = document.querySelector(".sql-skill");
+const cppSkill = document.querySelector(".cpp-skill");
 
-// const skillsAnimation = function (entries) {
-//   entries.forEach((entry) => {
-//     entry.isIntersecting;
-//     htmlSkill.classList.add("html-skill-animate");
-//     console.log("now");
-//   });
-// };
+const skillsAnimation = function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      htmlSkill.classList.add("html-skill-animate");
+      cssSkill.classList.add("css-skill-animate");
+      jsSkill.classList.add("js-skill-animate");
+      golangSkill.classList.add("go-skill-animate");
+      pythonSkill.classList.add("py-skill-animate");
+      sqlSkill.classList.add("sql-skill-animate");
+      cppSkill.classList.add("cpp-skill-animate");
+    } else {
+      htmlSkill.classList.remove("html-skill-animate");
+      cssSkill.classList.remove("css-skill-animate");
+      jsSkill.classList.remove("js-skill-animate");
+      golangSkill.classList.remove("go-skill-animate");
+      pythonSkill.classList.remove("py-skill-animate");
+      sqlSkill.classList.remove("sql-skill-animate");
+      cppSkill.classList.remove("cpp-skill-animate");
+    }
+  });
+};
 
-// const obsOptions = {
-//   root: null,
-//   threshold: 0.3,
-// };
+const obsOptionsSkills = {
+  root: null,
+  threshold: 0.3,
+};
 
-// const observer = new IntersectionObserver(skillsAnimation, obsOptions);
+const observer = new IntersectionObserver(skillsAnimation, obsOptionsSkills);
 
-// observer.observe(skills)
+observer.observe(skills);

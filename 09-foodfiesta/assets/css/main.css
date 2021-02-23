@@ -206,7 +206,7 @@ body {
   background-size: cover;
 }
 
-.card-search-recipies,
+.card-search-recipe,
 .card-7 {
   background-image: url(../imgs/food-3.jpg);
   background-size: cover;
@@ -250,13 +250,22 @@ body {
   -webkit-backdrop-filter: blur(100px);
           backdrop-filter: blur(100px);
   border-radius: 15px;
-  -webkit-box-shadow: 5px 5px 5px #292929;
-          box-shadow: 5px 5px 5px #292929;
+  -webkit-box-shadow: 0px 0px 10px #292929;
+          box-shadow: 0px 0px 10px #292929;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
 .food-fact-container .food-fact-card .food-fact {
   width: 80%;
   color: white;
+}
+
+.food-fact-container .food-fact-card:hover {
+  -webkit-box-shadow: 0px 0px 20px #292929;
+          box-shadow: 0px 0px 20px #292929;
 }
 
 .food-fact-container .refresh-fact-btn {
@@ -275,7 +284,80 @@ body {
   outline: none;
 }
 
-.food-fact-container .refresh-fact-btn:hover {
+.food-fact-container .refresh-fact-btn:active {
+  -webkit-animation: wiggle 0.4s;
+          animation: wiggle 0.4s;
+}
+
+@keyframes wiggle {
+  25% {
+    -webkit-transform: scale(0.9, 1.2);
+            transform: scale(0.9, 1.2);
+  }
+  75% {
+    -webkit-transform: scale(0.8, 1.1);
+            transform: scale(0.8, 1.1);
+  }
+}
+
+.food-joke-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.food-joke-container .food-joke-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 10rem;
+  margin-top: 4rem;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 5px #292929;
+          box-shadow: 5px 5px 5px #292929;
+}
+
+.food-joke-container .food-joke-card .food-joke {
+  width: 80%;
+  color: white;
+}
+
+.food-joke-container .refresh-joke-btn {
+  background-color: rgba(127, 0, 213, 0.5);
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: padding 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out;
+  -webkit-transition: margin 0.2s ease-in-out;
+  transition: margin 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+}
+
+.food-joke-container .refresh-joke-btn:hover {
   -webkit-animation: wiggle 0.6s;
           animation: wiggle 0.6s;
 }

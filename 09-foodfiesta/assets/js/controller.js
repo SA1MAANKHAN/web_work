@@ -1,15 +1,42 @@
 import * as model from "./model.js";
-import * as hompageView from "./Views/homepageView.js";
 import foodFact from "./Views/foodFactsView.js";
+import foodJoke from "./Views/foodJokeView.js";
+import searchFoodInput from "./Views/searchFoodView.js";
+import searchRecipeInput from "./Views/searchRecipeView.js";
+import randomRecipe from "./Views/randomRecipeView.js";
 
 const controlFoodFact = async function () {
-  return await model.randomFoodTrivia();
+  await model.randomFoodFact();
+  foodFact.render(model.state.foodFact);
+};
+
+const controlSearchFoodInput = function () {
+  model.searchFood("oreo");
+  searchFoodInput.renderSearch();
+};
+
+const controlSearchRecipeInput = function () {
+  model.searchFood("oreo");
+  searchRecipeInput.renderSearch();
+};
+
+const controlFoodJoke = function () {
+  model.randomFoodJoke();
+  foodJoke.render(model.state.foodJoke);
+};
+
+const controlRandomRecipe = function () {
+  // model.randomRecipies();
+  randomRecipe.render();
 };
 
 const init = function () {
-  // model.randomFoodTrivia();
-  //   foodFact.addFoodFactHandler(controlFoodFact);
-  // model.searchFood("oreo");
+  foodFact.addFoodFactHandler(controlFoodFact);
+  foodJoke.addFoodJokeHandler(controlFoodJoke);
+  searchFoodInput.addSearchFoodHandler(controlSearchFoodInput);
+  searchRecipeInput.addSearchRecipeHandler(controlSearchRecipeInput);
+  randomRecipe.addRandomRecipeHandler(controlRandomRecipe);
+  // devlopment
 };
 
 init();
