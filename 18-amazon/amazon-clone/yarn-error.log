@@ -2,7 +2,7 @@ Arguments:
   /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js config get registry
 
 PATH: 
-  /home/salmaan/.npm/_npx/35996/bin:/home/salmaan/anaconda3/bin:/home/salmaan/anaconda3/condabin:/home/salmaan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+  /home/salmaan/.npm/_npx/7983/bin:/home/salmaan/anaconda3/bin:/home/salmaan/anaconda3/condabin:/home/salmaan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
 
 Yarn version: 
   1.22.5
