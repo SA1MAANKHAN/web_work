@@ -1,0 +1,8 @@
+a {
+  text-decoration: none;
+}
+
+.card__container {
+  display: flex;
+  overflow-x: scroll;
+}
