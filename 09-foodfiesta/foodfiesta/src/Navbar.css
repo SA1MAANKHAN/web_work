@@ -1,0 +1,28 @@
+.navbar {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  align-self: center;
+  justify-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  margin-left: 20px;
+}
+
+.nav__icon {
+  color: #ff795b;
+  margin: 10px;
+}
+.nav__logo > h1 {
+  color: #ff795b;
+  font-family: "Pacifico", cursive;
+}
+.nav__home {
+  margin-right: 20px;
+}

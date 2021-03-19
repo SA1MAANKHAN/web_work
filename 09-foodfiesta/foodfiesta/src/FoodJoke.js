@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { apiKey } from "./Config";
+import Navbar from "./Navbar";
+import "./FoodJoke.css";
 
 function FoodJoke() {
   const [foodJoke, setFoodJoke] = useState();
@@ -23,6 +25,7 @@ function FoodJoke() {
 
   return (
     <div className="foodJoke">
+      <Navbar />
       <h1>FoodJokes</h1>
       <h2>{foodJoke}</h2>
       <button onClick={getFoodJoke}>RELOAD</button>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { apiKey } from "./Config";
 import ReactHtmlParser from "react-html-parser";
+import Navbar from "./Navbar";
 
 function Recipe() {
   const [recipes, setRecipe] = useState({});
@@ -32,6 +33,7 @@ function Recipe() {
   if (Object.keys(recipes).length === 0 && recipes.constructor === Object) {
     return (
       <div className="searchRecipe">
+        <Navbar />
         <h1>This is recipe , enter id </h1>
         <form onSubmit={getSearch} className=" recipe__from">
           <input
@@ -55,6 +57,7 @@ function Recipe() {
   if (!(Object.keys(recipes).length === 0 && recipes.constructor === Object)) {
     return (
       <div className="searchRecipe">
+        <Navbar />
         <h1>This is recipe</h1>
         <h2>see the console</h2>
         <form onSubmit={getSearch} className=" recipe__from">

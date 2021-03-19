@@ -3,6 +3,16 @@ a {
 }
 
 .card__container {
+  align-self: center;
+  height: 50vh;
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  margin: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 10px;
 }

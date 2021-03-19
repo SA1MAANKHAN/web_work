@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { apiKey } from "./Config";
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
+import "./SearchRecipe.css";
+import SearchIcon from "@material-ui/icons/Search";
+import Navbar from "./Navbar";
 
 function SearchRecipe() {
   const [recipes, setRecipe] = useState([]);
@@ -33,20 +36,18 @@ function SearchRecipe() {
   if (recipes.length < 1) {
     return (
       <div className="searchRecipe">
-        <h1>SearchRecipe</h1>
-        <form onSubmit={getSearch} className=" recipe__from">
+        <Navbar />
+        {/* <h1>Search</h1> */}
+        <form onSubmit={getSearch} className=" search__bar">
           <input
             type="text"
-            className="recipe__search"
+            className="search__input"
             value={search}
             onChange={updateSearch}
+            placeholder="Search recipes"
           />
-          <button
-            type="submit"
-            className="recipe__search__btn"
-            onClick={getSearch}
-          >
-            Search
+          <button type="submit" className="search__btn" onClick={getSearch}>
+            <SearchIcon className="search__icon" />
           </button>
         </form>
       </div>
@@ -56,41 +57,31 @@ function SearchRecipe() {
   if (recipes.length >= 1) {
     return (
       <div className="searchRecipe">
-        <h1>SearchRecipe</h1>
-        <form onSubmit={getSearch} className=" recipe__from">
+        <Navbar />
+        {/* <h1>Search</h1> */}
+        <form onSubmit={getSearch} className=" search__bar">
           <input
             type="text"
-            className="recipe__search"
+            className="search__input"
             value={search}
             onChange={updateSearch}
+            placeholder="Search recipes"
           />
-          <button
-            type="submit"
-            className="recipe__search__btn"
-            onClick={getSearch}
-          >
-            Search
+          <button type="submit" className="search__btn" onClick={getSearch}>
+            <SearchIcon className="search__icon" />
           </button>
         </form>
-        <h1>here comes recipe</h1>
         {console.log("this is recipe", recipes)}
-
-        {ReactHtmlParser(
-          recipes
-            .map((recipe) => {
-              return `
-              <Link to="/Recipe" >
-              <div className="recipe__result" id=${recipe.id}>
-              <h2 className = "recipe__title">${recipe.title}</h2>
-              <div className="recipe__img">
-              <img src=${recipe.image} alt=""/></div>
+        <div className="search__results">
+          {recipes.map((recipe) => (
+            <div className="search__result" itemId={recipe.id}>
+              <div className="search__img__container">
+                <img className="search__img" src={recipe.image} alt="" />
               </div>
-              </Link>
-    
-    `;
-            })
-            .join("")
-        )}
+              <h2 className="search__title">{recipe.title}</h2>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

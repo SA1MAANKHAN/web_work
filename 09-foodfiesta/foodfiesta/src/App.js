@@ -7,6 +7,8 @@ import SearchRecipe from "./SearchRecipe";
 import RandomRecipe from "./RandomRecipe";
 import FoodInfo from "./FoodInfo";
 import Recipe from "./Recipe";
+import Navbar from "./Navbar";
+import Header from "./Header";
 
 function App() {
   return (
@@ -31,13 +33,8 @@ function App() {
           <Route path="/FoodInfo">
             <FoodInfo />
           </Route>
-
           <Route path="/">
-            <h1>Welcome to FoodFiesta</h1>
-            {/* Header */}
-            {/* Slider */}
-            <CardContainer />
-            {/* Some other stuff */}
+            <Header />
           </Route>
         </Switch>
       </div>
