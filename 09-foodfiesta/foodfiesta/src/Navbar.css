@@ -23,6 +23,13 @@
   color: #ff795b;
   font-family: "Pacifico", cursive;
 }
+
+@media (max-width: 360px) {
+  .nav__logo > h1 {
+    font-size: 1em;
+  }
+}
+
 .nav__home {
   margin-right: 20px;
 }

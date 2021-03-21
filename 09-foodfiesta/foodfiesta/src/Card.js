@@ -5,7 +5,9 @@ function Card({ cardName, img, color }) {
   return (
     <div className="card">
       <img className="card__img" src={img} alt="" />
-      <h2>{cardName}</h2>
+      <div className="card__shape">
+        <h2>{cardName}</h2>
+      </div>
     </div>
   );
 }

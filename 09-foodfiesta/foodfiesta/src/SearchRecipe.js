@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { apiKey } from "./Config";
-import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 import "./SearchRecipe.css";
 import SearchIcon from "@material-ui/icons/Search";
@@ -74,12 +73,14 @@ function SearchRecipe() {
         {console.log("this is recipe", recipes)}
         <div className="search__results">
           {recipes.map((recipe) => (
-            <div className="search__result" itemId={recipe.id}>
-              <div className="search__img__container">
-                <img className="search__img" src={recipe.image} alt="" />
+            <Link to={`/RecipeResult/${recipe.id}`}>
+              <div className="search__result" itemId={recipe.id}>
+                <div className="search__img__container">
+                  <img className="search__img" src={recipe.image} alt="" />
+                </div>
+                <h2 className="search__title">{recipe.title}</h2>
               </div>
-              <h2 className="search__title">{recipe.title}</h2>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

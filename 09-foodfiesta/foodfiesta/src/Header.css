@@ -1,6 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .header {
-  color: black;
-  object-fit: contain;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,24 +13,31 @@
   background-image: url("./assets/cover2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
-  mask-image: linear-gradient(
+  /* mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1) 85%,
     rgba(34, 34, 34, 0)
-  );
+  ); */
 }
 
-.banner__title {
-  font-size: 5rem;
-  font-weight: 800;
-  color: rgb(255, 165, 91);
+.header > h2 {
+  font-size: 4rem;
+  color: #ff795b;
+  font-family: "Pacifico", cursive;
+  margin: 10px;
   text-align: center;
-  margin: 20px;
 }
 
-.banner__mantra {
+@media (max-width: 360px) {
+  .header > h2 {
+    font-size: 2.8rem;
+  }
+}
+
+.header > h3 {
   font-size: 2rem;
   font-family: "Arizonia", cursive;
+  color: rgb(255, 152, 67);
+  text-align: center;
+  margin: 0 10px;
 }

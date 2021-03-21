@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { apiKey } from "./Config";
 import Navbar from "./Navbar";
 import "./FoodFact.css";
+import Loading from "./Loading";
 
 function FoodFact() {
   const [foodFact, setFoodFact] = useState();
@@ -23,14 +24,23 @@ function FoodFact() {
     setFoodFact(data.text);
   };
 
-  return (
-    <div className="foodFact">
-      <Navbar />
-      <h1>FoodFAact</h1>
-      <h2>{foodFact}</h2>
-      <button onClick={getFoodFact}>RELOAD</button>
-    </div>
-  );
+  if (!foodFact) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
+  }
+
+  if (foodFact) {
+    return (
+      <div className="foodFact">
+        <Navbar />
+        <h1>{foodFact}</h1>
+        <button onClick={getFoodFact}>One More!</button>
+      </div>
+    );
+  }
 }
 
 export default FoodFact;

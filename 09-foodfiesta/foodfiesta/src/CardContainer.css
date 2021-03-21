@@ -4,15 +4,13 @@ a {
 
 .card__container {
   align-self: center;
-  height: 50vh;
+  height: 45vh;
+  width: 80%;
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  display: flex;
-  align-items: center;
-  margin: 25px;
+
+  align-items: flex-end;
+  margin-top: 100px;
   padding-left: 35px;
   padding-right: 35px;
-  border-radius: 10px;
 }
