@@ -94,3 +94,12 @@
   margin: 10px;
   font-weight: normal;
 }
+
+@media (max-width: 620px) {
+  .search__input {
+    width: 70vw;
+  }
+  .search__btn {
+    width: 20vw;
+  }
+} ;

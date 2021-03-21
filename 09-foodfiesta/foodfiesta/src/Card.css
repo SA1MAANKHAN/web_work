@@ -56,3 +56,10 @@
   margin: 50px 0;
   text-align: center;
 }
+
+@media (max-width: 280px) {
+  .card {
+    height: 150px;
+    width: 100px;
+  }
+}

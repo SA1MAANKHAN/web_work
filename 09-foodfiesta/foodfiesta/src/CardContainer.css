@@ -14,3 +14,9 @@ a {
   padding-left: 35px;
   padding-right: 35px;
 }
+
+@media (max-height: 720px) {
+  .card__container {
+    height: 80vh;
+  }
+}
