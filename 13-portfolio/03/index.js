@@ -1,3 +1,5 @@
+// import Scrollbar from "smooth-scrollbar";
+
 (function (q, g) {
   "function" === typeof define && define.amd
     ? define([], g)
@@ -339,11 +341,16 @@
 
 var rellax = new Rellax(".rellax");
 
-// Adding horizantal parallax scrolling
-// var rellax_h = new Rellax(".rellax_h", {
-//   // Activate horizantal scrolling
-//   // Turned off by default
-//   horizontal: false,
-//   //Deactivate vertical scrolling
-//   vertical: true,
-// });
+const header__text = document.querySelector(".header__text");
+
+var timer = setInterval(changeHeaderText, 1000);
+
+let i = 0;
+const changeHeaderText = function () {
+  const names = ["web dev", "blogger", "designer", "guitarist", "meditator"];
+  i = i % names.length;
+  console.log(i);
+  i++;
+};
+
+// Scrollbar.init(document.querySelector("#scroll"));
