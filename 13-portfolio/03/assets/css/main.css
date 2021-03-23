@@ -206,10 +206,10 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  -webkit-transition: -webkit-transform 0.8s ease-in-out;
-  transition: -webkit-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+  -webkit-transition: -webkit-transform 1.5s ease-in-out;
+  transition: -webkit-transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
@@ -235,26 +235,36 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .projects .flip-card-front {
   background-color: white;
-  color: black;
+  color: #3a3a3a;
+  padding: 10px;
 }
 
 .projects .flip-card-front > h1 {
   font-size: 2rem;
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
+  border: 5px solid #3a3a3a;
+  padding: 0.5em 1em;
 }
 
 .projects .flip-card-back {
   background-color: #ffffff;
-  color: black;
+  color: #3a3a3a;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  padding: 10px;
 }
 
 .projects .flip-card-back > p {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
 }
 
 .education {
