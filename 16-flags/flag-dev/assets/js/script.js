@@ -44,26 +44,20 @@ const countryListAlpha2 = {
   AI: "Anguilla",
   AQ: "Antarctica",
   AG: "Antigua and Barbuda",
-
   AM: "Armenia",
   AW: "Aruba",
-
   AZ: "Azerbaijan",
   BS: "Bahamas",
   BH: "Bahrain",
-
   BB: "Barbados",
   BY: "Belarus",
-
   BZ: "Belize",
   BJ: "Benin",
   BM: "Bermuda",
-
   BQ: "Bonaire",
   BA: "Bosnia",
   BW: "Botswana",
   BV: "Bouvet Island",
-
   BN: "Brunei Darussalam",
   BG: "Bulgaria",
   BF: "Burkina Faso",
@@ -71,12 +65,10 @@ const countryListAlpha2 = {
   CV: "Cabo Verde",
   KH: "Cambodia",
   CM: "Cameroon",
-
   KY: "Cayman Islands",
   CF: "Central African Republic",
   TD: "Chad",
   CL: "Chile",
-
   CX: "Christmas Island",
   CC: "Cocos (Keeling) Islands",
   CO: "Colombia",
@@ -84,7 +76,6 @@ const countryListAlpha2 = {
   CD: "Congo",
   CG: "Congo",
   CK: "Cook Islands (the)",
-
   CW: "Curaçao",
   CY: "Cyprus",
   CZ: "Czechia",
@@ -94,7 +85,6 @@ const countryListAlpha2 = {
   DM: "Dominica",
   DO: "Dominican Republic (the)",
   EC: "Ecuador",
-
   SV: "El Salvador",
   GQ: "Equatorial Guinea",
   ER: "Eritrea",
@@ -105,14 +95,12 @@ const countryListAlpha2 = {
   FO: "Faroe Islands (the)",
   FJ: "Fiji",
   FI: "Finland",
-
   GF: "French Guiana",
   PF: "French Polynesia",
   TF: "French Southern Territories (the)",
   GA: "Gabon",
   GM: "Gambia (the)",
   GE: "Georgia",
-
   GH: "Ghana",
   GI: "Gibraltar",
   GR: "Greece",
@@ -129,31 +117,25 @@ const countryListAlpha2 = {
   HM: "Heard Island and McDonald Islands",
   VA: "Holy See",
   HN: "Honduras",
-
   HU: "Hungary",
   IS: "Iceland",
-
   ID: "Indonesia",
   IR: "Iran",
   IQ: "Iraq",
   IE: "Ireland",
   IM: "Isle of Man",
   IL: "Israel",
-
   JM: "Jamaica",
-
   JE: "Jersey",
   JO: "Jordan",
   KZ: "Kazakhstan",
   KE: "Kenya",
   KI: "Kiribati",
   KP: "Korea",
-
   KW: "Kuwait",
   KG: "Kyrgyzstan",
   LA: "Lao People's Democratic Republic",
   LV: "Latvia",
-
   LS: "Lesotho",
   LR: "Liberia",
   LY: "Libya",
@@ -172,7 +154,6 @@ const countryListAlpha2 = {
   MR: "Mauritania",
   MU: "Mauritius",
   YT: "Mayotte",
-
   FM: "Micronesia",
   MD: "Moldova",
   MC: "Monaco",
@@ -184,12 +165,9 @@ const countryListAlpha2 = {
   MM: "Myanmar",
   NA: "Namibia",
   NR: "Nauru",
-
   NC: "New Caledonia",
-
   NI: "Nicaragua",
   NE: "Niger",
-
   NU: "Niue",
   NF: "Norfolk Island",
   MP: "Northern Mariana Islands (the)",
@@ -205,7 +183,6 @@ const countryListAlpha2 = {
   PH: "Philippines (the)",
   PN: "Pitcairn",
   PL: "Poland",
-
   PR: "Puerto Rico",
   QA: "Qatar",
   MK: "Republic of North Macedonia",
@@ -255,7 +232,6 @@ const countryListAlpha2 = {
   TO: "Tonga",
   TT: "Trinidad and Tobago",
   TN: "Tunisia",
-
   TM: "Turkmenistan",
   TC: "Turks and Caicos Islands",
   TV: "Tuvalu",
@@ -263,7 +239,6 @@ const countryListAlpha2 = {
   UA: "Ukraine",
   AE: "United Arab Emirates",
   UM: "United States Minor Outlying Islands",
-
   UY: "Uruguay",
   UZ: "Uzbekistan",
   VU: "Vanuatu",
@@ -333,3 +308,30 @@ console.log(first20Countries);
 codeCountry.forEach((country) => {
   // displayCountries(country[1]);
 });
+
+const getFourRandomCountries = function (level) {
+  let array;
+  let options = new Array();
+
+  if (level == 1) {
+    array = Object.keys(level1);
+  }
+
+  console.log("this is array ----> ", array.length);
+
+  while (options.length != 4) {
+    let random = Math.floor(Math.random() * array.length);
+
+    if (options.indexOf(array[random]) == -1) options.push(array[random]);
+  }
+
+  const correctIndex = Math.floor(Math.random() * 4);
+
+  console.log(options);
+
+  console.log(correctIndex, options[correctIndex]);
+
+  return options;
+};
+
+getFourRandomCountries(1);
