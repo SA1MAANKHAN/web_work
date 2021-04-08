@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Option from "./Option";
+import "./Type.css";
 
 function Type() {
   const typesOfQuiz = {

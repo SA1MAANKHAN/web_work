@@ -1,23 +1,4 @@
-.color__pallete {
-  color: #29b8fc;
-  color: #2c2a5f;
-  color: #039be6;
-  color: #28b6f6;
-  color: #d0d1e6;
-  color: #224450;
-  color: #a2dbd6;
-  color: #5b888c;
-  /* actual colors */
-  color: #194569;
-  color: #11698e;
-  color: #208aed;
-  color: #16c79a;
-  color: #5dfdcb;
-  color: #707070;
-}
-
 .home {
-  background: linear-gradient(to bottom, #002f64, #1cb977);
   height: 100vh;
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <Link className="navbar__container" to="/">
-        <HomeIcon className="home__icon" />
+        <HomeIcon style={{ fontSize: 40 }} />
         <h2>About</h2>
       </Link>
     </div>

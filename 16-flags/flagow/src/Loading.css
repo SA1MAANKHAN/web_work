@@ -5,13 +5,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffdca0;
 }
 .page__loading {
   height: 100px;
   width: 100px;
   object-fit: contain;
-  background-color: #ffdca0;
   animation: ImgRoatate infinite 0.8s linear;
   border-radius: 50%;
 }

@@ -296,3 +296,12 @@ export const getFourRandomCountries = function (level) {
 
   return { optionsArray: options, correctOption: correct };
 };
+
+// export const startGame = function () {
+//   const options = getFourRandomCountries(1);
+//   setOptions(options);
+//   setCorrectIndex(options.correctOption);
+//   options.optionsArray.forEach((country) => {
+//     fetchCountries(country);
+//   });
+// };

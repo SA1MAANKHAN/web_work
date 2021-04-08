@@ -5,12 +5,17 @@ import Level from "./Level";
 import Quiz from "./Quiz";
 import Type from "./Type";
 import About from "./About";
+import RoundWon from "./RoundWon";
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/RoundWon/:message">
+            <RoundWon />
+          </Route>
+
           <Route path="/Quiz">
             <Quiz />
           </Route>
