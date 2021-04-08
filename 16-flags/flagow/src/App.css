@@ -1,0 +1,38 @@
+colors {
+  color: #194569;
+  color: #11698e;
+  color: #208aed;
+  color: #16c79a;
+  color: #5dfdcb;
+  color: #707070;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  background: linear-gradient(to bottom, #002f64, #1cb977);
+  height: 100vh;
+}
+
+link,
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}

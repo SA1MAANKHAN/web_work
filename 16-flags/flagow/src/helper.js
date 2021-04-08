@@ -257,69 +257,34 @@ const countryList = {
   ZW: "Zimbabwe",
 };
 
-const home = document.querySelector(".home");
-const homeChild = document.querySelector(".home__child");
+// let html = `
+//    <div class="card-container">
+//         <div class="img"><img  src=${data.flag} alt=${data.name} class="card-flag-img" /></div>
+//         <div class="card-info">
+//           <h1 class="info info-country">${data.name}</h1>
+//           <h2 class="info info-continent">${data.region}</h2>
+//           <h3 class="info other-info other-info-1">${data.population}</h3>
+//           <h3 class="info other-info other-info-2">Language</h3>
+//           <h3 class="info other-info other-info-3">${data.capital}</h3>
+//         </div>
+//       </div>
+//   `;
 
-console.log(home);
-console.log(homeChild);
-
-const renderCountry = function (data) {
-  let html = `
-   <div class="card-container">
-        <div class="img"><img  src=${data.flag} alt=${data.name} class="card-flag-img" /></div>
-        <div class="card-info">
-          <h1 class="info info-country">${data.name}</h1>
-          <h2 class="info info-continent">${data.region}</h2>
-          <h3 class="info other-info other-info-1">${data.population}</h3>
-          <h3 class="info other-info other-info-2">Language</h3>
-          <h3 class="info other-info other-info-3">${data.capital}</h3>
-        </div>
-      </div>
-  `;
-
-  homeChild.insertAdjacentHTML("beforeend", html);
-};
-
-const displayCountries = async function (countryCode) {
+export const fetchCountries = async function (countryCode) {
   const response = await fetch(
     `https://restcountries.eu/rest/v2/alpha/${countryCode}`
   );
 
   const data = await response.json();
 
-  console.log(data);
-
-  renderCountry(data);
+  return data;
 };
-
-// displayCountries("USA");
-
-let codeCountry = new Array();
-
-const arrayKeysConverted = Object.keys(level1);
-
-const arrayValuesConverted = Object.values(level1);
-
-arrayValuesConverted.forEach((val, i) =>
-  codeCountry.push([val, arrayKeysConverted[i]])
-);
-
-console.log(codeCountry);
-
-const first20Countries = codeCountry.slice(0, 20);
-
-console.log(first20Countries);
-
-codeCountry.forEach((country) => {
-  // displayCountries(country[1]);
-});
 
 export const getFourRandomCountries = function (level) {
   if (level == 1) {
   }
   let options = new Array();
   let array = Object.keys(level1);
-  console.log("this is array ----> ", array.length);
 
   while (options.length != 4) {
     let random = Math.floor(Math.random() * array.length);
@@ -327,7 +292,7 @@ export const getFourRandomCountries = function (level) {
     if (options.indexOf(array[random]) == -1) options.push(array[random]);
   }
 
-  console.log(options);
+  const correct = Math.floor(Math.random() * 4);
 
-  return options;
+  return { optionsArray: options, correctOption: correct };
 };

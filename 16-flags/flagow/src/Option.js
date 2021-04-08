@@ -4,7 +4,7 @@ import "./Option.css";
 export default function Option({ optionName }) {
   return (
     <div className="option">
-      <h1>{optionName}</h1>
+      <h2>{optionName}</h2>
     </div>
   );
 }

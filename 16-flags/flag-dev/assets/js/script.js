@@ -275,7 +275,7 @@ const renderCountry = function (data) {
   homeChild.insertAdjacentHTML("beforeend", html);
 };
 
-const displayCountries = async function (countryCode) {
+export const Countries = async function (countryCode) {
   const response = await fetch(
     `https://restcountries.eu/rest/v2/alpha/${countryCode}`
   );
@@ -309,14 +309,36 @@ codeCountry.forEach((country) => {
   // displayCountries(country[1]);
 });
 
+// const getFourRandomCountries = function (level) {
+//   let array;
+//   let options = new Array();
+
+//   if (level == 1) {
+//     array = Object.keys(level1);
+//   }
+
+//   console.log("this is array ----> ", array.length);
+
+//   while (options.length != 4) {
+//     let random = Math.floor(Math.random() * array.length);
+
+//     if (options.indexOf(array[random]) == -1) options.push(array[random]);
+//   }
+
+//   const correctIndex = Math.floor(Math.random() * 4);
+
+//   console.log(options);
+
+//   console.log(correctIndex, options[correctIndex]);
+
+//   return options;
+// };
+
 const getFourRandomCountries = function (level) {
-  let array;
-  let options = new Array();
-
   if (level == 1) {
-    array = Object.keys(level1);
   }
-
+  let options = new Array();
+  let array = Object.keys(level1);
   console.log("this is array ----> ", array.length);
 
   while (options.length != 4) {
@@ -325,11 +347,17 @@ const getFourRandomCountries = function (level) {
     if (options.indexOf(array[random]) == -1) options.push(array[random]);
   }
 
-  const correctIndex = Math.floor(Math.random() * 4);
-
   console.log(options);
 
-  console.log(correctIndex, options[correctIndex]);
+  let temp;
+  const correct = Math.floor(Math.random() * 4);
+
+  // swapping
+  temp = options[0];
+  options[0] = options[correct];
+  options[correct] = temp;
+
+  console.log(options);
 
   return options;
 };

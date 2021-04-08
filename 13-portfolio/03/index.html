@@ -23,27 +23,33 @@
     <main id="main">
       <div class="header">
         <div class="nav">
-          <div class="name">Salmaan</div>
+          <div class="name">S.K</div>
           <div class="nav__links">
-            <div class="nav__link" id="nav__link1">about</div>
-            <div class="nav__link" id="nav__link2">contact</div>
-            <div class="nav__link" id="nav__link3">projects</div>
+            <div class="nav__link" id="nav__link2">
+              <a href="#contact"> contact</a>
+            </div>
+            <div class="nav__link" id="nav__link3">
+              <a href="#projects">projects</a>
+            </div>
           </div>
         </div>
         <div class="header__landing">
           <div class="header__text rellax" data-rellax-speed="8">
-            I <br />
-            am <br />
-            web dev
-
-            <!-- <div class="text">I</div>
-              <div class="text">am</div>
-              <div class="text">web dev</div> -->
+            <div class="animated-title">
+              <div class="text-top">
+                <div>
+                  <span class="header__text1">Hey there,</span>
+                  <span class="header__text2">I'm Salmaan</span>
+                </div>
+              </div>
+              <div class="text-bottom">
+                <div class="header__text3">Web dev</div>
+              </div>
+            </div>
           </div>
           <div class="header__img__container">
             <img
-              class="header__img rellax"
-              data-rellax-speed="20"
+              class="header__img"
               src="./assets/images/fullmoon.jpg"
               alt=""
             />
@@ -52,20 +58,29 @@
       </div>
       <section class="about">
         about
-        <div class="about__text rellax" data-rellax-speed="10">
-          Hello , I am a Web developer & designer. Currently, I'm pursuing my
-          Computer Science & Engineering degree from Punjabi University,
-          Patiala. I love learing new things and to explore.
+        <div class="about__text__img rellax" id="about" data-rellax-speed="10">
+          <div class="about__text">
+            Hello , I am a Web developer & designer. Currently, I'm pursuing my
+            Computer Science & Engineering degree from Punjabi University,
+            Patiala. I love learing new things and to explore.
+          </div>
+          <div class="about__img__container">
+            <img
+              class="about__img"
+              src="./assets/images/self2color.png"
+              alt=""
+            />
+          </div>
         </div>
       </section>
-      <section class="projects">
+      <section class="projects" id="projects">
         <h1 class="project__heading rellax" data-rellax-speed="8">projects</h1>
         <div class="project project1 flip-card rellax" data-rellax-speed="3">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
+            <div class="flip-card-front flip-card1-front">
               <h1>FoodFiesta</h1>
             </div>
-            <div class="flip-card-back">
+            <div class="flip-card-back flip-card1-back">
               <p>
                 this is a recipe app that lets you search and play with food
               </p>
@@ -75,10 +90,10 @@
 
         <div class="project project2 flip-card rellax" data-rellax-speed="6">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
+            <div class="flip-card-front flip-card2-front">
               <h1>Flags</h1>
             </div>
-            <div class="flip-card-back">
+            <div class="flip-card-back flip-card2-back">
               <p>
                 this is a game that will help you increase your knowledge of the
                 round rock you live on
@@ -89,10 +104,10 @@
 
         <div class="project project3 flip-card rellax" data-rellax-speed="9">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h1>Some shit!</h1>
+            <div class="flip-card-front flip-card3-front">
+              <h1>Covid Tracker</h1>
             </div>
-            <div class="flip-card-back">
+            <div class="flip-card-back flip-card3-back">
               <p>
                 this is gonna be some other cool project haven't thought of
                 anything yet
@@ -158,7 +173,7 @@
           <skill class="skill skill9 rellax" data-rellax-speed="2">ds</skill>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <h1>Contact</h1>
         <form class="contact__form">
           <div>

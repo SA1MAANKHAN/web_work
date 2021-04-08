@@ -7,8 +7,37 @@
   color: #224450;
   color: #a2dbd6;
   color: #5b888c;
+  /* actual colors */
+  color: #194569;
+  color: #11698e;
+  color: #208aed;
+  color: #16c79a;
+  color: #5dfdcb;
+  color: #707070;
 }
 
 .home {
-  background-color: #224450;
+  background: linear-gradient(to bottom, #002f64, #1cb977);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options {
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 20px 20px;
+}
+
+.link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

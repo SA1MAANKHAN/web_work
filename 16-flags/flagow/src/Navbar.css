@@ -1,0 +1,15 @@
+.navbar {
+  height: 50px;
+  width: 100vw;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #5dfdcb;
+}
+
+.home__icon {
+  height: 50px;
+}

@@ -16,8 +16,17 @@
   margin: 10px 0;
 
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+  width: 274px;
+  height: 70px;
+  background: var(--unnamed-color-16c79a) 0% 0% no-repeat padding-box;
+  background: #16c79a 0% 0% no-repeat padding-box;
+  box-shadow: 10px 10px 6px #00000029;
+  border-radius: 38px;
+  opacity: 1;
 }
 
 .option > h1 {
   text-decoration: none;
+  color: white;
 }
