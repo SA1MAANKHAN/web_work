@@ -10,13 +10,13 @@ function Home() {
     <div className="home">
       <Header />
       <div className="options">
-        <Link className="link" to="/Type">
-          <Option optionName="Flag Quiz" />
+        <Link className="link" to="/Level/Flags">
+          <Option optionName="Flags" />
         </Link>
-        <Link className="link" to="/Type">
-          <Option optionName="City Quiz" />
+        <Link className="link" to="/Level/Capitals">
+          <Option optionName="Capitals" />
         </Link>
-        <Link className="link" to="/Type">
+        <Link className="link" to="/Level/Currency">
           <Option optionName="Currency" />
         </Link>
 

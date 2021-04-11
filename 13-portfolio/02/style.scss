@@ -321,10 +321,10 @@ a {
   background-color: #323b63;
 }
 .html-skill {
-  width: 0%;
+  // width: 0%;
 }
 .html-skill-animate {
-  animation: html 2s;
+  animation: html 2s forwards ease;
 }
 @keyframes html {
   0% {
@@ -335,10 +335,10 @@ a {
   }
 }
 .js-skill {
-  width: 0%;
+  // width: 0%;
 }
 .js-skill-animate {
-  animation: js 2s;
+  animation: js 2s forwards ease;
 }
 @keyframes js {
   0% {
@@ -349,10 +349,10 @@ a {
   }
 }
 .css-skill {
-  width: 0%;
+  // width: 0%;
 }
 .css-skill-animate {
-  animation: css 2s;
+  animation: css 2s forwards ease;
 }
 @keyframes css {
   0% {
@@ -363,10 +363,10 @@ a {
   }
 }
 .golang-skill {
-  width: 0%;
+  // width: 0%;
 }
 .go-skill-animate {
-  animation: golang 2s;
+  animation: golang 2s forwards ease;
 }
 @keyframes golang {
   0% {
@@ -377,10 +377,10 @@ a {
   }
 }
 .sql-skill {
-  width: 0%;
+  // width: 0%;
 }
 .sql-skill-animate {
-  animation: sql 2s;
+  animation: sql 2s forwards ease;
 }
 @keyframes sql {
   0% {
@@ -391,10 +391,10 @@ a {
   }
 }
 .cpp-skill {
-  width: 0%;
+  // width: 0%;
 }
 .cpp-skill-animate {
-  animation: cpp 2s;
+  animation: cpp 2s forwards ease;
 }
 @keyframes cpp {
   0% {
@@ -405,10 +405,10 @@ a {
   }
 }
 .python-skill {
-  width: 0%;
+  // width: 0%;
 }
 .py-skill-animate {
-  animation: python 2s;
+  animation: python 2s forwards ease;
 }
 @keyframes python {
   0% {
@@ -418,6 +418,9 @@ a {
     width: 80%;
   }
 }
+
+// intrests
+
 .intrest-sec {
   height: 100vh;
   display: flex;

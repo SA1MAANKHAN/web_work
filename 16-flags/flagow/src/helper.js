@@ -10,7 +10,6 @@ const level1 = {
   BR: "Brazil",
   EG: "Egypt",
   IT: "Italy",
-  KR: "Korea",
   US: "United States of America",
   TR: "Turkey",
   CA: "Canada",
@@ -22,6 +21,9 @@ const level1 = {
 };
 
 const level2 = {
+  HU: "Hungary",
+  ID: "Indonesia",
+  IQ: "Iraq",
   AF: "Afghanistan",
   AT: "Austria",
   BT: "Bhutan",
@@ -33,228 +35,274 @@ const level2 = {
   NP: "Nepal",
   NL: "Netherlands",
   NG: "Nigeria",
+  PK: "Pakistan",
+  CL: "Chile",
+  FI: "Finland",
+  IE: "Ireland",
 };
 
-const level3 = {};
-const level4 = {};
-const level5 = {};
-const level6 = {};
-
-const countryList = {
-  AL: "Albania",
+const level3 = {
   DZ: "Algeria",
-  AS: "American Samoa",
-  AD: "Andorra",
-  AO: "Angola",
-  AI: "Anguilla",
   AQ: "Antarctica",
+  BS: "Bahamas",
+  KH: "Cambodia",
+  CO: "Colombia",
+  DK: "Denmark",
+  IS: "Iceland",
+  MA: "Morocco",
+  PR: "Puerto Rico",
+  QA: "Qatar",
+  SG: "Singapore",
+  LK: "Sri Lanka",
+  BG: "Bulgaria",
+  CM: "Cameroon",
+  EC: "Ecuador",
+  SV: "El Salvador",
+  GR: "Greece",
+  GL: "Greenland",
+  IL: "Israel",
+  KE: "Kenya",
+  ZW: "Zimbabwe",
+};
+const level4 = {
+  FJ: "Fiji",
+  GE: "Georgia",
+  GD: "Grenada",
+  JE: "Jersey",
+  MY: "Malaysia",
+  MV: "Maldives",
+  MM: "Myanmar",
+  PE: "Peru",
+  PH: "Philippines (the)",
+  PL: "Poland",
+  MF: "Saint Martin",
+  ZA: "South Africa",
+  ES: "Spain",
+  CH: "Switzerland",
+  TH: "Thailand",
+  UG: "Uganda",
+  AE: "United Arab Emirates",
+  VE: "Venezuela",
+  YE: "Yemen",
+  ZM: "Zambia",
+};
+const level5 = {
+  AL: "Albania",
+  BY: "Belarus",
+  BI: "Burundi",
+  CG: "Congo",
+  ET: "Ethiopia",
+  GH: "Ghana",
+  IR: "Iran",
+  JM: "Jamaica",
+  KW: "Kuwait",
+  LR: "Liberia",
+  LY: "Libya",
+  MG: "Madagascar",
+  MH: "Marshall Islands",
+  MC: "Monaco",
+  MS: "Montserrat",
+  NC: "New Caledonia",
+  NF: "Norfolk Island",
+  PY: "Paraguay",
+  RO: "Romania",
+  RU: "Russian Federation (the)",
+  LC: "Saint Lucia",
+  WS: "Samoa",
+  SA: "Saudi Arabia",
+  SE: "Sweden",
+  TW: "Taiwan",
+  TJ: "Tajikistan",
+  TN: "Tunisia",
+  TM: "Turkmenistan",
+  UA: "Ukraine",
+  UY: "Uruguay",
+  VG: "Virgin Islands",
+};
+const level6 = {
   AG: "Antigua and Barbuda",
   AM: "Armenia",
   AW: "Aruba",
   AZ: "Azerbaijan",
-  BS: "Bahamas",
+
   BH: "Bahrain",
-  BY: "Belarus",
   BZ: "Belize",
   BJ: "Benin",
+  CW: "Curaçao",
+  CY: "Cyprus",
+  CZ: "Czechia",
+  CI: "Côte d'Ivoire",
+
+  GT: "Guatemala",
+  GG: "Guernsey",
+  GN: "Guinea",
+  GW: "Guinea-Bissau",
+
+  IM: "Isle of Man",
+
+  JO: "Jordan",
+  KZ: "Kazakhstan",
+
+  MQ: "Martinique",
+  MR: "Mauritania",
+  MU: "Mauritius",
+  YT: "Mayotte",
+
+  MP: "Northern Mariana Islands (the)",
+  NO: "Norway",
+  OM: "Oman",
+
+  PW: "Palau",
+  SM: "San Marino",
+  ST: "Sao Tome and Principe",
+
+  SN: "Senegal",
+  RS: "Serbia",
+  SC: "Seychelles",
+  SL: "Sierra Leone",
+
+  GS: "South Georgia",
+  SS: "South Sudan",
+
+  SD: "Sudan",
+  SR: "Suriname",
+  SJ: "Svalbard and Jan Mayen",
+
+  SY: "Syrian Arab Republic",
+
+  TZ: "United Republic of Tanzania",
+
+  TL: "Timor-Leste",
+  TG: "Togo",
+  TK: "Tokelau",
+  TO: "Tonga",
+  TT: "Trinidad and Tobago",
+};
+
+const countryList = {
+  AS: "American Samoa",
+  AD: "Andorra",
+  AO: "Angola",
+  AI: "Anguilla",
+
   BM: "Bermuda",
   BQ: "Bonaire",
   BA: "Bosnia",
   BW: "Botswana",
   BV: "Bouvet Island",
   BN: "Brunei Darussalam",
-  BG: "Bulgaria",
+
   BF: "Burkina Faso",
-  BI: "Burundi",
+
   CV: "Cabo Verde",
-  KH: "Cambodia",
-  CM: "Cameroon",
+
   KY: "Cayman Islands",
   CF: "Central African Republic",
   TD: "Chad",
-  CL: "Chile",
+
   CX: "Christmas Island",
   CC: "Cocos (Keeling) Islands",
-  CO: "Colombia",
+
   KM: "Comoros",
   CD: "Congo",
-  CG: "Congo",
+
   CK: "Cook Islands (the)",
-  CW: "Curaçao",
-  CY: "Cyprus",
-  CZ: "Czechia",
-  CI: "Côte d'Ivoire",
-  DK: "Denmark",
+
   DJ: "Djibouti",
   DM: "Dominica",
   DO: "Dominican Republic (the)",
-  EC: "Ecuador",
-  SV: "El Salvador",
+
   GQ: "Equatorial Guinea",
   ER: "Eritrea",
   EE: "Estonia",
   SZ: "Eswatini",
-  ET: "Ethiopia",
+
   FK: "Falkland Islands (the) [Malvinas]",
   FO: "Faroe Islands (the)",
-  FJ: "Fiji",
-  FI: "Finland",
+
   GF: "French Guiana",
   PF: "French Polynesia",
   TF: "French Southern Territories (the)",
   GA: "Gabon",
   GM: "Gambia (the)",
-  GE: "Georgia",
-  GH: "Ghana",
+
   GI: "Gibraltar",
-  GR: "Greece",
-  GL: "Greenland",
-  GD: "Grenada",
+
   GP: "Guadeloupe",
   GU: "Guam",
-  GT: "Guatemala",
-  GG: "Guernsey",
-  GN: "Guinea",
-  GW: "Guinea-Bissau",
+
   GY: "Guyana",
   HT: "Haiti",
   HM: "Heard Island and McDonald Islands",
   VA: "Holy See",
   HN: "Honduras",
-  HU: "Hungary",
-  IS: "Iceland",
-  ID: "Indonesia",
-  IR: "Iran",
-  IQ: "Iraq",
-  IE: "Ireland",
-  IM: "Isle of Man",
-  IL: "Israel",
-  JM: "Jamaica",
-  JE: "Jersey",
-  JO: "Jordan",
-  KZ: "Kazakhstan",
-  KE: "Kenya",
+
   KI: "Kiribati",
-  KP: "Korea",
-  KW: "Kuwait",
+
   KG: "Kyrgyzstan",
   LA: "Lao People's Democratic Republic",
   LV: "Latvia",
   LS: "Lesotho",
-  LR: "Liberia",
-  LY: "Libya",
+
   LI: "Liechtenstein",
   LT: "Lithuania",
   LU: "Luxembourg",
   MO: "Macao",
-  MG: "Madagascar",
+
   MW: "Malawi",
-  MY: "Malaysia",
-  MV: "Maldives",
+
   ML: "Mali",
   MT: "Malta",
-  MH: "Marshall Islands",
-  MQ: "Martinique",
-  MR: "Mauritania",
-  MU: "Mauritius",
-  YT: "Mayotte",
 
   FM: "Micronesia",
   MD: "Moldova",
-  MC: "Monaco",
+
   MN: "Mongolia",
   ME: "Montenegro",
-  MS: "Montserrat",
-  MA: "Morocco",
+
   MZ: "Mozambique",
-  MM: "Myanmar",
+
   NA: "Namibia",
   NR: "Nauru",
-  NC: "New Caledonia",
+
   NI: "Nicaragua",
   NE: "Niger",
   NU: "Niue",
-  NF: "Norfolk Island",
-  MP: "Northern Mariana Islands (the)",
-  NO: "Norway",
-  OM: "Oman",
-  PK: "Pakistan",
-  PW: "Palau",
+
   PS: "Palestine, State of",
   PA: "Panama",
   PG: "Papua New Guinea",
-  PY: "Paraguay",
-  PE: "Peru",
-  PH: "Philippines (the)",
+
   PN: "Pitcairn",
-  PL: "Poland",
-  PR: "Puerto Rico",
-  QA: "Qatar",
+
   MK: "Republic of North Macedonia",
-  RO: "Romania",
-  RU: "Russian Federation (the)",
+
   RW: "Rwanda",
   RE: "Réunion",
   BL: "Saint Barthélemy",
   SH: "Saint Helena, Ascension and Tristan da Cunha",
   KN: "Saint Kitts and Nevis",
-  LC: "Saint Lucia",
-  MF: "Saint Martin",
+
   PM: "Saint Pierre and Miquelon",
   VC: "Saint Vincent and the Grenadines",
-  WS: "Samoa",
-  SM: "San Marino",
-  ST: "Sao Tome and Principe",
-  SA: "Saudi Arabia",
-  SN: "Senegal",
-  RS: "Serbia",
-  SC: "Seychelles",
-  SL: "Sierra Leone",
-  SG: "Singapore",
+
   SX: "Sint Maarten",
   SK: "Slovakia",
   SI: "Slovenia",
   SB: "Solomon Islands",
   SO: "Somalia",
-  ZA: "South Africa",
-  GS: "South Georgia",
-  SS: "South Sudan",
-  ES: "Spain",
-  LK: "Sri Lanka",
-  SD: "Sudan",
-  SR: "Suriname",
-  SJ: "Svalbard and Jan Mayen",
-  SE: "Sweden",
-  CH: "Switzerland",
-  SY: "Syrian Arab Republic",
-  TW: "Taiwan",
-  TJ: "Tajikistan",
-  TZ: "United Republic of Tanzania",
-  TH: "Thailand",
-  TL: "Timor-Leste",
-  TG: "Togo",
-  TK: "Tokelau",
-  TO: "Tonga",
-  TT: "Trinidad and Tobago",
-  TN: "Tunisia",
-  TM: "Turkmenistan",
   TC: "Turks and Caicos Islands",
   TV: "Tuvalu",
-  UG: "Uganda",
-  UA: "Ukraine",
-  AE: "United Arab Emirates",
+
   UM: "United States Minor Outlying Islands",
-  UY: "Uruguay",
+
   UZ: "Uzbekistan",
   VU: "Vanuatu",
-  VE: "Venezuela",
+
   VN: "Viet Nam",
-  VG: "Virgin Islands",
+
   WF: "Wallis and Futuna",
   EH: "Western Sahara",
-  YE: "Yemen",
-  ZM: "Zambia",
-  ZW: "Zimbabwe",
 };
 
 // let html = `
@@ -281,10 +329,27 @@ export const fetchCountries = async function (countryCode) {
 };
 
 export const getFourRandomCountries = function (level) {
-  if (level == 1) {
+  let array;
+  if (level == "level1") {
+    array = Object.keys(level1);
   }
+  if (level == "level2") {
+    array = Object.keys(level2);
+  }
+  if (level == "level3") {
+    array = Object.keys(level3);
+  }
+  if (level == "level4") {
+    array = Object.keys(level4);
+  }
+  if (level == "level5") {
+    array = Object.keys(level5);
+  }
+  if (level == "level6") {
+    array = Object.keys(level6);
+  }
+
   let options = new Array();
-  let array = Object.keys(level1);
 
   while (options.length != 4) {
     let random = Math.floor(Math.random() * array.length);

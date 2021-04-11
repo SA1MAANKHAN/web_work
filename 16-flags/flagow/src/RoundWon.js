@@ -11,12 +11,14 @@ function RoundWon() {
     return (
       <div className="roundWon">
         <div className="roundWon__container">
-          <img
-            className="roundWon__trophy"
-            src="http://www.pngall.com/wp-content/uploads/5/Gold-Trophy-PNG.png"
-            alt=""
-          />
-          <h1>Round Completed</h1>
+          <div className="roundWon__message">
+            <img
+              className="roundWon__trophy"
+              src="http://www.pngall.com/wp-content/uploads/5/Gold-Trophy-PNG.png"
+              alt=""
+            />
+            <h1>Round Completed</h1>
+          </div>
           <div className="roundWon__navigation">
             <Link className="roundWon__icon" to="/Quiz">
               <ReplayIcon style={{ fontSize: 60 }} />
@@ -34,8 +36,10 @@ function RoundWon() {
     return (
       <div className="roundWon">
         <div className="roundWon__container">
-          <h1>You Lost,</h1>
-          <h2>Better Luck next time</h2>
+          <div className="roundWon__message">
+            <h1>You Lost,</h1>
+            <h2>Better Luck next time</h2>
+          </div>
           <div className="roundWon__navigation">
             <Link className="roundWon__icon" to="/Quiz">
               <ReplayIcon style={{ fontSize: 60 }} />

@@ -509,13 +509,9 @@ a {
   background-color: #323b63;
 }
 
-.html-skill {
-  width: 0%;
-}
-
 .html-skill-animate {
-  -webkit-animation: html 2s;
-          animation: html 2s;
+  -webkit-animation: html 2s forwards ease;
+          animation: html 2s forwards ease;
 }
 
 @-webkit-keyframes html {
@@ -536,13 +532,9 @@ a {
   }
 }
 
-.js-skill {
-  width: 0%;
-}
-
 .js-skill-animate {
-  -webkit-animation: js 2s;
-          animation: js 2s;
+  -webkit-animation: js 2s forwards ease;
+          animation: js 2s forwards ease;
 }
 
 @-webkit-keyframes js {
@@ -563,13 +555,9 @@ a {
   }
 }
 
-.css-skill {
-  width: 0%;
-}
-
 .css-skill-animate {
-  -webkit-animation: css 2s;
-          animation: css 2s;
+  -webkit-animation: css 2s forwards ease;
+          animation: css 2s forwards ease;
 }
 
 @-webkit-keyframes css {
@@ -590,13 +578,9 @@ a {
   }
 }
 
-.golang-skill {
-  width: 0%;
-}
-
 .go-skill-animate {
-  -webkit-animation: golang 2s;
-          animation: golang 2s;
+  -webkit-animation: golang 2s forwards ease;
+          animation: golang 2s forwards ease;
 }
 
 @-webkit-keyframes golang {
@@ -617,13 +601,9 @@ a {
   }
 }
 
-.sql-skill {
-  width: 0%;
-}
-
 .sql-skill-animate {
-  -webkit-animation: sql 2s;
-          animation: sql 2s;
+  -webkit-animation: sql 2s forwards ease;
+          animation: sql 2s forwards ease;
 }
 
 @-webkit-keyframes sql {
@@ -644,13 +624,9 @@ a {
   }
 }
 
-.cpp-skill {
-  width: 0%;
-}
-
 .cpp-skill-animate {
-  -webkit-animation: cpp 2s;
-          animation: cpp 2s;
+  -webkit-animation: cpp 2s forwards ease;
+          animation: cpp 2s forwards ease;
 }
 
 @-webkit-keyframes cpp {
@@ -671,13 +647,9 @@ a {
   }
 }
 
-.python-skill {
-  width: 0%;
-}
-
 .py-skill-animate {
-  -webkit-animation: python 2s;
-          animation: python 2s;
+  -webkit-animation: python 2s forwards ease;
+          animation: python 2s forwards ease;
 }
 
 @-webkit-keyframes python {

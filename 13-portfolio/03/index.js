@@ -341,29 +341,32 @@
 
 var rellax = new Rellax(".rellax");
 
-const header__text = document.querySelector(".header__text");
+// const text = document.querySelector(".text__change");
 
-var timer = setInterval(changeHeaderText, 1000);
+// let counter = 0;
 
-let i = 0;
-const changeHeaderText = function () {
-  i = i % names.length;
-  console.log(i);
-  i++;
-};
+// text.textContent = "maggi";
 
-const text = document.querySelector(".text__change");
+// const changeText = function (list) {
+//   const names = ["web dev", "blogger", "designer", "guitarist", "meditator"];
+//   // text.textContent = names[counter % len(names)];
+//   text.textContent = "maggi";
+// };
 
-let counter = 0;
+// setInterval(function () {
+//   changeText;
+// }, 3000);
 
-text.textContent = "maggi";
-
-const changeText = function (list) {
-  const names = ["web dev", "blogger", "designer", "guitarist", "meditator"];
-  // text.textContent = names[counter % len(names)];
-  text.textContent = "maggi";
-};
-
-setInterval(function () {
-  changeText;
-}, 3000);
+gsap.registerPlugin(ScrollTrigger);
+var container = document.querySelector("#scroll-container");
+var height = container.clientHeight;
+document.body.style.height = height + "px";
+gsap.to(container, {
+  y: -(height - document.documentElement.clientHeight),
+  scrollTrigger: {
+    trigger: document.body,
+    start: "top top",
+    end: "bottom bottom",
+    scrub: 2,
+  },
+});

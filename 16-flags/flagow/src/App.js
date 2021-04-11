@@ -12,19 +12,19 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/RoundWon/:message">
-            <RoundWon />
-          </Route>
-
-          <Route path="/Quiz">
-            <Quiz />
-          </Route>
-
           <Route path="/About">
             <About />
           </Route>
 
-          <Route path="/Level/">
+          <Route path="/RoundWon/:message">
+            <RoundWon />
+          </Route>
+
+          <Route path="/Quiz/:level/:quizType">
+            <Quiz />
+          </Route>
+
+          <Route path="/Level/:quizType">
             <Level />
           </Route>
           <Route path="/Type">
