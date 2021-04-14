@@ -1,6 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+body {
+  background-color: #111111;
+}
+
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #473f97;
+  padding: 20px;
+}
+
+.app__headingRight {
+  color: rgb(93, 248, 3);
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.app__dropdown {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: bolder;
+  margin: 10px;
+}
+
 .app__header {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
   align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.app__header > h1 {
+  color: #eeeeee;
+  font-size: 2rem;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(45, 34, 104, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__left {
+  flex: 0.7;
+}
+
+.app__information {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.app__information > h3 {
+  color: rgb(45, 34, 104);
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.app__information > h3:last-of-type {
+  margin-top: 1rem;
+}
+
+.app__right {
+  flex: 0.3;
+  width: 40%;
+  margin: 25px;
+  color: #313131;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.app__rightTable {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgb(45, 34, 104, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+@media (max-width: 1190px) {
+  .app {
+    flex-direction: column;
+  }
+  .app__right {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .app__header > h1 {
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+  .app__stats {
+    flex-direction: column;
+  }
+  .app__right {
+    margin: 0px;
+    width: 100%;
+  }
+}
+
+p {
+  color: black;
+  font-weight: 500;
 }

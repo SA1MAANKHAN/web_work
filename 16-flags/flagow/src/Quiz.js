@@ -15,7 +15,7 @@ function Quiz() {
   const [correctIndex, setCorrectIndex] = useState();
   const [lives, setLives] = useState(numOfLives);
   const [currentQuesNumber, setCurrentQuesNumber] = useState(1);
-  const [options, setOptions] = useState([]);
+
   const [gameWon, setGameWon] = useState(false);
   const [gameLost, setGameLost] = useState(false);
 
@@ -51,13 +51,12 @@ function Quiz() {
     volume: 1,
   });
 
-  console.log(">>>>> ", quizType == "Flags", " Flags  <<<<<<<<");
-  console.log(">>>>> ", quizType == "Capitals", " Capitals  <<<<<<<<");
+  // console.log(">>>>> ", quizType == "Flags", " Flags  <<<<<<<<");
+  // console.log(">>>>> ", quizType == "Capitals", " Capitals  <<<<<<<<");
 
-  console.log(">>>>> ", quizType == "Currency", " Currency  <<<<<<<<");
+  // console.log(">>>>> ", quizType == "Currency", " Currency  <<<<<<<<");
   const startGame = function () {
     const options = getFourRandomCountries(level);
-    setOptions(options);
     setCorrectIndex(options.correctOption);
     options.optionsArray.forEach((country) => {
       fetchCountries(country);
@@ -219,7 +218,7 @@ function Quiz() {
               .map((_, i) => (
                 <FavoriteIcon
                   key={`heart${i}`}
-                  style={{ fontSize: 40, color: "#23ecaf" }}
+                  style={{ fontSize: 35, color: "#23ecaf" }}
                 />
               ))}
           </div>

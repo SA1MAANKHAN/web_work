@@ -17,8 +17,8 @@ function RoundWon() {
               src="http://www.pngall.com/wp-content/uploads/5/Gold-Trophy-PNG.png"
               alt=""
             />
-            <h1>Round Completed</h1>
           </div>
+          <h1>Round Completed</h1>
           <div className="roundWon__navigation">
             <Link className="roundWon__icon" to="/Quiz">
               <ReplayIcon style={{ fontSize: 60 }} />

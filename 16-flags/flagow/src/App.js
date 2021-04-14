@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Level from "./Level";
 import Quiz from "./Quiz";
 import Type from "./Type";
-import About from "./About";
+
 import RoundWon from "./RoundWon";
 
 function App() {
@@ -12,10 +12,6 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/About">
-            <About />
-          </Route>
-
           <Route path="/RoundWon/:message">
             <RoundWon />
           </Route>

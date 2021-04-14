@@ -178,7 +178,7 @@ section {
 @media (min-width: 900px) {
   .header .bubble4 {
     margin-left: 15vw;
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
 
@@ -196,7 +196,7 @@ section {
 @media (min-width: 900px) {
   .header .bubble5 {
     margin-left: 15vw;
-    opacity: 0.6;
+    opacity: 1;
   }
 }
 
@@ -214,7 +214,7 @@ section {
 @media (min-width: 900px) {
   .header .bubble6 {
     margin-left: 15vw;
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
 
@@ -1033,7 +1033,7 @@ footer .social__media {
   left: 10px;
   -o-object-fit: contain;
      object-fit: contain;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .bubble2 {
@@ -1043,7 +1043,7 @@ footer .social__media {
   right: 0;
   -o-object-fit: contain;
      object-fit: contain;
-  opacity: 0.6;
+  opacity: 0.8;
   right: 5vw;
 }
 
@@ -1061,7 +1061,7 @@ footer .social__media {
   right: 20px;
   -o-object-fit: contain;
      object-fit: contain;
-  opacity: 0.6;
+  opacity: 0.8;
   right: 5vw;
 }
 

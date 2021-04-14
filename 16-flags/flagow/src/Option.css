@@ -1,6 +1,7 @@
 .option {
   height: 50px;
   width: 90%;
+  max-width: 400px;
 
   display: flex;
   justify-content: center;
@@ -18,7 +19,6 @@
 
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
-  width: 274px;
   height: 70px;
   background: var(--unnamed-color-16c79a) 0% 0% no-repeat padding-box;
   background: #44b692 0% 0% no-repeat padding-box;
@@ -27,7 +27,14 @@
   opacity: 1;
 }
 
-.option > h1 {
+.option > h2 {
   text-decoration: none;
   color: white;
+}
+
+@media (max-width: 400px) {
+  .option > h2 {
+    font-size: 8vw;
+    height: 10vw;
+  }
 }

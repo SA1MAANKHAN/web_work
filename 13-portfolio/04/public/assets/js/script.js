@@ -8,7 +8,7 @@ gsap.to(container, {
     trigger: document.body,
     start: "top top",
     end: "bottom bottom",
-    scrub: 0.8cd,
+    scrub: 3,
   },
 });
 

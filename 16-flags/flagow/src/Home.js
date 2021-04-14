@@ -19,11 +19,13 @@ function Home() {
         <Link className="link" to="/Level/Currency">
           <Option optionName="Currency" />
         </Link>
+        {/* <Link className="link" to="/More">
+          <Option optionName="More" />
+        </Link> */}
 
-        <Option optionName="More" />
-        <Link className="link" to="/About">
+        <a className="link" href="https://salmaan.netlify.app/">
           <Option optionName="About" />
-        </Link>
+        </a>
       </div>
     </div>
   );

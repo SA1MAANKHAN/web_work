@@ -25,6 +25,12 @@ colors {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@media (max-width: 400px) {
+  * {
+    font-size: 4vw;
+  }
+}
+
 .app {
   background: linear-gradient(to bottom, #194569, #224450);
   height: 100vh;
