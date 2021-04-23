@@ -271,7 +271,12 @@
           <div class="drink-form__input">
             <select
               type="text"
-              style="background: rgb(78, 79, 78)"
+              style="
+                background: rgb(78, 79, 78);
+                font-size: 1.5rem;
+                width: 40%;
+                padding: 10px 30px;
+              "
               name=""
               id=""
               maxlength="15"
@@ -346,7 +351,7 @@
                         product +
                         "', document.getElementById('" +
                         product +
-                        '\').value)" class="fa fa-shopping-cart" style="padding: 0 10px;float: right;"></i>'
+                        '\').value)" class="fa fa-shopping-cart btn__animate" style="padding: 0 10px;float: right;"></i>'
                     );
                     document.write("       </div></div>");
                     i++;
@@ -392,7 +397,7 @@
                         product +
                         "', document.getElementById('" +
                         product +
-                        '\').value)" class="fa fa-shopping-cart" style="padding: 0 10px;float: right;"></i>'
+                        '\').value)" class="fa fa-shopping-cart btn__animate" style="padding: 0 10px;float: right;"></i>'
                     );
                     document.write("       </div></div>");
                     i++;
@@ -440,7 +445,7 @@
                         product +
                         "', document.getElementById('" +
                         product +
-                        '\').value)" class="fa fa-shopping-cart" style="padding: 0 10px;float: right;"></i>'
+                        '\').value)" class="fa fa-shopping-cart btn__animate" style="padding: 0 10px;float: right;"></i>'
                     );
                     document.write("       </div></div>");
                     i++;
@@ -477,6 +482,7 @@
           <!-- The Cart Section -->
         </h3>
         <a
+          class="btn__animate"
           href="Order.html"
           id="cartBtn"
           style="
@@ -486,8 +492,8 @@
             font-weight: 800;
             font-family: sans-serif;
             padding: 10px;
-            border: 1px solid blanchedalmond;
-            border-radius: 25px 25px;
+            border: none;
+            border-radius: 15px;
             margin-left: 44%;
           "
           >See Orders</a

@@ -88,6 +88,23 @@ section {
   margin-bottom: 60px;
 }
 
+#style-16::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #38257f;
+  border-radius: 10px;
+}
+
+#style-16::-webkit-scrollbar {
+  width: 10px;
+  background-color: #696969;
+}
+
+#style-16::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(top, #a20c98 0%, #7653f5 100%);
+}
+
 .absolute {
   position: absolute;
 }
@@ -97,10 +114,17 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  height: 70vh;
+  width: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#5d3fcb), color-stop(#4a32a4), color-stop(#38257f), color-stop(#27195c), to(#170d3b));
   background-image: linear-gradient(to bottom, #5d3fcb, #4a32a4, #38257f, #27195c, #170d3b);
   color: white;
+}
+
+@media (max-width: 400px) {
+  .landing {
+    height: 160vw;
+  }
 }
 
 .navbar {
@@ -139,6 +163,7 @@ section {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#1a0b50), to(#6d27be));
   background-image: linear-gradient(to top, #1a0b50, #6d27be);
   border: none;
+  cursor: pointer;
 }
 
 .header {
@@ -185,18 +210,53 @@ section {
 .header .bubble5 {
   z-index: 0;
   margin-right: 5vw;
-  height: 250px;
-  width: 250px;
-  right: 20px;
+  height: 350px;
+  width: 350px;
+  right: 40px;
+  top: 50;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-animation: upDown 3s infinite 0.5s ease;
+          animation: upDown 3s infinite 0.5s ease;
   opacity: 0;
 }
 
 @media (min-width: 900px) {
   .header .bubble5 {
-    margin-left: 15vw;
+    margin-left: 10vw;
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes upDown {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(8%);
+            transform: translateY(8%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(8%);
+            transform: translateY(8%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
 }
 
@@ -285,7 +345,131 @@ section {
   }
 }
 
+.scroll {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.scroll #mouse-scroll {
+  display: block;
+}
+
+.scroll #mouse-scroll {
+  margin: auto;
+  left: 50%;
+  top: 80px;
+  z-index: 9999;
+}
+
+.scroll #mouse-scroll span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin: 0 0 3px 5px;
+}
+
+.scroll #mouse-scroll .mouse {
+  height: 21px;
+  width: 14px;
+  border-radius: 10px;
+  -webkit-transform: none;
+          transform: none;
+  border: 2px solid #ffffff;
+  top: 170px;
+}
+
+.scroll #mouse-scroll .down-arrow-1 {
+  margin-top: 6px;
+}
+
+.scroll #mouse-scroll .down-arrow-1,
+.scroll #mouse-scroll .down-arrow-2,
+.scroll #mouse-scroll .down-arrow-3 {
+  -webkit-animation: mouse-scroll 1s infinite;
+  -moz-animation: mouse-scroll 1s infinite;
+}
+
+.scroll #mouse-croll .down-arrow-1 {
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -webkit-animation-direction: alternate;
+}
+
+.scroll #mouse-scroll .down-arrow-2 {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-direction: alternate;
+}
+
+.scroll #mouse-scroll .down-arrow-3 {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-dekay: 0.3s;
+  -webkit-animation-direction: alternate;
+}
+
+.scroll #mouse-scroll .mouse-in {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: #ffffff;
+  position: relative;
+}
+
+.scroll #mouse-scroll .mouse-in {
+  -webkit-animation: animated-mouse 1.2s ease infinite;
+  moz-animation: mouse-animated 1.2s ease infinite;
+}
+
+@-webkit-keyframes animated-mouse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@-webkit-keyframes mouse-scroll {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .about {
+  margin-top: 30vh;
   height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -301,6 +485,12 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
+}
+
+@media (max-width: 500px) {
+  .about {
+    margin-top: 5vh;
+  }
 }
 
 .about .about__para {
@@ -321,6 +511,7 @@ section {
 .about .about__cvBtn {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {
@@ -379,8 +570,16 @@ section {
   background-color: transparent;
   height: 400px;
   width: 300px;
+  border-radius: 15px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+}
+
+@media (max-width: 350px) {
+  .projects .flip-card {
+    height: 120vw;
+    width: 90vw;
+  }
 }
 
 .projects .flip-card-inner {
@@ -388,15 +587,15 @@ section {
   width: 100%;
   height: 100%;
   text-align: center;
-  -webkit-animation: transformAnimationOff 1.4s forwards ease-in-out;
-          animation: transformAnimationOff 1.4s forwards ease-in-out;
+  -webkit-animation: transformAnimationOff 2s forwards ease-in-out;
+          animation: transformAnimationOff 2s forwards ease-in-out;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
 .projects .flip-card:hover .flip-card-inner {
-  -webkit-animation: transformAnimation 2.2s forwards ease-in-out;
-          animation: transformAnimation 2.2s forwards ease-in-out;
+  -webkit-animation: transformAnimation 2.4s forwards ease;
+          animation: transformAnimation 2.4s forwards ease;
 }
 
 @-webkit-keyframes transformAnimation {
@@ -546,26 +745,31 @@ section {
 .projects .flip-card-front {
   color: white;
   padding: 10px;
+  background-size: cover;
+  border-radius: 15px;
 }
 
 .projects .flip-card1-front {
-  background-image: url("https://i.pinimg.com/originals/08/80/99/08809940d40530bfdb457d7a60466657.jpg");
+  background-image: url("../images/foodfiesta.jpeg");
 }
 
 .projects .flip-card2-front {
-  background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-spring-landscape_23-2148448598.jpg?size=626&ext=jpg");
+  background-image: url("../images/covid.jpeg");
 }
 
 .projects .flip-card3-front {
-  background-image: url("https://image.freepik.com/free-vector/scenery-autumn-forest-with-mountain-sky-illustration_105940-204.jpg");
+  background-image: url("../images/flagow.jpeg");
+  background-position: center;
 }
 
 .projects .flip-card-front > h1 {
   font-size: 2rem;
+  font-weight: 700;
   -webkit-transform: translateZ(60px);
           transform: translateZ(60px);
-  border: 5px solid white;
+  background-color: #170d3b9f;
   padding: 0.5em 0.5em;
+  border-radius: 15px;
 }
 
 .projects .flip-card-back {
@@ -576,21 +780,31 @@ section {
 }
 
 .projects .flip-card1-back {
-  background-image: url("https://icons8.com/wp-content/uploads/2020/02/digital-illustration-brian-edward-miller.jpg");
+  background-image: url("https://i.pinimg.com/originals/08/80/99/08809940d40530bfdb457d7a60466657.jpg");
 }
 
 .projects .flip-card2-back {
-  background-image: url("https://i.pinimg.com/originals/2c/a5/4f/2ca54ff95120c940800df9f59ab15cf1.png");
+  background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-spring-landscape_23-2148448598.jpg?size=626&ext=jpg");
 }
 
 .projects .flip-card3-back {
-  background-image: url("https://blog.spoongraphics.co.uk/wp-content/uploads/2017/landscape-illustrations/31.jpg");
+  background-image: url("https://image.freepik.com/free-vector/scenery-autumn-forest-with-mountain-sky-illustration_105940-204.jpg");
 }
 
 .projects .flip-card-back > p {
-  font-size: 1rem;
+  height: 80%;
+  width: 80%;
+  padding: 20px;
+  font-size: 1.2rem;
   -webkit-transform: translateZ(80px);
           transform: translateZ(80px);
+  background-color: #1a0b50b4;
+}
+
+@media (max-width: 330px) {
+  .projects .flip-card-back > p {
+    font-size: 5vw;
+  }
 }
 
 .skill__heading {

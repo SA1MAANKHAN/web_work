@@ -73,17 +73,37 @@ body {
   position: relative;
   color: white;
   background-color: #170d3b;
+  // width: 100vw;
 }
 section {
   margin-bottom: 60px;
 }
+
+#style-16::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #38257f;
+  border-radius: 10px;
+}
+
+#style-16::-webkit-scrollbar {
+  width: 10px;
+  background-color: #696969;
+}
+
+#style-16::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(top, #a20c98 0%, #7653f5 100%);
+}
+
 .absolute {
   position: absolute;
 }
 
 .landing {
   flex-direction: column;
-  height: 100vh;
+  height: 70vh;
+  width: 100%;
   background-image: linear-gradient(
     to bottom,
     #5d3fcb,
@@ -94,6 +114,10 @@ section {
   );
 
   color: white;
+
+  @media (max-width: 400px) {
+    height: 160vw;
+  }
 }
 
 // navbar
@@ -113,6 +137,7 @@ section {
       padding: 10px 20px;
       background-image: linear-gradient(to top, #1a0b50, #6d27be);
       border: none;
+      cursor: pointer;
     }
   }
 }
@@ -146,14 +171,31 @@ section {
   .bubble5 {
     z-index: 0;
     margin-right: 5vw;
-    height: 250px;
-    width: 250px;
-    right: 20px;
+    height: 350px;
+    width: 350px;
+    right: 40px;
+    top: 50;
+    transform: translateY(0%);
     object-fit: contain;
+
+    animation: upDown 3s infinite 0.5s ease;
     opacity: 0;
     @media (min-width: 900px) {
-      margin-left: 15vw;
+      margin-left: 10vw;
       opacity: 1;
+    }
+  }
+  @keyframes upDown {
+    0% {
+      transform: translateY(0%);
+    }
+
+    50% {
+      transform: translateY(8%);
+    }
+
+    100% {
+      transform: translateY(0%);
     }
   }
   .bubble6 {
@@ -217,16 +259,136 @@ section {
   }
 }
 
-.elementToAnimate {
+// scroll
+
+.scroll {
+  // margin-bottom: 0;
+  // height: 20vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  // font-size: 2rem;
+
+  #mouse-scroll {
+    display: block;
+  }
+
+  #mouse-scroll {
+    // position: fixed;
+    margin: auto;
+    left: 50%;
+    top: 80px;
+    z-index: 9999;
+  }
+  #mouse-scroll span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin: 0 0 3px 5px;
+  }
+  #mouse-scroll .mouse {
+    height: 21px;
+    width: 14px;
+    border-radius: 10px;
+
+    transform: none;
+    border: 2px solid #ffffff;
+    top: 170px;
+  }
+  #mouse-scroll .down-arrow-1 {
+    margin-top: 6px;
+  }
+  #mouse-scroll .down-arrow-1,
+  #mouse-scroll .down-arrow-2,
+  #mouse-scroll .down-arrow-3 {
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+  }
+  #mouse-croll .down-arrow-1 {
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .down-arrow-2 {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .down-arrow-3 {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-dekay: 0.3s;
+    -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .mouse-in {
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 5px auto;
+    background: #ffffff;
+    position: relative;
+  }
+  #mouse-scroll .mouse-in {
+    -webkit-animation: animated-mouse 1.2s ease infinite;
+    moz-animation: mouse-animated 1.2s ease infinite;
+  }
+
+  @-webkit-keyframes animated-mouse {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
+  @-webkit-keyframes mouse-scroll {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes mouse-scroll {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 // about
 
 .about {
+  margin-top: 30vh;
   height: 60vh;
   @include flex();
   flex-direction: column;
   padding: 20px;
+
+  @media (max-width: 500px) {
+    margin-top: 5vh;
+  }
+
   .about__para {
     align-self: center;
     width: 80%;
@@ -239,6 +401,7 @@ section {
   }
   .about__cvBtn {
     align-self: flex-end;
+    cursor: pointer;
 
     @media (min-width: 900px) {
       margin-right: 25vw;
@@ -278,7 +441,13 @@ section {
     background-color: transparent;
     height: 400px;
     width: 300px;
+    border-radius: 15px;
     perspective: 1000px;
+
+    @media (max-width: 350px) {
+      height: 120vw;
+      width: 90vw;
+    }
   }
 
   .flip-card-inner {
@@ -286,12 +455,12 @@ section {
     width: 100%;
     height: 100%;
     text-align: center;
-    animation: transformAnimationOff 1.4s forwards ease-in-out;
+    animation: transformAnimationOff 2s forwards ease-in-out;
     transform-style: preserve-3d;
   }
 
   .flip-card:hover .flip-card-inner {
-    animation: transformAnimation 2.2s forwards ease-in-out;
+    animation: transformAnimation 2.4s forwards ease;
   }
 
   @keyframes transformAnimation {
@@ -357,26 +526,52 @@ section {
     transform-style: preserve-3d;
   }
 
+  // .overlay {
+  //   position: absolute;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: 2;
+  //   border-radius: 15px;
+  //   background-color: #1a1a1a4f;
+  // }
+
   .flip-card-front {
     color: rgb(255, 255, 255);
     padding: 10px;
+    background-size: cover;
+    border-radius: 15px;
   }
 
+  // .flip-card1-front {
+  //   background-image: url("https://i.pinimg.com/originals/08/80/99/08809940d40530bfdb457d7a60466657.jpg");
+  // }
+  // .flip-card2-front {
+  //   background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-spring-landscape_23-2148448598.jpg?size=626&ext=jpg");
+  // }
+  // .flip-card3-front {
+  //   background-image: url("https://image.freepik.com/free-vector/scenery-autumn-forest-with-mountain-sky-illustration_105940-204.jpg");
+  // }
+
   .flip-card1-front {
-    background-image: url("https://i.pinimg.com/originals/08/80/99/08809940d40530bfdb457d7a60466657.jpg");
+    background-image: url("../images/foodfiesta.jpeg");
   }
   .flip-card2-front {
-    background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-spring-landscape_23-2148448598.jpg?size=626&ext=jpg");
+    background-image: url("../images/covid.jpeg");
   }
   .flip-card3-front {
-    background-image: url("https://image.freepik.com/free-vector/scenery-autumn-forest-with-mountain-sky-illustration_105940-204.jpg");
+    background-image: url("../images/flagow.jpeg");
+    background-position: center;
   }
 
   .flip-card-front > h1 {
     font-size: 2rem;
+    font-weight: 700;
     transform: translateZ(60px);
-    border: 5px solid rgb(255, 255, 255);
+    background-color: #170d3b9f;
+    // border: 5px solid rgb(255, 255, 255);
     padding: 0.5em 0.5em;
+    border-radius: 15px;
+    // color: #694dce;
   }
 
   .flip-card-back {
@@ -385,19 +580,37 @@ section {
     background-size: cover;
   }
 
+  // .flip-card1-back {
+  //   background-image: url("https://icons8.com/wp-content/uploads/2020/02/digital-illustration-brian-edward-miller.jpg");
+  // }
+  // .flip-card2-back {
+  //   background-image: url("https://i.pinimg.com/originals/2c/a5/4f/2ca54ff95120c940800df9f59ab15cf1.png");
+  // }
+  // .flip-card3-back {
+  //   background-image: url("https://blog.spoongraphics.co.uk/wp-content/uploads/2017/landscape-illustrations/31.jpg");
+  // }
+
   .flip-card1-back {
-    background-image: url("https://icons8.com/wp-content/uploads/2020/02/digital-illustration-brian-edward-miller.jpg");
+    background-image: url("https://i.pinimg.com/originals/08/80/99/08809940d40530bfdb457d7a60466657.jpg");
   }
   .flip-card2-back {
-    background-image: url("https://i.pinimg.com/originals/2c/a5/4f/2ca54ff95120c940800df9f59ab15cf1.png");
+    background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-spring-landscape_23-2148448598.jpg?size=626&ext=jpg");
   }
   .flip-card3-back {
-    background-image: url("https://blog.spoongraphics.co.uk/wp-content/uploads/2017/landscape-illustrations/31.jpg");
+    background-image: url("https://image.freepik.com/free-vector/scenery-autumn-forest-with-mountain-sky-illustration_105940-204.jpg");
   }
 
   .flip-card-back > p {
-    font-size: 1rem;
+    height: 80%;
+    width: 80%;
+    padding: 20px;
+    font-size: 1.2rem;
     transform: translateZ(80px);
+    background-color: #1a0b50b4;
+
+    @media (max-width: 330px) {
+      font-size: 5vw;
+    }
   }
 }
 

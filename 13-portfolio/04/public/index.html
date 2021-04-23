@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <!-- gsap  -->
-    <script
+    <!-- <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
       integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
       crossorigin="anonymous"
-    ></script>
-    <script
+    ></script> -->
+    <!-- <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"
       integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q=="
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;800;900&family=Poppins:wght@100;200;400;500;700;800&display=swap"
       rel="stylesheet"
@@ -41,50 +41,50 @@
     ></script>
     <title>Salmaan</title>
   </head>
-  <body id="scroll-container">
+  <body id="style-16">
     <section class="landing">
       <div class="navbar">
-        <div class="name">s k.</div>
+        <div class="name">sk</div>
 
         <div class="nav__links">
           <!-- <button class="nav__projects nav__link">
             <a href="#projects"> Projects</a>
           </button> -->
-          <button class="nav__contact nav__link">
-            <a href="#contact">Contact</a>
-          </button>
+          <a href="#contact">
+            <button class="nav__contact nav__link">Contact</button></a
+          >
         </div>
       </div>
       <div class="header">
-        <img
+        <!-- <img
           class="absolute abs__img bubble1"
           src="./assets/images/bubble.png"
           alt=""
-        />
+        /> -->
 
         <div class="landing__text">I'm Salmaan,</div>
-        <div class="landing__subText">Web developer <br />& designer</div>
+        <div class="landing__subText">Web developer & designer</div>
         <button class="landing__projectsBtn">
-          <a href="#about"> Projects</a>
+          <a href="#projects"> Projects</a>
         </button>
 
-        <img
+        <!-- <img
           class="absolute abs__img bubble4"
           src="./assets/images/bubble.png"
           alt=""
-        />
+        /> -->
         <img
           class="absolute abs__img bubble5"
-          src="./assets/images/bubble.png"
+          src="./assets/images/laptop.png"
           alt=""
         />
-        <img
+        <!-- <img
           class="absolute abs__img bubble6"
           src="./assets/images/bubble.png"
           alt=""
-        />
+        /> -->
       </div>
-      <img
+      <!-- <img
         class="absolute abs__img bubble2"
         src="./assets/images/bubble.png"
         alt=""
@@ -93,10 +93,24 @@
         class="absolute abs__img bubble3"
         src="./assets/images/bubble.png"
         alt=""
-      />
+      /> -->
       <!-- <div class="absolute blur1"></div>
       <div class="absolute blur2"></div> -->
       <!-- <div class="landing__scroll">v</div> -->
+    </section>
+    <section class="scroll">
+      <a href="#about">
+        <div id="mouse-scroll">
+          <div class="mouse">
+            <div class="mouse-in"></div>
+          </div>
+          <div>
+            <span class="down-arrow-1"></span>
+            <span class="down-arrow-2"></span>
+            <span class="down-arrow-3"></span>
+          </div>
+        </div>
+      </a>
     </section>
     <section class="about" id="about">
       <h1 class="about__heading">About</h1>
@@ -106,7 +120,9 @@
         I love learing new things and to explore.
       </p>
 
-      <button class="about__cvBtn">Download CV</button>
+      <a href="assets/files/SalmaanKhan.pdf" download>
+        <button class="about__cvBtn">Download CV</button></a
+      >
     </section>
 
     <h1 class="skill__heading">Skills</h1>
@@ -169,12 +185,18 @@
       <div class="project__container">
         <div class="project project1 flip-card">
           <div class="flip-card-inner">
+            <div class="overlay"></div>
             <div class="flip-card-front flip-card1-front">
-              <h1>FoodFiesta</h1>
+              <h1><a href="https://itsfoodfiesta.web.app"> FoodFiesta</a></h1>
             </div>
             <div class="flip-card-back flip-card1-back">
               <p>
-                this is a recipe app that lets you search and play with food
+                this is a recipe app that lets you search and play with food. It
+                is built on top of spoonacular API. The design is original. Its
+                build using Html, Css, Js, and React. Hosted using Firebase.
+                <br />
+                <br />
+                Click on project name!
               </p>
             </div>
           </div>
@@ -182,13 +204,21 @@
 
         <div class="project project2 flip-card">
           <div class="flip-card-inner">
+            <div class="overlay"></div>
+
             <div class="flip-card-front flip-card2-front">
-              <h1>Flags</h1>
+              <h1>
+                <a href="https://covid19-90f4c.web.app/"> Covid Tracker</a>
+              </h1>
             </div>
             <div class="flip-card-back flip-card2-back">
               <p>
-                this is a game that will help you increase your knowledge of the
-                round rock you live on
+                It's a covid tracker with functionalities like it gets Live
+                covid data, user can see cases, recovered and deaths on maps
+                with country cards and dynamic circles. List of countries by
+                total cases and graph showing case history.
+                <br />
+                Click on project name!
               </p>
             </div>
           </div>
@@ -196,13 +226,20 @@
 
         <div class="project project3 flip-card">
           <div class="flip-card-inner">
+            <div class="overlay"></div>
+
             <div class="flip-card-front flip-card3-front">
-              <h1>Covid Tracker</h1>
+              <h1><a href="https://itsflagow.web.app/"> Flags</a></h1>
             </div>
             <div class="flip-card-back flip-card3-back">
               <p>
-                this is gonna be some other cool project haven't thought of
-                anything yet
+                It's basically a quiz app that lets users play different quizzes
+                by which the user can learn about flags of different countries,
+                currencies, and capitals. A lot more functionality will be added
+                in the coming versions
+                <br />
+                <br />
+                Click on project name!
               </p>
             </div>
           </div>

@@ -296,9 +296,10 @@ function CheckBrowser() {
 
 //-------------------------------------------------------------------------------------
 //restart the local storage
-function ClearAll() {
+function ClearAll(cusName) {
   const save = localStorage.getItem("productDetails");
-  saveOrder();
+  saveOrder(cusName);
+
   const saveOrders = localStorage.getItem("orders");
 
   console.log(saveOrders);
@@ -313,7 +314,7 @@ function ClearAll() {
   // doShowAll();
 }
 
-function saveOrder() {
+function saveOrder(cusName) {
   if (JSON.parse(localStorage.getItem("orders")) == null) {
     orders = {};
     localStorage.setItem("orders", JSON.stringify(orders));
@@ -324,7 +325,7 @@ function saveOrder() {
   const current = new Date();
   const currentTime = current.toLocaleString();
 
-  orders[currentTime] = {};
+  orders[cusName]["time"] = currentTime;
 
   for (i = 0; i <= localStorage.length - 2; i++) {
     key = localStorage.key(i);
@@ -334,7 +335,7 @@ function saveOrder() {
 
     console.log(key);
 
-    orders[currentTime][key] = localStorage.getItem(key);
+    orders[cusName][key] = localStorage.getItem(key);
   }
 
   console.log(orders);
@@ -376,11 +377,11 @@ function doShowAll() {
         localStorage.getItem(key) +
         '" style="background: rgb(78, 79, 78);width:155px;height:28px;"/></td><td align="center">' +
         price_intoqty +
-        '</td><td align="center"><a onclick="javascript:ModifyItem(\'' +
+        '</td><td align="center"><a class="btn__animate" onclick="javascript:ModifyItem(\'' +
         key +
         "', document.getElementById('" +
         key +
-        '_basket\').value)" style="background-color: #f1b450;color: #392824;font-size: 12px;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 3px 3px;"><b> Update</b></a><i onclick="javascript:RemoveItem(\'' +
+        '_basket\').value)" style="background-color: #f1b450;color: #392824;font-size: 12px;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 5px 10px; margin:10px"><b> Update</b></a><i  onclick="javascript:RemoveItem(\'' +
         key +
         '\')" class="fa fa-trash" style="padding: 0 5px;"></i></td></tr>\n';
     }
@@ -394,7 +395,7 @@ function doShowAll() {
     } else {
       list += `<tr><td></td></tr>\n<tr><td colspan="6" align="center">
        
-     <a onclick="javascript:orderContent()" style="background-color: #f1b450;color: #392824;font-size: 12px;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 6px 3px;"><b> Add to Order</b></a></td></tr>`;
+     <a onclick="javascript:getName()" style="background-color: #f1b450;color: #392824;font-size: 1.2rem;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 10px 15px;"><b> Add to Order</b></a></td></tr>`;
     }
     //bind the data to html table
     //you can use jQuery too....
@@ -419,7 +420,7 @@ function ModifyItem(item, quantity) {
   doShowAll();
 }
 
-function orderContent() {
+function orderContent(cusName) {
   if (CheckBrowser()) {
     var key = "";
     var list_ord = '<section class="drink section-padding">';
@@ -471,13 +472,15 @@ function orderContent() {
         productDetails["Tax"]["price"] +
         '</td></tr>\n<td colspan="3" style="border:none;">&nbsp;</td><td>Total</td><td>' +
         total_plus_tax +
-        '</td></tr>\n\n<tr><td colspan="5" align="center" style="border:none;"><a href="WebStore.html" style="background-color: #f1b450;color: #392824;font-size: 12px;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 6px 3px;"><b> Cancel</b></a>&nbsp;<a onclick="javascript:orderComplete()" style="background-color: #f1b450;color: #392824;font-size: 12px;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 6px 3px;"><b> Confirm Order</b></a></td></tr>';
+        `</td></tr>\n\n<tr><td colspan="5" align="center" style="border:none;"><a href="WebStore.html" style="background-color: #f1b450;color: #392824;font-size: 1.2rem;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 8px 10px;"><b> Cancel</b></a>&nbsp;<button class="nameSaveOrder" style="background-color: #f1b450;color: #392824;font-size: 1.2rem;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 8px 10px;"> Confirm Order</button></td></tr>`;
     }
+
     //bind the data to html table
     //you can use jQuery too....
 
     list_ord += "</tbody></table><div><section>";
     document.getElementById("order_sec").innerHTML = list_ord;
+    saveOrderByName(cusName);
   } else {
     alert("Cannot save shopping list as your browser does not support HTML 5");
   }
@@ -492,13 +495,13 @@ function orderContent() {
   z.style.display = "none";
 }
 
-function orderComplete() {
+function orderComplete(cusName) {
   var list_confirm = '<section class="drink section-padding">';
   list_confirm += "<div>";
   list_confirm +=
-    '<h3 class="drink-form__title bell-fonts" style="text-align:  center;">Thank  You , Your Order  Has  Been  Successfully  Submited!</h3><a href="WebStore.html" style="background-color: #f1b450;color: #392824;font-size: 12px;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 6px 20px; margin-left: 46%;"><b> Exit</b></a></div></section>';
+    '<h3 class="drink-form__title bell-fonts" style="text-align:  center; margin:20px">Thank  You , Your Order  Has  Been  Successfully  Submited!</h3><a href="WebStore.html" style="background-color: #f1b450;color: #392824;font-size: 1.2rem;font-weight: 600;font-family: sans-serif;border: 1px solid blanchedalmond;border-radius:9px 9px; padding: 10px 30px; margin-left: 46%;"><b> Exit</b></a></div></section>';
 
-  ClearAll();
+  ClearAll(cusName);
   document.getElementById("order_sec").innerHTML = list_confirm;
 }
 
