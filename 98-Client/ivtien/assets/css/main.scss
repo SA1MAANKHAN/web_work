@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,9 @@
 }
 
 $borderRadius: 15px;
+$myLightBlue: #3e8ce5;
+$myDarkBlue: #004ba1;
+$myGrey: #474747;
 
 @mixin flex {
   display: flex;
@@ -16,78 +20,214 @@ $borderRadius: 15px;
   align-items: center;
 }
 
+html {
+  @media (min-width: 1024px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 13px;
+  }
+  @media (max-width: 300px) {
+    font-size: 10px;
+  }
+}
+
 body {
   position: relative;
-  height: 100vh;
+
+  @media (min-width: 1024px) {
+    display: flex;
+
+    background-image: linear-gradient(to right, rgb(141, 200, 222), #47c6e667);
+    background-size: cover;
+  }
 }
 
-.search__bar {
+.left__side {
+  height: 100vh;
+  width: 100%;
+  @media (min-width: 1024px) {
+    flex: 0.5;
+  }
+}
+
+.map__container {
+  height: 100%;
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  @media (min-width: 1024px) {
+    height: 95%;
+    width: 95%;
+  }
+}
+
+// search bar and refresh bar
+
+.right__side {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  position: absolute;
-  height: 2.8rem;
-  width: 60%;
-  min-width: 250px;
-  max-width: 350px;
-  margin: 50px;
-  padding: 10px 20px;
-  z-index: 2;
-  background-color: white;
-  border-radius: $borderRadius;
-  box-shadow: 8px 8px 6px rgb(70, 70, 70);
-
-  .search__input {
-    height: 100%;
-    width: 80%;
-
-    padding: 5px;
-    border-radius: $borderRadius 0 0 $borderRadius;
-
-    outline: none;
-    border: none;
-    font-size: 1.2rem;
-  }
-  .search__btn {
-    margin: 5px;
-    font-size: 1.4rem;
-    color: gray;
-    background-color: white;
-    border: none;
+  @media (min-width: 1024px) {
+    position: static;
+    flex: 0.5;
+    height: 100vh;
   }
 }
 
-.refresh__bar {
+.search-filters {
+  width: 100%;
+  height: 40vh;
+
   @include flex();
-  justify-content: space-around;
-  position: absolute;
-  top: 80px;
-  height: 1.8rem;
-  min-width: 100px;
-  padding: 10px;
-  z-index: 2;
-  margin: 20px 60px;
-  background-color: white;
-  border-radius: $borderRadius/2;
-  box-shadow: 4px 4px 6px rgb(70, 70, 70);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
 
-  .refresh__btn {
+  @media (min-width: 1024px) {
+    margin-top: 50px;
+  }
+
+  .search {
+    @include flex();
+    .search__bar {
+      @include flex();
+
+      justify-content: space-between;
+      height: 3.5rem;
+      min-width: 15rem;
+      max-width: 35rem;
+
+      padding: 10px 20px;
+
+      background-color: white;
+      border-radius: $borderRadius * 3;
+      box-shadow: 8px 8px 6px rgb(70, 70, 70);
+
+      .search__input {
+        height: 100%;
+        width: 80%;
+
+        border-radius: $borderRadius 0 0 $borderRadius;
+        padding: 5px;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+      }
+      .search__btn {
+        font-size: 1.4rem;
+        color: $myLightBlue;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .search__adjust {
+      font-size: 1.4rem;
+      margin: 0 30px;
+      padding: 10px;
+      color: $myLightBlue;
+      background-color: white;
+      box-shadow: 8px 8px 6px rgb(70, 70, 70);
+
+      border: none;
+      border-radius: 10px;
+
+      cursor: pointer;
+    }
+  }
+
+  .refresh__bar {
+    display: flex;
+    align-items: center;
+    height: 1.8rem;
+    min-width: 7rem;
+    margin: 10px 30px;
+    padding: 10px;
+    color: white;
+    background-color: $myLightBlue;
+    border-radius: $borderRadius;
+    box-shadow: 4px 4px 6px rgb(70, 70, 70);
     font-size: 1rem;
-    margin: 5px;
-    color: gray;
-    background-color: white;
+    font-weight: 600;
     border: none;
+    cursor: pointer;
+
+    .fa-redo-alt {
+      align-items: center;
+      height: 100%;
+      display: flex;
+      margin: 5px;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 20px 30px;
+    }
+  }
+
+  .filters {
+    .filter {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+
+      label {
+        text-align: center;
+        width: 70px;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 10px;
+        color: white;
+        font-weight: 500;
+        background-color: $myLightBlue;
+
+        @media (max-width: 320px) {
+          margin: 3px;
+        }
+      }
+
+      input {
+        width: 5rem;
+        padding: 5px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        box-shadow: 8px 8px 6px rgb(70, 70, 70);
+      }
+    }
   }
 }
+
+// bulding card
 
 .cards__container {
   display: flex;
-  position: absolute;
   overflow-x: scroll;
-  z-index: 2;
   padding: 20px;
-  bottom: 70px;
-  width: 100%;
+
+  width: 90vw;
+  @media (min-width: 1024px) {
+    width: 46vw;
+  }
 
   .card {
     display: flex;
@@ -96,14 +236,17 @@ body {
 
     min-height: 13rem;
     min-width: 11rem;
-    margin: 10px;
+    margin: 1rem;
 
     border-radius: $borderRadius;
     box-shadow: 8px 8px 6px rgb(70, 70, 70);
     background-position: center;
     background-size: cover;
 
-    // background-color: aqua;
+    @media (min-width: 1024px) {
+      min-height: 15rem;
+      min-width: 13rem;
+    }
 
     .card__info {
       height: 40%;
@@ -146,6 +289,12 @@ body {
   }
 }
 
+// for giving border to the last child
+.cards__container::after {
+  content: "";
+  border-left: 20px solid transparent;
+}
+
 .card1 {
   background-image: url("https://media1.s-nbcnews.com/i/newscms/2018_30/1355945/home-exterior-today-180726-tease_3f99937c609d875fece6a12af1594bd9.jpg");
 }
@@ -164,18 +313,6 @@ body {
   background-image: url("https://static.onecms.io/wp-content/uploads/sites/37/2016/02/15230656/white-modern-house-curved-patio-archway-c0a4a3b3.jpg");
 }
 
-// .map__container {
-// position: relative;
-// height: 100vh;
-// width: 100vw;
-// }
-
-#map {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  z-index: 1;
-}
 // footer {
 //   @include flex();
 

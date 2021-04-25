@@ -56,7 +56,7 @@ const skillsAnimation = function (entries) {
 
 const obsOptionsSkills = {
   root: null,
-  threshold: 0.3,
+  threshold: 0.1,
 };
 
 const observer = new IntersectionObserver(skillsAnimation, obsOptionsSkills);

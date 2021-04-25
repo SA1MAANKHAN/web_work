@@ -237,15 +237,18 @@ section {
     }
   }
   .landing__projectsBtn {
+    color: white;
+    font-weight: bolder;
+    margin: 40px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #1a0b50, #6d27be);
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.315);
     align-self: flex-end;
     animation: revealAnimation 0.5s forwards 0s linear;
   }
-  // .landing__scroll {
-  //   align-self: center;
-  //   @include flex();
-  //   width: 50px;
-  //   text-align: center;
-  // }
 }
 
 @keyframes revealAnimation {
@@ -415,6 +418,8 @@ section {
   @include flex();
   flex-direction: column;
 
+  margin: 10rem 0;
+
   .project__heading {
     margin: 80px 0;
   }
@@ -460,7 +465,7 @@ section {
   }
 
   .flip-card:hover .flip-card-inner {
-    animation: transformAnimation 2.4s forwards ease;
+    animation: transformAnimation 2.8s forwards ease;
   }
 
   @keyframes transformAnimation {
@@ -539,18 +544,7 @@ section {
     color: rgb(255, 255, 255);
     padding: 10px;
     background-size: cover;
-    border-radius: 15px;
   }
-
-  // .flip-card1-front {
-  //   background-image: url("https://i.pinimg.com/originals/08/80/99/08809940d40530bfdb457d7a60466657.jpg");
-  // }
-  // .flip-card2-front {
-  //   background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-spring-landscape_23-2148448598.jpg?size=626&ext=jpg");
-  // }
-  // .flip-card3-front {
-  //   background-image: url("https://image.freepik.com/free-vector/scenery-autumn-forest-with-mountain-sky-illustration_105940-204.jpg");
-  // }
 
   .flip-card1-front {
     background-image: url("../images/foodfiesta.jpeg");
@@ -569,7 +563,7 @@ section {
     transform: translateZ(60px);
     background-color: #170d3b9f;
     // border: 5px solid rgb(255, 255, 255);
-    padding: 0.5em 0.5em;
+    padding: 0.2em 0.5em;
     border-radius: 15px;
     // color: #694dce;
   }
@@ -777,6 +771,7 @@ section {
 .contact {
   @include flex();
   flex-direction: column;
+  margin-top: 10rem;
   .contact__messageSent {
     background-color: green;
     padding: 10px 20px;
@@ -787,10 +782,9 @@ section {
   .contact__form {
     @include flex();
     flex-direction: column;
-
+    margin: 10px 0;
     width: 90%;
     max-width: 800px;
-    margin: 30px 0;
     background-color: #241263;
     border-radius: 20px;
 
@@ -803,14 +797,20 @@ section {
       background-color: #1a0b50;
       border: none;
       border-radius: 20px;
-      margin-top: 60px;
+      margin-top: 40px;
+      @media (max-width: 600px) {
+        margin-top: 20px;
+      }
       padding: 20px;
     }
     .contact__messageInput {
       margin-top: 80px;
       padding: 12px 20px;
-      margin: 20px 0;
+      margin: 40px 0;
       height: 200px;
+      @media (max-width: 600px) {
+        margin-top: 20px;
+      }
     }
     .contact__submitBtn {
       padding: 10px 25px;

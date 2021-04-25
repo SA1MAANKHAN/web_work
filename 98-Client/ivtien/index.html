@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script src="./assets/js/script.js"></script>
- <script
+    <script
       defer
       src="https://kit.fontawesome.com/343b140bdc.js"
       crossorigin="anonymous"
@@ -14,73 +14,96 @@
     <title>HappyHomes</title>
   </head>
   <body>
-     <div class="map__container">
-      <div id="map"></div>
-    </div>
-      <div class="search__bar">
-        <input type="text" class="search__input" placeholder="Search Near by" />
-        <button class="search__btn"><i class="fas fa-search"></i></button>
+    <div class="left__side">
+      <div class="map__container">
+        <!-- <h1 class="map__heading">HappyHomes</h1> -->
+        <div id="map"></div>
       </div>
     </div>
-      <div class="refresh__bar">
-        <button class="refresh__btn"><i class="fas fa-redo-alt"></i></button>
-        <p>refresh</p>
-    </div>
-    <div class="cards__container">
-      <div class="card card1" >
-        <div class="card__info">
-          <h3 class="card__houseLocation">Entire House.California</h3>
-          <h3 class="card__houseName">SuperVilla</h3>
-          <div class="card__priceInfo">
-            <span class="card__priceAmount">$100</span>
-            <span class="card__nights">/night</span>
+    <div class="right__side">
+      <div class="search-filters">
+        <div class="search">
+          <div class="search__bar">
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Search Near by"
+            />
+            <button class="search__btn"><i class="fas fa-search"></i></button>
           </div>
+          <div class="search__adjust"><i class="fas fa-sliders-h"></i></div>
         </div>
-      </div>
+        <button class="refresh__bar">
+          <i class="fas fa-redo-alt"></i>refresh
+        </button>
 
-        <div class="card card2" >
-        <div class="card__info" style="background-image: url("");">
-          <h3 class="card__houseLocation">Entire House.California</h3>
-          <h3 class="card__houseName">SuperVilla</h3>
-          <div class="card__priceInfo">
-            <span class="card__priceAmount">$100</span>
-            <span class="card__nights">/night</span>
+        <div class="filters">
+          <div class="filter filter__radius">
+            <label for="">radius</label>
+            <input type="number" placeholder="40 km" />
+          </div>
+          <div class="filter filter__price">
+            <label for="">price</label>
+            <input type="number" placeholder="$10 k" />
           </div>
         </div>
       </div>
+      <div class="cards__container">
+        <div class="card card1">
+          <div class="card__info">
+            <h3 class="card__houseLocation">Entire House.California</h3>
+            <h3 class="card__houseName">SuperVilla</h3>
+            <div class="card__priceInfo">
+              <span class="card__priceAmount">$100</span>
+              <span class="card__nights">/night</span>
+            </div>
+          </div>
+        </div>
 
-        <div class="card card3" >
-        <div class="card__info" style="background-image: url("");">
-          <h3 class="card__houseLocation">Entire House.California</h3>
-          <h3 class="card__houseName">SuperVilla</h3>
-          <div class="card__priceInfo">
-            <span class="card__priceAmount">$100</span>
-            <span class="card__nights">/night</span>
+        <div class="card card2">
+          <div class="card__info">
+            <h3 class="card__houseLocation">Entire House.California</h3>
+            <h3 class="card__houseName">SuperVilla</h3>
+            <div class="card__priceInfo">
+              <span class="card__priceAmount">$100</span>
+              <span class="card__nights">/night</span>
+            </div>
           </div>
         </div>
-      </div>
-        <div class="card card4" >
-        <div class="card__info" style="background-image: url("");">
-          <h3 class="card__houseLocation">Entire House.California</h3>
-          <h3 class="card__houseName">SuperVilla</h3>
-          <div class="card__priceInfo">
-            <span class="card__priceAmount">$100</span>
-            <span class="card__nights">/night</span>
+
+        <div class="card card3">
+          <div class="card__info">
+            <h3 class="card__houseLocation">Entire House.California</h3>
+            <h3 class="card__houseName">SuperVilla</h3>
+            <div class="card__priceInfo">
+              <span class="card__priceAmount">$100</span>
+              <span class="card__nights">/night</span>
+            </div>
           </div>
         </div>
-      </div>
-        <div class="card card5" >
-        <div class="card__info" style="background-image: url("");">
-          <h3 class="card__houseLocation">Entire House.California</h3>
-          <h3 class="card__houseName">SuperVilla</h3>
-          <div class="card__priceInfo">
-            <span class="card__priceAmount">$100</span>
-            <span class="card__nights">/night</span>
+        <div class="card card4">
+          <div class="card__info">
+            <h3 class="card__houseLocation">Entire House.California</h3>
+            <h3 class="card__houseName">SuperVilla</h3>
+            <div class="card__priceInfo">
+              <span class="card__priceAmount">$100</span>
+              <span class="card__nights">/night</span>
+            </div>
+          </div>
+        </div>
+        <div class="card card5">
+          <div class="card__info">
+            <h3 class="card__houseLocation">Entire House.California</h3>
+            <h3 class="card__houseName">SuperVilla</h3>
+            <div class="card__priceInfo">
+              <span class="card__priceAmount">$100</span>
+              <span class="card__nights">/night</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-   
+
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY&callback=initMap&libraries=&v=weekly"
       async

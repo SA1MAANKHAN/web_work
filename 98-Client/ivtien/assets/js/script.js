@@ -73,6 +73,10 @@ function initMap() {
     "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png",
     "<h1>Hey , wassup</h1>"
   );
+
+  addMarker({ lat: 30.9738581, lng: 76.5141432 });
+  addMarker({ lat: 30.9838581, lng: 76.5121432 });
+  addMarker({ lat: 30.9938581, lng: 76.5161432 });
 }
 
 // const marker = new google.maps.Marker({

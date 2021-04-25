@@ -313,6 +313,17 @@ section {
 }
 
 .header .landing__projectsBtn {
+  color: white;
+  font-weight: bolder;
+  margin: 40px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#1a0b50), to(#6d27be));
+  background-image: linear-gradient(to top, #1a0b50, #6d27be);
+  border: none;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.315);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.315);
   -ms-flex-item-align: end;
       align-self: flex-end;
   -webkit-animation: revealAnimation 0.5s forwards 0s linear;
@@ -534,6 +545,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 10rem 0;
 }
 
 .projects .project__heading {
@@ -594,8 +606,8 @@ section {
 }
 
 .projects .flip-card:hover .flip-card-inner {
-  -webkit-animation: transformAnimation 2.4s forwards ease;
-          animation: transformAnimation 2.4s forwards ease;
+  -webkit-animation: transformAnimation 2.8s forwards ease;
+          animation: transformAnimation 2.8s forwards ease;
 }
 
 @-webkit-keyframes transformAnimation {
@@ -746,7 +758,6 @@ section {
   color: white;
   padding: 10px;
   background-size: cover;
-  border-radius: 15px;
 }
 
 .projects .flip-card1-front {
@@ -768,7 +779,7 @@ section {
   -webkit-transform: translateZ(60px);
           transform: translateZ(60px);
   background-color: #170d3b9f;
-  padding: 0.5em 0.5em;
+  padding: 0.2em 0.5em;
   border-radius: 15px;
 }
 
@@ -1132,6 +1143,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 10rem;
 }
 
 .contact .contact__messageSent {
@@ -1157,9 +1169,9 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 10px 0;
   width: 90%;
   max-width: 800px;
-  margin: 30px 0;
   background-color: #241263;
   border-radius: 20px;
 }
@@ -1173,15 +1185,27 @@ section {
   background-color: #1a0b50;
   border: none;
   border-radius: 20px;
-  margin-top: 60px;
+  margin-top: 40px;
   padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .contact .contact__form .contact__input {
+    margin-top: 20px;
+  }
 }
 
 .contact .contact__form .contact__messageInput {
   margin-top: 80px;
   padding: 12px 20px;
-  margin: 20px 0;
+  margin: 40px 0;
   height: 200px;
+}
+
+@media (max-width: 600px) {
+  .contact .contact__form .contact__messageInput {
+    margin-top: 20px;
+  }
 }
 
 .contact .contact__form .contact__submitBtn {
