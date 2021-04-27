@@ -74,20 +74,82 @@ body {
   }
 }
 
-// search bar and refresh bar
+// map markup
+.markup {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 
+  min-height: 13rem;
+  min-width: 11rem;
+
+  border-radius: $borderRadius;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://image.freepik.com/free-vector/suburban-house-illustration_33099-2357.jpg");
+
+  @media (min-width: 1024px) {
+    min-height: 15rem;
+    min-width: 13rem;
+  }
+
+  .card__info {
+    height: 40%;
+    width: 100%;
+    padding: 10px;
+    border-radius: $borderRadius;
+
+    background-color: rgba(255, 255, 255, 0.719);
+    // backdrop-filter: blur(2px);
+
+    .card__houseLocation {
+      font-weight: 400;
+
+      font-size: 0.8rem;
+      width: 90%;
+      height: 50%;
+    }
+
+    .card__houseName {
+      font-weight: 700;
+
+      font-size: 0.9rem;
+    }
+
+    .card__priceInfo {
+      display: flex;
+      align-items: center;
+
+      .card__priceAmount {
+        font-family: "Darker Grotesque", sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .card__nights {
+        font-family: "Darker Grotesque", sans-serif;
+
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// search bar and refresh bar
 .right__side {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
   height: 100%;
+  pointer-events: none;
 
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   @media (min-width: 1024px) {
+    pointer-events: auto;
     position: static;
     flex: 0.5;
     height: 100vh;
@@ -97,7 +159,7 @@ body {
 .search-filters {
   width: 100%;
   height: 40vh;
-
+  // pointer-events: auto;
   @include flex();
   flex-direction: column;
   align-items: flex-start;
@@ -109,6 +171,7 @@ body {
 
   .search {
     @include flex();
+    pointer-events: auto;
     .search__bar {
       @include flex();
 
@@ -162,6 +225,7 @@ body {
     height: 1.8rem;
     min-width: 7rem;
     margin: 10px 30px;
+    pointer-events: auto;
     padding: 10px;
     color: white;
     background-color: $myLightBlue;
@@ -185,6 +249,7 @@ body {
   }
 
   .filters {
+    pointer-events: auto;
     .filter {
       display: flex;
       align-items: center;
@@ -220,6 +285,7 @@ body {
 // bulding card
 
 .cards__container {
+  pointer-events: auto;
   display: flex;
   overflow-x: scroll;
   padding: 20px;
@@ -261,6 +327,9 @@ body {
       .card__houseLocation {
         font-weight: 300;
         font-size: 0.8rem;
+        width: 90%;
+        height: 50%;
+        overflow: hidden;
       }
 
       .card__houseName {
@@ -295,6 +364,10 @@ body {
   border-left: 20px solid transparent;
 }
 
+.card {
+  background-image: url("https://media1.s-nbcnews.com/i/newscms/2018_30/1355945/home-exterior-today-180726-tease_3f99937c609d875fece6a12af1594bd9.jpg");
+}
+
 .card1 {
   background-image: url("https://media1.s-nbcnews.com/i/newscms/2018_30/1355945/home-exterior-today-180726-tease_3f99937c609d875fece6a12af1594bd9.jpg");
 }
@@ -322,3 +395,27 @@ body {
 //   height: 5vh;
 //   width: 100%;
 // }
+
+// description
+
+.hidden {
+  display: none;
+}
+
+.house__description {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: white;
+  // height: 50vh;
+  width: 60vw;
+  z-index: 4;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(20px);
+}

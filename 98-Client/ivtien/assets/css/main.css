@@ -91,12 +91,79 @@ body {
   }
 }
 
+.markup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 13rem;
+  min-width: 11rem;
+  border-radius: 15px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://image.freepik.com/free-vector/suburban-house-illustration_33099-2357.jpg");
+}
+
+@media (min-width: 1024px) {
+  .markup {
+    min-height: 15rem;
+    min-width: 13rem;
+  }
+}
+
+.markup .card__info {
+  height: 40%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.719);
+}
+
+.markup .card__info .card__houseLocation {
+  font-weight: 400;
+  font-size: 0.8rem;
+  width: 90%;
+  height: 50%;
+}
+
+.markup .card__info .card__houseName {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.markup .card__info .card__priceInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.markup .card__info .card__priceInfo .card__priceAmount {
+  font-family: "Darker Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.markup .card__info .card__priceInfo .card__nights {
+  font-family: "Darker Grotesque", sans-serif;
+  font-weight: 400;
+}
+
 .right__side {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
   height: 100%;
+  pointer-events: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,6 +181,7 @@ body {
 
 @media (min-width: 1024px) {
   .right__side {
+    pointer-events: auto;
     position: static;
     -webkit-box-flex: 0.5;
         -ms-flex: 0.5;
@@ -160,6 +228,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  pointer-events: auto;
 }
 
 .search-filters .search .search__bar {
@@ -226,6 +295,7 @@ body {
   height: 1.8rem;
   min-width: 7rem;
   margin: 10px 30px;
+  pointer-events: auto;
   padding: 10px;
   color: white;
   background-color: #3e8ce5;
@@ -253,6 +323,10 @@ body {
   .search-filters .refresh__bar {
     margin: 20px 30px;
   }
+}
+
+.search-filters .filters {
+  pointer-events: auto;
 }
 
 .search-filters .filters .filter {
@@ -293,6 +367,7 @@ body {
 }
 
 .cards__container {
+  pointer-events: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,6 +423,9 @@ body {
 .cards__container .card .card__info .card__houseLocation {
   font-weight: 300;
   font-size: 0.8rem;
+  width: 90%;
+  height: 50%;
+  overflow: hidden;
 }
 
 .cards__container .card .card__info .card__houseName {
@@ -380,6 +458,10 @@ body {
   border-left: 20px solid transparent;
 }
 
+.card {
+  background-image: url("https://media1.s-nbcnews.com/i/newscms/2018_30/1355945/home-exterior-today-180726-tease_3f99937c609d875fece6a12af1594bd9.jpg");
+}
+
 .card1 {
   background-image: url("https://media1.s-nbcnews.com/i/newscms/2018_30/1355945/home-exterior-today-180726-tease_3f99937c609d875fece6a12af1594bd9.jpg");
 }
@@ -398,5 +480,27 @@ body {
 
 .card5 {
   background-image: url("https://static.onecms.io/wp-content/uploads/sites/37/2016/02/15230656/white-modern-house-curved-patio-archway-c0a4a3b3.jpg");
+}
+
+.hidden {
+  display: none;
+}
+
+.house__description {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: white;
+  width: 60vw;
+  z-index: 4;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 /*# sourceMappingURL=main.css.map */

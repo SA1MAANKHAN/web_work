@@ -5,21 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <script src="./assets/js/script.js"></script>
+    <script defer src="./script.js"></script>
+    <script
+      defer
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY&callback=initMap&libraries=&v=weekly"
+    ></script>
     <script
       defer
       src="https://kit.fontawesome.com/343b140bdc.js"
       crossorigin="anonymous"
     ></script>
+
     <title>HappyHomes</title>
   </head>
   <body>
     <div class="left__side">
       <div class="map__container">
-        <!-- <h1 class="map__heading">HappyHomes</h1> -->
         <div id="map"></div>
       </div>
     </div>
+    <div class="house__description hidden">
+      <div class="description__header">       
+        <h1 class="description__close">X</h1>
+      </div>
+      <div class="house__descriptionContent">
+      </div>
+      </div>
+
+        <div class="overlay hidden"></div>
+   <!-- <h1 class="map__heading">HappyHomes</h1> -->
     <div class="right__side">
       <div class="search-filters">
         <div class="search">
@@ -49,7 +64,7 @@
         </div>
       </div>
       <div class="cards__container">
-        <div class="card card1">
+        <!-- <div class="card card1">
           <div class="card__info">
             <h3 class="card__houseLocation">Entire House.California</h3>
             <h3 class="card__houseName">SuperVilla</h3>
@@ -81,7 +96,7 @@
             </div>
           </div>
         </div>
-        <div class="card card4">
+        <div class="card">
           <div class="card__info">
             <h3 class="card__houseLocation">Entire House.California</h3>
             <h3 class="card__houseName">SuperVilla</h3>
@@ -98,15 +113,39 @@
             <div class="card__priceInfo">
               <span class="card__priceAmount">$100</span>
               <span class="card__nights">/night</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
+    <!-- <div class="house__description hidden">
+      <h1>Villa in To Ngoc Van, Hanoi Westlake</h1>
+      <div class="house__priceAndArea">
+        <div class="house__price">$4000</div>
+        <div class="area">250</div>
+      </div>
+      <div class="house__info">
+        <div class="house__beds">4 Beds</div>
+        <div class="house__baths">4 Baths</div>
+        <div class="house__furniture">Partially Furnished</div>
+      </div>
+      <div class="house__style">Style</div>
+
+      <div class="house__details">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem
+        inventore consectetur ex consequatur, iure voluptatibus nisi magnam?
+        Numquam, fugiat aut?Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Iusto, molestias?
+      </div>
+      <div class="house__location">This house was created at some date</div>
+    </div>
+    <div class="overlay"></div> -->
+
+    <script>
+      // const cardsContainer = document.querySelector(".cards__container");
+
+      // console.log(cardsContainer);
+    </script>
   </body>
 </html>
