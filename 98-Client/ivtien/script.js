@@ -1453,10 +1453,24 @@ const realEstateData = [
   },
 ];
 
+const radius = document.querySelector(".radius");
+
+// first filter
+
 // this array contains data filtered on the basis of condition
 // i:e radius or price
+let filteredData = realEstateData.filter(
+  (home) =>
+    calculateDistance(
+      home.GeoX / 1000000,
+      home.GeoY / 1000000,
+      21043318 / 1000000,
+      105841419 / 1000000
+    ) <
+    radius.value * 1000
+);
 
-let filteredData = [];
+console.log(filteredData);
 
 // userLocaion contains the current location of the user
 //  and map will start form that location automatically.
@@ -1477,11 +1491,11 @@ if (navigator.geolocation)
 
 // intilizing map object here
 let map;
-
+let markers = new Array();
 function initMap() {
   // map Options
   const options = {
-    center: { lat: userLocaion.lat, lng: userLocaion.lng },
+    center: { lat: 21.073987, lng: 105.806832 },
     zoom: 8,
     zoomControlOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER,
@@ -1491,71 +1505,78 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), options);
 
   //   take marker dynamically
-  const addMarker = function (coords, markup) {
-    const marker = new google.maps.Marker({
-      position: coords,
-      map: map,
-    });
-
-    // for custom Icon of marker
-
-    // if (iconUrl) {
-    //    marker.setIcon(iconUrl);
-    // }
-
-    if (markup) {
-      const infoWindow = new google.maps.InfoWindow({
-        content: markup,
-      });
-
-      marker.addListener("click", function () {
-        infoWindow.open(map, marker);
-      });
-    }
-  };
-
-  addMarker(
-    { lat: 30.9608149, lng: 76.5181926 },
-    `
- 
-    <div class="markup ">
-    <div class="card__info card">
-    <h3 class="card__houseLocation">Entire House.California</h3>
-    <h3 class="card__houseName">SuperVilla</h3>
-    <div class="card__priceInfo">
-    <span class="card__priceAmount">$100</span>
-    <span class="card__nights">/night</span>
-    </div>
-    </div>
-    </div>
-  
-        
-        `
-  );
 
   // automatically gets marker from the object of data
 
-  realEstateData.forEach((home) => {
+  renderMarkers();
+}
+
+const addMarker = function (coords, markup) {
+  const marker = new google.maps.Marker({
+    position: coords,
+    map: map,
+  });
+
+  markers.push(marker);
+
+  // for custom Icon of marker
+
+  // if (iconUrl) {
+  //    marker.setIcon(iconUrl);
+  // }
+
+  if (markup) {
+    const infoWindow = new google.maps.InfoWindow({
+      content: markup,
+    });
+
+    marker.addListener("click", function () {
+      infoWindow.open(map, marker);
+    });
+  }
+};
+
+// addMarker(
+//   { lat: 30.9608149, lng: 76.5181926 },
+//   `
+
+//     <div class="markup ">
+//     <div class="card__info card">
+//     <h3 class="card__houseLocation">Entire House.California</h3>
+//     <h3 class="card__houseName">SuperVilla</h3>
+//     <div class="card__priceInfo">
+//     <span class="card__priceAmount">$100</span>
+//     <span class="card__nights">/night</span>
+//     </div>
+//     </div>
+//     </div>
+
+//         `
+// );
+
+// renderMarkers();
+function renderMarkers() {
+  filteredData.forEach((home) => {
     addMarker(
       { lat: home.GeoX / 1000000, lng: home.GeoY / 1000000 },
       `
-    <div class="markup" id=${home.RealEstateId}>
-    <div class="card__info">
-    <h3 class="card__houseLocation">${home.Title}</h3>
-    <h3 class="card__houseName">${home.PropertyType}</h3>
-    <div class="card__priceInfo">
-    <span class="card__priceAmount">$${home.Price}</span>
-    <span class="card__nights">/night</span>
-    </div>
-    </div>
-    </div>
-        `
+      <div class="markup" id=${home.RealEstateId}>
+      <div class="card__info">
+      <h3 class="card__houseLocation">${home.Title}</h3>
+      <h3 class="card__houseName">${home.PropertyType}</h3>
+      <div class="card__priceInfo">
+      <span class="card__priceAmount">$${home.Price}</span>
+      <span class="card__nights">/night</span>
+      </div>
+      </div>
+      </div>
+      `
     );
   });
 
   // trying to add listner to marker which doesnt render at the start
   const mapMarkup = document.querySelectorAll(".markup");
-  console.log(mapMarkup);
+  // console.log(mapMarkup);
 
   mapMarkup.forEach((markup) => {
     markup.addEventListener("click", () => {
@@ -1564,30 +1585,39 @@ function initMap() {
   });
 }
 
+function clearMarkers() {
+  markers.forEach((marker) => marker.setMap(null));
+}
+
 // rendering cards automatically
 const cardsContainer = document.querySelector(".cards__container");
 const lastCard = document.querySelector(".card5");
 
-realEstateData.forEach((home) => {
-  const div = document.createElement("div");
+const renderCards = function () {
+  cardsContainer.innerHTML = "";
 
-  div.className = "card";
-  div.id = `${home.RealEstateId}`;
+  filteredData.forEach((home) => {
+    const div = document.createElement("div");
 
-  div.innerHTML = `
-   <div class="card__info">
-    <h3 class="card__houseLocation">${home.Title}</h3>
-    <h3 class="card__houseName">${home.PropertyType}</h3>
-    <div class="card__priceInfo">
+    div.className = "card";
+    div.id = `${home.RealEstateId}`;
+
+    div.innerHTML = `
+  <div class="card__info">
+  <h3 class="card__houseLocation">${home.Title}</h3>
+  <h3 class="card__houseName">${home.PropertyType}</h3>
+  <div class="card__priceInfo">
     <span class="card__priceAmount">$${home.Price}</span>
     <span class="card__nights">/night</span>
     </div>
     </div>
   `;
 
-  cardsContainer.appendChild(div);
-});
+    cardsContainer.appendChild(div);
+  });
+};
 
+renderCards();
 // get address from lat lng  ------ billing required
 
 // const getAddressFromLatLng = async function (coords) {
@@ -1604,19 +1634,21 @@ const houseDescription = document.querySelector(".house__description");
 const houseDescriptionContent = document.querySelector(
   ".house__descriptionContent"
 );
-const overlay = document.querySelector(".overlay");
-const btnCloseDescription = document.querySelector(".closeDescription");
-const card = document.querySelectorAll(".card");
-const closeBtn = document.querySelector(".description__close");
 
-card.forEach((card) => {
-  const houseId = card.id;
+function addDescription() {
+  const card = document.querySelectorAll(".card");
+  const overlay = document.querySelector(".overlay");
+  const btnCloseDescription = document.querySelector(".closeDescription");
+  const closeBtn = document.querySelector(".description__close");
 
-  card.addEventListener("click", () => {
-    houseDescriptionContent.innerHTML = "";
-    houseDescriptionContent.innerHTML = `   
+  card.forEach((card) => {
+    const houseId = card.id;
 
-        <h1>${"vsv"}</h1>
+    card.addEventListener("click", () => {
+      houseDescriptionContent.innerHTML = "";
+      houseDescriptionContent.innerHTML = `   
+
+    <h1>${"vsv"}</h1>
       <div class="house__priceAndArea">
         <div class="house__price">$4000</div>
         <div class="area">250</div>
@@ -1629,29 +1661,32 @@ card.forEach((card) => {
       <div class="house__style">Style</div>
 
       <div class="house__details">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem
-        inventore consectetur ex consequatur, iure voluptatibus nisi magnam?
-        Numquam, fugiat aut?Lorem ipsum dolor sit amet consectetur adipisicing
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem
+      inventore consectetur ex consequatur, iure voluptatibus nisi magnam?
+      Numquam, fugiat aut?Lorem ipsum dolor sit amet consectetur adipisicing
         elit. Iusto, molestias?
-      </div>
-      <div class="house__location">This house was created at some date</div>`;
+        </div>
+        <div class="house__location">This house was created at some date</div>`;
 
-    houseDescription.classList.toggle("hidden");
-    overlay.classList.toggle("hidden");
+      houseDescription.classList.toggle("hidden");
+      overlay.classList.toggle("hidden");
+    });
   });
-});
 
-overlay.addEventListener("click", () => {
-  overlay.classList.toggle("hidden");
+  overlay.addEventListener("click", () => {
+    overlay.classList.add("hidden");
 
-  houseDescription.classList.toggle("hidden");
-});
+    houseDescription.classList.add("hidden");
+  });
 
-closeBtn.addEventListener("click", () => {
-  overlay.classList.toggle("hidden");
+  closeBtn.addEventListener("click", () => {
+    overlay.classList.add("hidden");
 
-  houseDescription.classList.toggle("hidden");
-});
+    houseDescription.classList.add("hidden");
+  });
+}
+
+addDescription();
 
 // EVENT LISTNTER FOR MARKUP
 // const mapMarkup = document.querySelectorAll(".markup");
@@ -1668,15 +1703,32 @@ refreshBtn.addEventListener("click", () => {
   console.log(map.getCenter().lat());
   console.log(map.getCenter().lng());
 
-  calculateDistance(userLocaion.lat, userLocaion.lng);
+  console.log(radius.value);
+  // multiply thousand for km
+  filterData(radius.value * 1000);
+
+  // renderCards agains
+  renderCards();
+
+  // clear markers
+  clearMarkers();
+  renderMarkers();
+
+  // add description to newly renders cards
+  addDescription();
+
+  const distance = calculateDistance(userLocaion.lat, userLocaion.lng);
 });
 
 // this is a function that calculates distance btw two pair of lat lng coordinates points
-const calculateDistance = function (lat1, lon1) {
+function calculateDistance(
+  lat1,
+  lon1,
+  lat2 = map.getCenter().lat(),
+  lon2 = map.getCenter().lng()
+) {
   // loc contains lat and long
   // calcualate lat and long values based on the postion of the map using map.getCenter(); and radius as defined by the user
-  const lat2 = map.getCenter().lat();
-  const lon2 = map.getCenter().lng();
 
   const R = 6371e3; // metres
   const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
@@ -1691,5 +1743,53 @@ const calculateDistance = function (lat1, lon1) {
 
   const d = R * c; // in metres
 
+  return d;
+
   console.log(`this distance btw points is ${d} meters`);
+}
+
+const filterData = function (radius) {
+  filteredData = realEstateData.filter(
+    (home) =>
+      calculateDistance(home.GeoX / 1000000, home.GeoY / 1000000) < radius
+  );
+
+  console.log(filteredData);
 };
+
+// search Functionality
+
+const searchBtn = document.querySelector(".search__btn");
+const searchInput = document.querySelector(".search__input");
+
+searchBtn.addEventListener("click", () => {
+  const querry = formatSearchQuerry(searchInput.value);
+  // clear input
+  searchInput.value = "";
+
+  console.log(querry);
+
+  getCoords(querry);
+});
+
+function formatSearchQuerry(querry) {
+  return querry.replaceAll(" ", "+");
+}
+
+async function getCoords(querry) {
+  const data = await fetch(
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${querry}&key=AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY`
+  );
+
+  const res = await data.json();
+
+  console.log(res);
+}
+
+// hide filters
+
+const adjustFilters = document.querySelector(".search__adjust");
+const filterOptions = document.querySelector(".filters");
+adjustFilters.addEventListener("click", () => {
+  filterOptions.classList.toggle("hidden");
+});
