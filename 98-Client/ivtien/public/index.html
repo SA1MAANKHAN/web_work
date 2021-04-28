@@ -16,6 +16,15 @@
       src="https://kit.fontawesome.com/343b140bdc.js"
       crossorigin="anonymous"
     ></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.4.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.4.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 
     <title>HappyHomes</title>
   </head>
@@ -27,7 +36,7 @@
     </div>
     <div class="house__description hidden">
       <div class="description__header">       
-        <h1 class="description__close">X</h1>
+        <h1 class="description__close">x</h1>
       </div>
       <div class="house__descriptionContent">
       </div>
@@ -55,7 +64,7 @@
         <div class="filters hidden">
           <div class="filter filter__radius">
             <label for="">radius</label>
-            <input class="radius type="number" value=10 placeholder="40 km" />
+            <input class="radius type="number" value=2 placeholder="40 km" />
           </div>
           <div class="filter filter__price">
             <label for="">price</label>

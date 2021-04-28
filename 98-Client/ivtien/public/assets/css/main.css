@@ -41,6 +41,10 @@ body {
   }
 }
 
+.fas {
+  margin: 10px;
+}
+
 .left__side {
   height: 100vh;
   width: 100%;
@@ -393,21 +397,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 13rem;
-  min-width: 11rem;
+  min-height: 15rem;
+  min-width: 13rem;
   margin: 1rem;
   border-radius: 15px;
   -webkit-box-shadow: 8px 8px 6px #464646;
           box-shadow: 8px 8px 6px #464646;
   background-position: center;
   background-size: cover;
-}
-
-@media (min-width: 1024px) {
-  .cards__container .card {
-    min-height: 15rem;
-    min-width: 13rem;
-  }
 }
 
 .cards__container .card .card__info {
@@ -488,11 +485,143 @@ body {
 
 .house__description {
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 25%;
   background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 8px 8px 6px rgba(70, 70, 70, 0.6);
+          box-shadow: 8px 8px 6px rgba(70, 70, 70, 0.6);
   width: 60vw;
   z-index: 4;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .house__description {
+    height: 70vh;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 400px) {
+  .house__description {
+    top: 5%;
+    left: 5%;
+    width: 90vw;
+    overflow: scroll;
+  }
+}
+
+.house__description .description__header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.house__description .description__header .description__close {
+  padding: 0 10px;
+  color: #004ba1;
+}
+
+.house__description .house__descriptionContent h1 {
+  color: #3e8ce5;
+  margin: 0 10px;
+}
+
+.house__description .house__descriptionContent .house__priceAndArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.house__description .house__descriptionContent .house__priceAndArea .house__price {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__priceAndArea .house__area {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.house__description .house__descriptionContent .house__info .house__beds {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__info .house__baths {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__info .house__furniture {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__styleAndDate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.house__description .house__descriptionContent .house__styleAndDate .house__style {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__styleAndDate .house__date {
+  width: 30%;
+  margin: 10px;
+}
+
+.house__description .house__descriptionContent .house__details {
+  margin: 10px;
+  height: 300px;
+  overflow: scroll;
 }
 
 .overlay {
@@ -502,5 +631,24 @@ body {
   width: 100vw;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+}
+
+@media (max-width: 1024px) {
+  .overlay {
+    display: none;
+  }
+}
+
+button.custom-map-control-button {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  margin: 10px;
+}
+
+button.custom-map-control-button .current {
+  font-size: 2rem;
+  color: #e74747;
 }
 /*# sourceMappingURL=main.css.map */
