@@ -23118,7 +23118,7 @@ const radius = document.querySelector(".radius");
 //   });
 // }
 
-functionhe basis of condition
+// functionhe basis of condition
 // i:e radius or price
 let filteredData = realEstateData.filter(
   (home) =>
