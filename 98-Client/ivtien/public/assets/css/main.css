@@ -249,18 +249,32 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 3.5rem;
-  min-width: 15rem;
+  min-width: 22rem;
   max-width: 35rem;
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: white;
   border-radius: 45px;
   -webkit-box-shadow: 8px 8px 6px #464646;
           box-shadow: 8px 8px 6px #464646;
 }
 
-.search-filters .search .search__bar .search__input {
+.search-filters .search .search__bar label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
+}
+
+.search-filters .search .search__bar .search__inputMin,
+.search-filters .search .search__bar .search__inputMax {
   height: 100%;
-  width: 80%;
+  width: 25%;
   border-radius: 15px 0 0 15px;
   padding: 5px;
   outline: none;
@@ -277,9 +291,9 @@ body {
 }
 
 .search-filters .search .search__adjust {
-  font-size: 1.4rem;
-  margin: 0 30px;
-  padding: 10px;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  padding: 3px;
   color: #3e8ce5;
   background-color: white;
   -webkit-box-shadow: 8px 8px 6px #464646;
@@ -387,6 +401,7 @@ body {
 }
 
 .cards__container .card {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,6 +420,27 @@ body {
           box-shadow: 8px 8px 6px #464646;
   background-position: center;
   background-size: cover;
+}
+
+.cards__container .card .card__houseLocationMarker {
+  position: absolute;
+  font-size: 2rem;
+  color: #eb3131;
+  top: 10px;
+  right: 15px;
+  width: 10%;
+}
+
+.cards__container .card .card__houseDescriptionIcon {
+  position: absolute;
+  font-size: 1.8rem;
+  color: #3292ff;
+  top: 10px;
+  left: 15px;
+  width: 50px;
+  padding: 1px;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
 }
 
 .cards__container .card .card__info {

@@ -23066,7 +23066,7 @@ const radius = document.querySelector(".radius");
 
 // first filter
 
-// this array contains data filtered on tfunction addMarkerDescription() {
+// this array contains data filtered on function addMarkerDescription() {
 //   // trying to add listner to marker which doesnt render at the start
 //   const mapMarkups = document.querySelectorAll(".markup");
 //   // console.log(mapMarkup);
@@ -23120,6 +23120,9 @@ const radius = document.querySelector(".radius");
 
 // functionhe basis of condition
 // i:e radius or price
+
+// ivtien's key  AIzaSyCVcPQq0K8StMwdSJzN1S3f4XJdq_9SBWg
+//  my key       AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY
 let filteredData = realEstateData.filter(
   (home) =>
     calculateDistance(
@@ -23200,6 +23203,7 @@ function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   });
+  renderMarkers();
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -23212,8 +23216,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
   //   take marker dynamically
   // automatically gets marker from the object of data
-
-  renderMarkers();
 }
 
 const addMarker = function (coords, markup) {
@@ -23354,6 +23356,12 @@ const renderCards = function () {
     div.id = `${home.RealEstateId}`;
 
     div.innerHTML = `
+  <div class="card__houseLocationMarker" id=${
+    home.RealEstateId * 10
+  }><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+  <div class="card__houseDescriptionIcon" id=${
+    home.RealEstateId * 100
+  }><i class="fas fa-align-left"></i></div>
   <div class="card__info">
   <h3 class="card__houseLocation">${home.Title}</h3>
   <h3 class="card__houseName">${home.PropertyType}</h3>
@@ -23387,17 +23395,23 @@ const houseDescriptionContent = document.querySelector(
 );
 
 function addDescription() {
-  const card = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".caard");
   const overlay = document.querySelector(".overlay");
   const btnCloseDescription = document.querySelector(".closeDescription");
   const closeBtn = document.querySelector(".description__close");
+  const cardHouseLocationMarkers = document.querySelectorAll(
+    ".card__houseLocationMarker"
+  );
+  const cardHouseDescriptionMarkers = document.querySelectorAll(
+    ".card__houseDescriptionIcon"
+  );
 
-  card.forEach((card) => {
-    const houseId = card.id;
+  cardHouseLocationMarkers.forEach((marker) => {
+    const cardId = marker.id / 10;
 
-    card.addEventListener("click", () => {
+    marker.addEventListener("click", () => {
       // getting details of particular house
-      const house = filteredData.filter((h) => h.RealEstateId == houseId);
+      const house = filteredData.filter((h) => h.RealEstateId == cardId);
 
       const pos = {
         lat: house[0].GeoX / 1000000,
@@ -23409,6 +23423,26 @@ function addDescription() {
       infoWindow.setContent("Here is this house.");
       infoWindow.open(map);
       map.setCenter(pos);
+    });
+  });
+
+  cardHouseDescriptionMarkers.forEach((card) => {
+    const houseId = card.id / 100;
+
+    card.addEventListener("click", () => {
+      // getting details of particular house
+      const house = filteredData.filter((h) => h.RealEstateId == houseId);
+
+      // const pos = {
+      //   lat: house[0].GeoX / 1000000,
+      //   lng: house[0].GeoY / 1000000,
+      // };
+
+      // // take map center to card/house location
+      // infoWindow.setPosition(pos);
+      // infoWindow.setContent("Here is this house.");
+      // infoWindow.open(map);
+      // map.setCenter(pos);
 
       houseDescriptionContent.innerHTML = "";
       houseDescriptionContent.innerHTML = `   
@@ -23480,7 +23514,7 @@ const refreshBtn = document.querySelector(".refresh__bar");
 
 refreshBtn.addEventListener("click", () => {
   // multiply thousand for km
-  filterData(radius.value * 1000);
+  filterData(radius.value * 1000, searchInputMin.value, searchInputMax.value);
 
   // renderCards agains
   renderCards();
@@ -23490,8 +23524,6 @@ refreshBtn.addEventListener("click", () => {
 
   // add description to newly renders cards
   addDescription();
-
-  const distance = calculateDistance(userLocaion.lat, userLocaion.lng);
 });
 
 // this is a function that calculates distance btw two pair of lat lng coordinates points
@@ -23522,29 +23554,30 @@ function calculateDistance(
   console.log(`this distance btw points is ${d} meters`);
 }
 
-const filterData = function (radius) {
+const filterData = function (radius, min = 50, max = 500) {
   filteredData = realEstateData.filter(
     (home) =>
-      calculateDistance(home.GeoX / 1000000, home.GeoY / 1000000) < radius
+      (calculateDistance(home.GeoX / 1000000, home.GeoY / 1000000) < radius) &
+      ((home.PropertyArea > min) & (home.PropertyArea < max))
   );
 
-  console.log(filteredData);
+  // console.log(filteredData);
 };
 
 // search Functionality
 
-const searchBtn = document.querySelector(".search__btn");
-const searchInput = document.querySelector(".search__input");
+// const searchBtn = document.querySelector(".search__btn");
+// const searchInput = document.querySelector(".search__input");
 
-searchBtn.addEventListener("click", () => {
-  const querry = formatSearchQuerry(searchInput.value);
-  // clear input
-  searchInput.value = "";
+// searchBtn.addEventListener("click", () => {
+//   const querry = formatSearchQuerry(searchInput.value);
+//   // clear input
+//   searchInput.value = "";
 
-  console.log(querry);
+//   console.log(querry);
 
-  getCoords(querry);
-});
+//   getCoords(querry);
+// });
 
 function formatSearchQuerry(querry) {
   return querry.replaceAll(" ", "+");
@@ -23552,7 +23585,7 @@ function formatSearchQuerry(querry) {
 
 async function getCoords(querry) {
   const data = await fetch(
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${querry}&key=AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY`
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${querry}&key=AIzaSyCVcPQq0K8StMwdSJzN1S3f4XJdq_9SBWg`
   );
 
   const res = await data.json();
@@ -23566,4 +23599,29 @@ const adjustFilters = document.querySelector(".search__adjust");
 const filterOptions = document.querySelector(".filters");
 adjustFilters.addEventListener("click", () => {
   filterOptions.classList.toggle("hidden");
+});
+
+// Filter by property area
+
+const searchBtn = document.querySelector(".search__btn");
+
+const searchInputMin = document.querySelector(".search__inputMin");
+const searchInputMax = document.querySelector(".search__inputMax");
+
+// console.log(searchInputMax);
+// console.log(searchInputMin);
+
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  filterData(radius.value * 1000, searchInputMin.value, searchInputMax.value);
+
+  // renderCards agains
+  renderCards();
+
+  // clear markers
+  clearMarkers();
+
+  // add description to newly renders cards
+  addDescription();
 });

@@ -181,18 +181,24 @@ body {
 
       justify-content: space-between;
       height: 3.5rem;
-      min-width: 15rem;
+      min-width: 22rem;
       max-width: 35rem;
 
-      padding: 10px 20px;
+      padding: 5px 10px;
 
       background-color: white;
       border-radius: $borderRadius * 3;
       box-shadow: 8px 8px 6px rgb(70, 70, 70);
 
-      .search__input {
+      label {
+        @include flex();
+        width: 25%;
+      }
+
+      .search__inputMin,
+      .search__inputMax {
         height: 100%;
-        width: 80%;
+        width: 25%;
 
         border-radius: $borderRadius 0 0 $borderRadius;
         padding: 5px;
@@ -209,9 +215,9 @@ body {
       }
     }
     .search__adjust {
-      font-size: 1.4rem;
-      margin: 0 30px;
-      padding: 10px;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      padding: 3px;
       color: $myLightBlue;
       background-color: white;
       box-shadow: 8px 8px 6px rgb(70, 70, 70);
@@ -300,6 +306,7 @@ body {
   }
 
   .card {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -316,6 +323,27 @@ body {
     @media (min-width: 1024px) {
       // min-height: 15rem;
       // min-width: 13rem;
+    }
+
+    .card__houseLocationMarker {
+      position: absolute;
+      font-size: 2rem;
+      color: rgb(235, 49, 49);
+      top: 10px;
+      right: 15px;
+      width: 10%;
+    }
+
+    .card__houseDescriptionIcon {
+      position: absolute;
+      font-size: 1.8rem;
+      color: #3292ff;
+      top: 10px;
+      left: 15px;
+      width: 50px;
+      padding: 1px;
+      background-color: rgba(255, 255, 255, 0.719);
+      border-radius: 10px;
     }
 
     .card__info {

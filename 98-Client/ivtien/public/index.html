@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script defer src="./script.js"></script>
     <script
     
     async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpPRKstmGFm8VJuzWN0tvbKIw2vTT8GPY&callback=initMap&libraries=&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVcPQq0K8StMwdSJzN1S3f4XJdq_9SBWg&callback=initMap&libraries=&v=weekly"
     ></script>
     <script
       defer
@@ -48,10 +48,19 @@
       <div class="search-filters">
         <div class="search">
           <div class="search__bar">
+            <label for="">Min Area</label>
             <input
               type="text"
-              class="search__input"
-              placeholder="Search Near by"
+              value=0
+              class="search__inputMin"
+              placeholder="Min House Area"
+            />
+              <label for="">Max Area</label>
+             <input
+              type="text"
+              class="search__inputMax"
+              value=600
+              placeholder="Max House Area"
             />
             <button class="search__btn"><i class="fas fa-search"></i></button>
           </div>
