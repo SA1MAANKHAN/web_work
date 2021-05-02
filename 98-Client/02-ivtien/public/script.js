@@ -23158,7 +23158,7 @@ function initMap() {
   // map Options
   const options = {
     center: { lat: 21.073987, lng: 105.806832 },
-    zoom: 8,
+    zoom: 14,
     zoomControlOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER,
     },
