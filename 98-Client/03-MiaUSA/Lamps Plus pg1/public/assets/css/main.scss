@@ -194,12 +194,24 @@ body {
     margin: 25px;
   }
   .work__subHeading {
+    @include flex(column);
     margin: 0 0 65px 0;
     font-weight: 300;
     @media (max-width: 600px) {
       margin: 0 0 25px 0;
     }
+    &:after {
+      align-self: center;
+      justify-self: center;
+      display: block;
+
+      content: "";
+      margin-top: 1rem;
+      width: 8rem;
+      border-bottom: 2px solid rgb(110, 110, 110);
+    }
   }
+
   .work__details {
     @include flex(row);
     @media (max-width: 1080px) {
