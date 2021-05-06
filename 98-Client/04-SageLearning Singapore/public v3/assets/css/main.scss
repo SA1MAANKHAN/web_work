@@ -31,10 +31,11 @@ body {
   grid-template-rows: 1fr 1fr;
 
   .img__container {
-    height: 10rem;
-    width: 10rem;
+    // height: 10rem;
+    // width: 10rem;
 
     .img {
+      border: 2px dotted hotpink;
       // transition: transform 0.2s ease;
     }
     &:hover {

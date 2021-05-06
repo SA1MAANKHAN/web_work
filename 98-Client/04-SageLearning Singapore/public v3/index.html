@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <script defer src="./assets/js/script.js"></script>
+    <!-- <script defer src="./assets/js/script.js"></script> -->
     <script
       defer
       src="https://kit.fontawesome.com/343b140bdc.js"
@@ -53,7 +53,7 @@
       </div>
       <div class="completed" style="display: none">
         <h1>You have got it!</h1>
-        <p>Congrtulations you have completer the task!</p>
+        <p>Congratulations you have completed the task!</p>
         <img src="./assets/images/Completed.png" alt="" />
       </div>
     </div>
@@ -138,7 +138,6 @@
             img3.classList.toggle("hidden");
             img4.classList.toggle("hidden");
             completed.style.display = "block";
-            completed.style.transform = "scale(1.2)";
 
             // stops functionality
             gameOn = false;
@@ -156,27 +155,27 @@
         var y = e.pageY;
 
         if (dragValue) {
-          dragValue.style.left = x - dragValue.width / 2 + "px";
-          dragValue.style.top = y - dragValue.height / 2 + "px";
+          dragValue.style.left = x - e.clientX / 2 + "px";
+          dragValue.style.top = y - e.clientY / 2 + "px";
 
           if (dragValue.id[3] == 1) {
-            img1Coords.left = x - dragValue.width / 2;
-            img1Coords.top = y - dragValue.height / 2;
+            img1Coords.left = x - e.clientX / 2;
+            img1Coords.top = y - e.clientY / 2;
           }
 
           if (dragValue.id[3] == 2) {
-            img2Coords.left = x - dragValue.width / 2;
-            img2Coords.top = y - dragValue.height / 2;
+            img2Coords.left = x - e.clientX / 2;
+            img2Coords.top = y - e.clientY / 2;
           }
 
           if (dragValue.id[3] == 3) {
-            img3Coords.left = x - dragValue.width / 2;
-            img3Coords.top = y - dragValue.height / 2;
+            img3Coords.left = x - e.clientX / 2;
+            img3Coords.top = y - e.clientY / 2;
           }
 
           if (dragValue.id[3] == 4) {
-            img4Coords.left = x - dragValue.width / 2;
-            img4Coords.top = y - dragValue.height / 2;
+            img4Coords.left = x - e.clientX / 2;
+            img4Coords.top = y - e.clientY / 2;
           }
         }
 

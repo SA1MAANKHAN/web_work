@@ -38,9 +38,8 @@ body {
       grid-template-rows: 1fr 1fr;
 }
 
-.board .img__container {
-  height: 10rem;
-  width: 10rem;
+.board .img__container .img {
+  border: 2px dotted hotpink;
 }
 
 .board .completed {
