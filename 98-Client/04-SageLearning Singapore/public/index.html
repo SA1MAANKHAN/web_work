@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script defer src="./assets/js/script.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/343b140bdc.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Puzzle</title>
+  </head>
+  <body>
+    <div class="board">
+      <div class="img__container" id="img__contiainer1" draggable="true">
+        <img
+          class="img"
+          id="img1"
+          src="./assets/images/Pic2.png"
+          alt=""
+          onload="move('img1')"
+        />
+      </div>
+      <div class="img__container" id="img__contiainer2" draggable="true">
+        <img
+          class="img"
+          id="img2"
+          src="./assets/images/Pic1.png"
+          alt=""
+          onload="move('img2')"
+        />
+      </div>
+      <div class="img__container" id="img__contiainer3" draggable="true">
+        <img
+          class="img"
+          id="img3"
+          src="./assets/images/Pic3.png"
+          alt=""
+          onload="move('img3')"
+        />
+      </div>
+      <div class="img__container" id="img__contiainer4" draggable="true">
+        <img
+          class="img"
+          id="img4"
+          src="./assets/images/Pic4.png"
+          alt=""
+          onload="move('img4')"
+        />
+      </div>
+      <div class="completed" style="display: none">
+        <h1>You have got it!</h1>
+        <p>Congrtulations you have completer the task!</p>
+        <img src="./assets/images/Completed.png" alt="" />
+      </div>
+    </div>
+
+    <script>
+      let gameOn = true;
+
+      const img1 = document.getElementById("img1");
+      const img2 = document.getElementById("img2");
+      const img3 = document.getElementById("img3");
+      const img4 = document.getElementById("img4");
+      const completed = document.querySelector(".completed");
+
+      let img1Coords = {};
+      let img2Coords = {};
+      let img3Coords = {};
+      let img4Coords = {};
+
+      var dragValue;
+
+      function getDistance(xA, yA, xB, yB) {
+        var xDiff = xA - xB;
+        var yDiff = yA - yB;
+
+        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+      }
+
+      function isMapComplete(img1, img2, img3, img4) {
+        const d1 = getDistance(img1.left, img1.top, img2.left, img2.top);
+
+        const d2 = getDistance(img3.left, img3.top, img2.left, img2.top);
+
+        const d3 = getDistance(img3.left, img3.top, img4.left, img4.top);
+
+        const d4 = getDistance(img1.left, img1.top, img4.left, img4.top);
+
+        // console.log(d1);
+        // console.log(d2);
+        // console.log(d3);
+        // console.log(d4);
+
+        if (
+          (img1.left < img3.left) &
+          (img1.left < img2.left) &
+          (img1.top < img3.top) &
+          (img1.top < img4.top) &
+          (img4.left < img3.left) &
+          (img4.left < img2.left) &
+          (img4.top > img2.top) &
+          (img3.top > img2.top + 60) &
+          ((103 < d1) & (d1 < 122)) &
+          ((242 < d2) & (d2 < 258)) &
+          ((192 < d3) & (d3 < 208)) &
+          ((182 < d4) & (d4 < 201))
+        ) {
+          return true;
+        }
+
+        return false;
+      }
+
+      function move(id) {
+        if (gameOn) {
+          var element = document.getElementById(id);
+
+          element.style.position = "absolute";
+          element.onmousedown = function () {
+            dragValue = element;
+            console.log(dragValue, id);
+          };
+        }
+      }
+
+      document.onmouseup = function (e) {
+        if (gameOn) {
+          e.preventDefault();
+          dragValue = null;
+
+          if (isMapComplete(img1Coords, img2Coords, img3Coords, img4Coords)) {
+            img1.classList.toggle("hidden");
+            img2.classList.toggle("hidden");
+            img3.classList.toggle("hidden");
+            img4.classList.toggle("hidden");
+            completed.style.display = "block";
+            completed.style.transform = "scale(1.2)";
+
+            // stops functionality
+            gameOn = false;
+          }
+
+          console.log(img1Coords);
+          console.log(img2Coords);
+          console.log(img3Coords);
+          console.log(img4Coords);
+        }
+      };
+      document.onmousemove = function (e) {
+        e.preventDefault();
+        var x = e.pageX;
+        var y = e.pageY;
+
+        if (dragValue) {
+          dragValue.style.left = x - dragValue.width / 2 + "px";
+          dragValue.style.top = y - dragValue.height / 2 + "px";
+
+          if (dragValue.id[3] == 1) {
+            img1Coords.left = x - dragValue.width / 2;
+            img1Coords.top = y - dragValue.height / 2;
+          }
+
+          if (dragValue.id[3] == 2) {
+            img2Coords.left = x - dragValue.width / 2;
+            img2Coords.top = y - dragValue.height / 2;
+          }
+
+          if (dragValue.id[3] == 3) {
+            img3Coords.left = x - dragValue.width / 2;
+            img3Coords.top = y - dragValue.height / 2;
+          }
+
+          if (dragValue.id[3] == 4) {
+            img4Coords.left = x - dragValue.width / 2;
+            img4Coords.top = y - dragValue.height / 2;
+          }
+        }
+
+        // console.log(
+        //   img1.style.left,
+        //   img1.style.top,
+        //   img2.style.left,
+        //   img2.style.top,
+        //   img3.style.left,
+        //   img3.style.top,
+        //   img4.style.left,
+        //   img4.style.top
+        // );
+      };
+    </script>
+  </body>
+</html>

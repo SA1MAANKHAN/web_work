@@ -4,14 +4,15 @@
 
   box-sizing: border-box;
 }
-@mixin flex {
+@mixin flex($direction) {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: $direction;
 }
 
 footer {
-  @include flex();
+  @include flex(row);
 
   background-color: black;
   color: white;

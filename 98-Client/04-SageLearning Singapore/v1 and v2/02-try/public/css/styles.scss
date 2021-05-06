@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+$mainColor: rgb(207, 136, 54);
+
+@mixin flex($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+body {
+  font-family: "Segoe UI", Calibri, Arial;
+  margin: 0;
+}
+h2 {
+  font-weight: normal;
+  text-align: center;
+}
+h3 {
+  font-weight: normal;
+  margin: 3px 0px;
+  text-align: center;
+}
+
+html {
+  height: 100vh;
+}
+
+#collage {
+  height: 100vh;
+
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: $mainColor;
+  }
+}
+
+#playPanel {
+  padding: 5px;
+  display: none;
+  h3 {
+    text-align: center;
+
+    font-size: 3rem;
+    font-weight: 600;
+    color: $mainColor;
+  }
+}
+
+.aDiv {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  vertical-align: top;
+  padding: 2rem;
+}
+
+#actualImageBox {
+  color: $mainColor;
+  #stepBox {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  #timeBox {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
+
+.subText {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 10px;
+}
+
+#levelPanel {
+  display: none;
+  // font-size: 1.4rem;
+  // font-weight: 600;
+  // @include flex(row);
+  // justify-content: space-between;
+  // input {
+  //   @include flex(row);
+  //   // margin
+  // }
+}
+
+#gameOver {
+  display: none;
+}
+
+.aDiv2 {
+  @include flex(column);
+  background-color: #274736;
+  padding: 5px 10px 20px 10px;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  button {
+    border-radius: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: $mainColor;
+    color: wheat;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      background-color: rgba(247, 185, 53, 0.979);
+    }
+  }
+}
+
+// puzzle styles
+
+#collage hr {
+  border: none;
+  border-top: 2px solid #f5f2f2;
+  height: 1px;
+}
+
+#collage #playPanel {
+  background-color: #cad7e6;
+  padding: 10px 0px;
+  margin: 10px auto;
+  max-width: 800px;
+  width: 95%;
+}
+
+#collage #actualImageBox {
+  display: inline-block;
+  font-size: 0.8em;
+  margin: 10px 10px;
+  vertical-align: top;
+  width: 280px;
+}
+
+#collage #stepBox,
+#collage #timeBox {
+  display: inline-block;
+  width: 48%;
+}
+
+#collage #stepBox div {
+  display: inline-block;
+  padding: 1px 4px;
+  margin: 0px auto;
+  max-width: 800px;
+}
+
+#collage img#actualImage {
+  border: none;
+  height: 280px;
+  width: 280px;
+}
+
+#collage #sortable {
+  border: 2px solid rgb(255, 255, 255);
+  list-style-type: none;
+  display: inline-block;
+  margin: 10px;
+  padding: 0;
+  width: 400px;
+}
+
+#collage #sortable li {
+  background-size: 400% 400%;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+// #collage button {
+//   background-color: #f5f2f2;
+//   border: 1px solid #cce;
+//   display: inline;
+//   font-size: 14px;
+//   height: auto;
+//   width: auto;
+//   padding: 3px 8px;
+// }
