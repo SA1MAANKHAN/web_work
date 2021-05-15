@@ -1,0 +1,51 @@
+
+  header{
+height: 150px;
+flex-flow: column;
+}
+nav{
+  /* flex-flow: column; */
+}
+div.nav{
+  margin:8px 3px;
+}
+section.header{
+  height: 240px;
+  padding: 20px;
+}
+div.para{
+  flex-flow: column;
+  width: 100%;
+}
+para{
+  width: 90%;
+}
+section.contact{
+  flex-flow: column;
+}
+div.contact{
+  height: 150px;
+  background-position: bottom;
+}
+div.contact_num{
+  width: 100%;
+}
+section.about{
+  flex-flow: column;
+}
+div.about{
+  height: 150px;
+  background-position: center;
+}
+div.about_para{
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+footer.Copyright{
+  padding: 20px;
+  width: 100%;
+  font-size: .8rem;
+}

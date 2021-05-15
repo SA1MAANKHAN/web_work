@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="./index.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="main">
+      <div class="section one">Section One</div>
+      <div class="section two">Section Two</div>
+      <div id="three" class="section three">Section Three</div>
+      <div class="section four">Section Four</div>
+
+      <div class="header">
+        <div class="nav">
+          <div class="name">Salmaan</div>
+          <div class="nav__links">
+            <div class="nav__link" id="nav__link1">about</div>
+            <div class="nav__link" id="nav__link2">contact</div>
+            <div class="nav__link" id="nav__link3">projects</div>
+          </div>
+        </div>
+        <div class="header__landing">
+          <div class="header__text rellax" data-rellax-speed="8">
+            I <br />
+            am <br />
+            web dev
+
+            <div class="text">I</div>
+            <div class="text">am</div>
+            <div class="text">web dev</div>
+          </div>
+          <div class="header__img__container">
+            <img
+              class="header__img rellax"
+              data-rellax-speed="20"
+              src="./assets/images/fullmoon.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <section class="about">
+        about
+        <div class="about__text rellax" data-rellax-speed="10">
+          Hello , I am a Web developer & designer. Currently, I'm pursuing my
+          Computer Science & Engineering degree from Punjabi University,
+          Patiala. I love learing new things and to explore.
+        </div>
+      </section>
+      <section class="projects">
+        <h1 class="project__heading rellax" data-rellax-speed="8">projects</h1>
+        <div class="project project1 flip-card rellax" data-rellax-speed="3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>FoodFiesta</h1>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                this is a recipe app that lets you search and play with food
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project project2 flip-card rellax" data-rellax-speed="6">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>Flags</h1>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                this is a game that will help you increase your knowledge of the
+                round rock you live on
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project project3 flip-card rellax" data-rellax-speed="9">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>Some shit!</h1>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                this is gonna be some other cool project haven't thought of
+                anything yet
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="education" id="edu">
+        <h1 class="edu-heading">Education</h1>
+        <h3 class="edu-sub-heading">What I'v Learnt</h3>
+
+        <div class="education__info__container">
+          <div
+            class="education__info education__info1 rellax"
+            data-rellax-speed="2"
+          >
+            <h2 class="edu-years">2018-Present</h2>
+            <h3 class="edu-sub">
+              Computer Science & Engineering<br />Punjabi University,<br />
+              Patiala
+            </h3>
+          </div>
+
+          <div
+            class="education__info education__info2 rellax"
+            data-rellax-speed="4"
+          >
+            <h2 class="edu-years">2018</h2>
+            <h3 class="edu-sub">
+              83% in XII <br />Shiwalik Public School,<br />Rupnagar
+            </h3>
+          </div>
+
+          <div
+            class="education__info education__info3 rellax"
+            data-rellax-speed="6"
+          >
+            <h2 class="edu-years">2016</h2>
+            <h3 class="edu-sub">
+              9.8 CGPA in X <br />Shiwalik Public School,<br />Rupnagar
+            </h3>
+          </div>
+        </div>
+        <h1 class="skill__heading">skills</h1>
+        <h3 class="skill__sub__heading">What you could use</h3>
+        <div class="skills">
+          <skill class="skill skill1 rellax" data-rellax-speed="5">html</skill>
+          <skill class="skill skill2 rellax" data-rellax-speed="1">css</skill>
+          <skill class="skill skill3 rellax" data-rellax-speed="8">js</skill>
+          <skill class="skill skill4 rellax" data-rellax-speed="1"
+            >golang</skill
+          >
+          <skill class="skill skill5 rellax" data-rellax-speed="6"
+            >pl/sql</skill
+          >
+          <skill class="skill skill6 rellax" data-rellax-speed="3">react</skill>
+          <skill class="skill skill7 rellax" data-rellax-speed="8"
+            >python</skill
+          >
+          <skill class="skill skill8 rellax" data-rellax-speed="4">c++</skill>
+          <skill class="skill skill9 rellax" data-rellax-speed="2">ds</skill>
+        </div>
+      </section>
+      <section class="contact">
+        <h1>Contact</h1>
+        <form class="contact__form">
+          <div>
+            <input type="text" name="firstname" placeholder="your name" />
+          </div>
+
+          <div>
+            <input type="text" name="lastname" placeholder="your email" />
+          </div>
+
+          <div>
+            <textarea
+              name="subject"
+              placeholder="message"
+              style="height: 200px"
+            ></textarea>
+          </div>
+
+          <button class="contact__btn">Submit</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/people/Salmaan-Khan/100024933231947"
+            class="fa fa-facebook"
+          ></a>
+          <a
+            href="https://twitter.com/Salmaan65991730"
+            class="fa fa-twitter"
+          ></a>
+          <a
+            href="https://www.instagram.com/sa1maan_khan/"
+            class="fa fa-instagram"
+          ></a>
+          <a href="https://medium.com/@salmaank" class="fa fa-med">M</a>
+          <a href="https://github.com/SA1MAANKHAN" class="fa fa-github"></a>
+        </div>
+        <div class="footer-div"><br />Designed and Created by Salmaan.</div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+header{
+height: 150px;
+flex-flow: column;
+}
+div.nav{
+margin:8px 3px;
+}
+section.header{
+height: 240px;
+padding: 20px;
+}
+p.para{
+  font-size: 1rem;
+}
+section.contact{
+  flex-direction: column;
+}

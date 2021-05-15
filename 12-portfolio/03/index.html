@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+      integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"
+      integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./index.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/343b140bdc.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Portfolio</title>
+  </head>
+  <body id="scroll-container">
+    <div class="header">
+      <div class="nav">
+        <div class="name">S.K</div>
+        <div class="nav__links">
+          <div class="nav__link" id="nav__link2">
+            <a href="#contact"> contact</a>
+          </div>
+          <div class="nav__link" id="nav__link3">
+            <a href="#projects">projects</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__landing">
+        <div class="header__text rellax" data-rellax-speed="8">
+          <div class="animated-title">
+            <div class="text-top">
+              <div>
+                <span class="header__text1">Hey there,</span>
+                <span class="header__text2">I'm Salmaan</span>
+              </div>
+            </div>
+            <div class="text-bottom">
+              <div class="header__text3">Web dev</div>
+            </div>
+          </div>
+        </div>
+        <div class="header__img__container">
+          <img class="header__img" src="./assets/images/fullmoon.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <section class="about">
+      about
+      <div class="about__text__img rellax" id="about" data-rellax-speed="10">
+        <div class="about__text">
+          Hello , I am a Web developer & designer. Currently, I'm pursuing my
+          Computer Science & Engineering degree from Punjabi University,
+          Patiala. I love learing new things and to explore.
+        </div>
+        <div class="about__img__container">
+          <img class="about__img" src="./assets/images/self2color.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <h1 class="project__heading rellax" data-rellax-speed="8">projects</h1>
+      <div class="project project1 flip-card rellax" data-rellax-speed="3">
+        <div class="flip-card-inner">
+          <div class="flip-card-front flip-card1-front">
+            <h1>FoodFiesta</h1>
+          </div>
+          <div class="flip-card-back flip-card1-back">
+            <p>this is a recipe app that lets you search and play with food</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project project2 flip-card rellax" data-rellax-speed="6">
+        <div class="flip-card-inner">
+          <div class="flip-card-front flip-card2-front">
+            <h1>Flags</h1>
+          </div>
+          <div class="flip-card-back flip-card2-back">
+            <p>
+              this is a game that will help you increase your knowledge of the
+              round rock you live on
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project project3 flip-card rellax" data-rellax-speed="9">
+        <div class="flip-card-inner">
+          <div class="flip-card-front flip-card3-front">
+            <h1>Covid Tracker</h1>
+          </div>
+          <div class="flip-card-back flip-card3-back">
+            <p>
+              this is gonna be some other cool project haven't thought of
+              anything yet
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="edu">
+      <h1 class="edu-heading">Education</h1>
+      <h3 class="edu-sub-heading">What I'v Learnt</h3>
+
+      <div class="education__info__container">
+        <div
+          class="education__info education__info1 rellax"
+          data-rellax-speed="2"
+        >
+          <h2 class="edu-years">2018-Present</h2>
+          <h3 class="edu-sub">
+            Computer Science & Engineering<br />Punjabi University,<br />
+            Patiala
+          </h3>
+        </div>
+
+        <div
+          class="education__info education__info2 rellax"
+          data-rellax-speed="4"
+        >
+          <h2 class="edu-years">2018</h2>
+          <h3 class="edu-sub">
+            83% in XII <br />Shiwalik Public School,<br />Rupnagar
+          </h3>
+        </div>
+
+        <div
+          class="education__info education__info3 rellax"
+          data-rellax-speed="6"
+        >
+          <h2 class="edu-years">2016</h2>
+          <h3 class="edu-sub">
+            9.8 CGPA in X <br />Shiwalik Public School,<br />Rupnagar
+          </h3>
+        </div>
+      </div>
+      <h1 class="skill__heading">skills</h1>
+      <h3 class="skill__sub__heading">What you could use</h3>
+      <div class="skills">
+        <skill class="skill skill1 rellax" data-rellax-speed="5">html</skill>
+        <skill class="skill skill2 rellax" data-rellax-speed="1">css</skill>
+        <skill class="skill skill3 rellax" data-rellax-speed="8">js</skill>
+        <skill class="skill skill4 rellax" data-rellax-speed="1">golang</skill>
+        <skill class="skill skill5 rellax" data-rellax-speed="6">pl/sql</skill>
+        <skill class="skill skill6 rellax" data-rellax-speed="3">react</skill>
+        <skill class="skill skill7 rellax" data-rellax-speed="8">python</skill>
+        <skill class="skill skill8 rellax" data-rellax-speed="4">c++</skill>
+        <skill class="skill skill9 rellax" data-rellax-speed="2">ds</skill>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h1>Contact</h1>
+      <form class="contact__form">
+        <div>
+          <input type="text" name="firstname" placeholder="your name" />
+        </div>
+
+        <div>
+          <input type="text" name="lastname" placeholder="your email" />
+        </div>
+
+        <div>
+          <textarea
+            name="subject"
+            placeholder="message"
+            style="height: 200px"
+          ></textarea>
+        </div>
+
+        <button class="contact__btn">Submit</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="social-media">
+        <a
+          href="https://www.facebook.com/people/Salmaan-Khan/100024933231947"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://twitter.com/Salmaan65991730" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/sa1maan_khan/"
+          class="fa fa-instagram"
+        ></a>
+        <a href="https://medium.com/@salmaank" class="fa fa-med">M</a>
+        <a href="https://github.com/SA1MAANKHAN" class="fa fa-github"></a>
+      </div>
+      <div class="footer-div"><br />Designed and Created by Salmaan.</div>
+    </footer>
+  </body>
+</html>

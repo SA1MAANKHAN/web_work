@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+}
+
+.header > img {
+  position: absolute;
+}
+/*# sourceMappingURL=main.css.map */
